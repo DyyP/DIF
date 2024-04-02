@@ -1,0 +1,51 @@
+Forensikbericht
+Datum der Untersuchung: 26.03.2024 17:00 Uhr - 18:30 Uhr GMT +1
+Beteiligte Mitarbeiter:
+Pesch, Dylan (Matr.Nr: 2123049)
+Rück, Alexander (Matr.Nr: 2120676)
+Steelandt, Jonathan (Matr.Nr: 2124503)
+Untersuchungsprofil:
+Übung 1
+Zu bearbeitendes Dokument: U1.pdf
+Umgebungsbeschreibung: Computerpool A008
+Forensische Instrumente und Taktiken:
+Werkzeugauswahl: Vorwissen und Internetrecherche via Brave Browser
+Beweissicherungsprozess:
+Sicherungsmethoden: Dokumentation in einem Google Dokument
+Datenanalyse:
+Extraktionsergebnisse: [Art der extrahierten Daten und deren Relevanz für die Untersuchung]
+Analysezusammenfassung: [Zusammenfassung der analysierten Daten und ihrer Implikationen]
+Ergebnisübersicht:
+Ergebnisse:
+Aufgabe 1
+Forensik ist ein Sammelbegriff für wissenschaftliche und technische Arbeitsgebiete, die sich mit der systematischen Untersuchung krimineller Handlungen befassen.
+Computer-Forensik
+Forensische Psychiatrie und Psychologie
+Rechtsmedizin
+Spuren sind physische Hinweise auf eine Straftat, wie Fingerabdrücke oder Blutspuren. Indizien sind mittelbare Hinweise, die auf eine Straftat schließen lassen, aber nicht direkt beweisen. Beweise sind direkte und unmittelbare Hinweise, die eine Straftat beweisen.
+Das Locardsche Austauschprinzip besagt, dass bei jedem Kontakt zwischen zwei Objekten Spuren übertragen werden. Es ist ein grundlegendes Prinzip der Forensik, das besagt, dass keine Spuren ohne Spurenübertragung existieren können.
+c) 255
+b) 10010111
+c) 218
+a) 0x2100
+a) 0010 0001 0000 0001
+c) 1000101
+Das Dezimaläquivalent des Hexadezimalwerts 0x33FACC00 ist 569614080, unabhängig davon, ob in Big-Endian oder Little-Endian interpretiert.
+
+
+
+Aufgabe 2
+Kali linux wurde als VM eingerichtet 
+Die wichtigsten tools sind hier zusammengefasst: https://medium.com/@mailtodevens/deciphering-digital-mysteries-a-comprehensive-guide-to-kali-linux-forensic-tools-6cbe429c73de
+		Aktuelles Arbeitsverzeichnis: /home/kali 
+		Aktuelles Verzeichnis: pwd
+		Allen anweisungen wurde folge geleistet 
+Die Bezeichnungen “-rw -rw -r-- 1 donald staff 6,1K 28 Sep 2022 datei.txt” in einer Unix- oder Linux-Dateiliste geben verschiedene Informationen über die Datei datei.txt wieder:
+Das erste “-rw” steht für den Dateibesitzer (user) und bedeutet, dass er lesen und schreiben kann.
+Das zweite “-rw” steht für die Gruppe (group) und bedeutet, dass sie ebenfalls lesen und schreiben kann.
+“-r–” steht für andere Benutzer (others) und bedeutet, dass sie nur lesen können.
+“1” zeigt die Anzahl der Links zur Datei an, normalerweise 1 für eine einzelne Datei.
+“donald” ist der Benutzername des Dateibesitzers.
+“staff” ist der Name der Gruppe, zu der der Dateibesitzer gehört.
+“6,1K” ist die Größe der Datei (hier: 6,1 KB).
+“28 Sep 2022” ist das Datum der letzten Änderung der Datei.
