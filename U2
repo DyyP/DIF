@@ -16,3 +16,18 @@ Aktionen: Hashwerte ermitteln
             MD5: 31e8feb8e5a501e5302a7ac983336a24
             SHA1: 409499f04d7bb853cc12991f209bad2d58478cf8
 
+Befehlszeilenoptionen für 'mount'
+
+Parameter
+
+Eine vollständige Übersicht zu den Parametern findet man in den Man-Pages zu mount. Die folgende Tabelle führt nur die gängigsten auf:
+
+Parameter von mount
+Parameter 	Beschreibung
+-a 	Es werden alle Geräte bzw. Dateisysteme eingehängt, die in der Datei /etc/fstab ohne die Option noauto aufgeführt sind. Dies wird standardmäßig beim Systemstart durchgeführt.
+-o Option 	Übergibt weitere Optionen an mount, mit denen das Verhalten des eingehängten Dateisystems sehr detailliert festgelegt werden kann.
+-B 	Remount von Verzeichnissen so, dass sie an beiden Orten verfügbar sind (entspricht --bind oder -o bind).
+-M 	Remount von Verzeichnissen so, dass sie nur noch am neuen Ort verfügbar sind (entspricht --move oder -o move).
+-t Typ 	Es wird der Typ des einzuhängenden Dateisystems definiert. mount kennt alle gängigen Dateisysteme sowie einige "Exoten". Einige Typen sind z.B.: ext, ext2, ext3, ext4, reiserfs, nfs, iso9660 (für CDs), udf (für DVDs), vfat (=FAT32), NTFS uvm. Eine vollständige Übersicht findet man in der Man-Page.
+-f 	Simuliert die Durchführung von mount, der Befehl wird nicht wirklich ausgeführt. 
+
