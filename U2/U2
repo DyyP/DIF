@@ -31,3 +31,8 @@ Parameter 	Beschreibung
 -t Typ 	Es wird der Typ des einzuhängenden Dateisystems definiert. mount kennt alle gängigen Dateisysteme sowie einige "Exoten". Einige Typen sind z.B.: ext, ext2, ext3, ext4, reiserfs, nfs, iso9660 (für CDs), udf (für DVDs), vfat (=FAT32), NTFS uvm. Eine vollständige Übersicht findet man in der Man-Page.
 -f 	Simuliert die Durchführung von mount, der Befehl wird nicht wirklich ausgeführt. 
 
+Datum: 2024-04-08T20:40:00+02:00
+Einhänge des Iamges über die Befehle 
+    sudo mkdir /mnt/iso
+    sudo mount -o loop,ro U2.img /mnt/iso
+Im Orndner /mnt/iso befinden sich zwei Dateien RecoverMe01 &RecoverMe02.
