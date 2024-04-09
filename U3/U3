@@ -8,7 +8,7 @@ ncurses-hexedit
     
 Aktionen:
 1) Mounten mit sudo mkdir /mnt/iso und sudo mount -o loop,ro U2.img /mnt/iso
-2) Anfetigung einer Kopie mit dd if=[source] of=[destination]
+2) Anfetigung einer Kopie mit dd if=[source] of=[destination]/[Filenname]
 3) Öffnen der Dateien RecoverMe01 und RecoverMe02 mit Hex Editor (read only) mit ncurses-hexedit
 4) Öffnen der Datei mit Exiftool
 
@@ -18,4 +18,94 @@ Ergebnisse:
     ebenfalls wird Adobe photoshop Cs5 erwähnt, was aud eine Bearbeitung der Ursprünglichen Bilddatei hinweißt 
     Zeitstempel der datei: 2010-09-17 14:44:37 
     Der name Rudolf Stricker ist ebenfalls in den Metadaten zu finden 
-4)
+4) Ergenisse exiftool:
+    ExifTool Version Number         : 12.76
+File Name                       : RecoverMe01
+Directory                       : Desktop/DIF/Übung2
+File Size                       : 1580 kB
+File Modification Date/Time     : 2024:04:09 17:16:46+02:00
+File Access Date/Time           : 2024:04:09 17:24:44+02:00
+File Inode Change Date/Time     : 2024:04:09 17:16:46+02:00
+File Permissions                : -rw-r--r--
+Warning                         : Processing TIFF-like data after unknown 12-byte header
+Exif Byte Order                 : Little-endian (Intel, II)
+Image Width                     : 1851
+Image Height                    : 2453
+Bits Per Sample                 : 8 8 8
+Photometric Interpretation      : RGB
+Make                            : Canon
+Camera Model Name               : Canon EOS 1000D
+Orientation                     : Horizontal (normal)
+Samples Per Pixel               : 3
+X Resolution                    : 240
+Y Resolution                    : 240
+Resolution Unit                 : inches
+Software                        : Adobe Photoshop CS5 Windows
+Modify Date                     : 2010:09:17 14:44:37
+Artist                          : Rudolf Stricker
+Exposure Time                   : 1/100
+F Number                        : 11.0
+Exposure Program                : Aperture-priority AE
+ISO                             : 200
+Sensitivity Type                : Unknown
+Exif Version                    : 0221
+Date/Time Original              : 2010:09:17 09:37:05
+Create Date                     : 2010:09:17 09:37:05
+Shutter Speed Value             : 1/100
+Aperture Value                  : 11.0
+Exposure Compensation           : 0
+Max Aperture Value              : 2.7
+Subject Distance                : 6.88 m
+Metering Mode                   : Center-weighted average
+Flash                           : Off, Did not fire
+Focal Length                    : 23.0 mm
+Sub Sec Time                    : 94
+Sub Sec Time Original           : 94
+Sub Sec Time Digitized          : 94
+Color Space                     : sRGB
+Exif Image Width                : 1641
+Exif Image Height               : 2182
+Focal Plane X Resolution        : 4438.356164
+Focal Plane Y Resolution        : 4445.969125
+Focal Plane Resolution Unit     : inches
+Custom Rendered                 : Normal
+Exposure Mode                   : Auto
+White Balance                   : Auto
+Scene Capture Type              : Standard
+Owner Name                      : Rudolf Stricker
+Serial Number                   : 2350566822
+Lens Info                       : 17-50mm f/?
+Lens Model                      : 17-50mm
+GPS Version ID                  : 2.2.0.0
+GPS Latitude Ref                : North
+GPS Longitude Ref               : East
+GPS Altitude Ref                : Above Sea Level
+GPS Time Stamp                  : 09:37:05
+GPS Satellites                  : 0
+GPS Map Datum                   : WGS-84
+GPS Date Stamp                  : 2010:09:17
+Compression                     : JPEG (old-style)
+Thumbnail Offset                : 1250
+Thumbnail Length                : 8817
+Aperture                        : 11.0
+Image Size                      : 1851x2453
+Megapixels                      : 4.5
+Scale Factor To 35 mm Equivalent: 1.6
+Shutter Speed                   : 1/100
+Create Date                     : 2010:09:17 09:37:05.94
+Date/Time Original              : 2010:09:17 09:37:05.94
+Modify Date                     : 2010:09:17 14:44:37.94
+Thumbnail Image                 : (Binary data 8817 bytes, use -b option to extract)
+GPS Altitude                    : 99 m Above Sea Level
+GPS Date/Time                   : 2010:09:17 09:37:05Z
+GPS Latitude                    : 49 deg 28' 10.56" N
+GPS Longitude                   : 8 deg 28' 56.32" E
+Circle Of Confusion             : 0.019 mm
+Depth Of Field                  : inf (1.89 m - inf)
+Field Of View                   : 51.6 deg
+Focal Length                    : 23.0 mm (35 mm equivalent: 37.2 mm)
+GPS Position                    : 49 deg 28' 10.56" N, 8 deg 28' 56.32" E
+Hyperfocal Distance             : 2.59 m
+Light Value                     : 12.6
+Lens ID                         : 17-50mm
+
