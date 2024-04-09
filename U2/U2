@@ -36,3 +36,4 @@ Einhänge des Iamges über die Befehle
     sudo mkdir /mnt/iso
     sudo mount -o loop,ro U2.img /mnt/iso
 Im Orndner /mnt/iso befinden sich zwei Dateien RecoverMe01 &RecoverMe02.
+Touch wurde nicht ausgeführt da es zu einer Änderung des Asservats führen könnte.
