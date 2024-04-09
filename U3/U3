@@ -8,7 +8,7 @@ ncurses-hexedit
     
 Aktionen:
 1) Mounten mit sudo mkdir /mnt/iso und sudo mount -o loop,ro U2.img /mnt/iso
-2) Anfetigung einer Kopie mit dd 
+2) Anfetigung einer Kopie mit dd (if= [source] of=[destination]
 3) Öffnen der Dateien RecoverMe01 und RecoverMe02 mit Hex Editor (read only) mit ncurses-hexedit
 4) Öffnen der Datei mit Exiftool
 
