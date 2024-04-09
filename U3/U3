@@ -11,6 +11,8 @@ Aktionen:
 2) Anfetigung einer Kopie mit dd if=[source] of=[destination]/[Filenname]
 3) Öffnen der Dateien RecoverMe01 und RecoverMe02 mit Hex Editor (read only) mit ncurses-hexedit
 4) Öffnen der Datei mit Exiftool
+5) RM01 geöffnet mit Ghex, als Jpeg identifiziert, entsprechende fehler in der HEX signatur geändert ( Von: 0F D8 FF E0 Auf: FF D8 FF E0)
+6) RM02 geöffnet mit Ghex, als PNG identifiziert, entsprechende fehler in der HEX signatur geändert ( Von: 89 50 4E 77 0D 0A 1A 0A Auf: 89 50 4E 47 0D 0A 1A 0A)
 
 Ergebnisse: 
 
@@ -108,4 +110,7 @@ GPS Position                    : 49 deg 28' 10.56" N, 8 deg 28' 56.32" E
 Hyperfocal Distance             : 2.59 m
 Light Value                     : 12.6
 Lens ID                         : 17-50mm
+
+5) Bild des H gebäudes 
+6) Bild des Hochschule Mannheim logos 
 
