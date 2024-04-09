@@ -3,5 +3,17 @@ Datum: 2024-04-09T17:08:00+02:00
 Datein: U2.img / U3.zip
 Genutzte Programme:
 
+dd 
+ncurses-hexedit
     
 Aktionen:
+1) Mounten mit sudo mkdir /mnt/iso und sudo mount -o loop,ro U2.img /mnt/iso
+2) Anfetigung einer Kopie mit dd 
+3) Öffnen der Dateien RecoverMe01 und RecoverMe02 mit Hex Editor (read only) mit ncurses-hexedit
+
+Ergebnisse: 
+
+3) RM01 vermutlich Exif Datei. Hier sind einige metadaten zu erkennen wie der Kameraname: Conon Eos 100D  (Linse vermutlich: 17-50mm)
+    ebenfalls wird Adobe photoshop Cs5 erwähnt, was aud eine Bearbeitung der Ursprünglichen Bilddatei hinweißt 
+    Zeitstempel der datei: 2010-09-17 14:44:37 
+    Der name Rudolf Stricker ist ebenfalls in den Metadaten zu finden 
