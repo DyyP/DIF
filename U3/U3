@@ -10,6 +10,7 @@ Aktionen:
 1) Mounten mit sudo mkdir /mnt/iso und sudo mount -o loop,ro U2.img /mnt/iso
 2) Anfetigung einer Kopie mit dd 
 3) Öffnen der Dateien RecoverMe01 und RecoverMe02 mit Hex Editor (read only) mit ncurses-hexedit
+4) Öffnen der Datei mit Exiftool
 
 Ergebnisse: 
 
@@ -17,3 +18,4 @@ Ergebnisse:
     ebenfalls wird Adobe photoshop Cs5 erwähnt, was aud eine Bearbeitung der Ursprünglichen Bilddatei hinweißt 
     Zeitstempel der datei: 2010-09-17 14:44:37 
     Der name Rudolf Stricker ist ebenfalls in den Metadaten zu finden 
+4)
