@@ -75,6 +75,8 @@ sr0    1024M rom
 
 4) ┌──(kali㉿kali)-[/mnt/mount]
    └─$ sudo losetup /dev/loop0 ~/Desktop/DIF/Kopie/imageC.img
+   ┌──(kali㉿kali)-[/mnt/mount]
+   └─$ cd /mnt/mount
 
 5) lässt sich nicht mounten, da Probleme beim Lesen des Superblocks (Inhalt vermutlich beschädigt) auftreten
 6) 
