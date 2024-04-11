@@ -48,4 +48,6 @@ Aktionen:
    4763+0 records out
    19977469952 bytes (20 GB, 19 GiB) copied, 84.9873 s, 235 MB/s
 
-4)
+4) sudo mount -a ~/Desktop/DIF/Kopie/image.img /mnt/mount
+
+5) 
