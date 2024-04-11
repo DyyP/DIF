@@ -50,12 +50,26 @@ sda    80.1G disk
 sr0    1024M rom  
 
 
-3) sudo dd if=/dev/sda1 of=~/Desktop/DIF/Kopie/image.img bs=4M conv=notrunc,sync,noerror
-dd: error writing '/home/kali/Desktop/DIF/Kopie/image.img': No space left on device
-4559+0 records in
-4558+0 records out
-19117715456 bytes (19 GB, 18 GiB) copied, 85.9531 s, 222 MB/s
+3) ┌──(kali㉿kali)-[~]
+   └─$ fdisk -l ~/Desktop/DIF/Übung2/image.img
+   Disk /home/kali/Desktop/DIF/Übung2/image.img: 20 GiB, 21474836480 bytes, 41943040 sectors
+   Units: sectors of 1 * 512 = 512 bytes
+   Sector size (logical/physical): 512 bytes / 512 bytes
+   I/O size (minimum/optimal): 512 bytes / 512 bytes
+   Disklabel type: gpt
+   Disk identifier: C9C91594-26B4-4241-A6AC-99ED6689E164
 
+   Device                                     Start      End  Sectors  Size Type
+   /home/kali/Desktop/DIF/Übung2/image.img1    2048     4095     2048    1M BIOS boot
+   /home/kali/Desktop/DIF/Übung2/image.img2    4096  1054719  1050624  513M EFI System
+   /home/kali/Desktop/DIF/Übung2/image.img3 1054720 41940991 40886272 19.5G Linux filesystem
+                                                                                                                      
+   ┌──(kali㉿kali)-[~]
+   └─$ sudo dd if=~/Desktop/DIF/Übung2/image.img bs=512 skip=1052672 count=40886272 of=~/Desktop/DIF/Kopie/imageC.img conv=notrunc,sync,noerror
+   
+   40886272+0 records in
+   40886272+0 records out
+   20933771264 bytes (21 GB, 19 GiB) copied, 176.036 s, 119 MB/s
 
 4) sudo mount -a ~/Desktop/DIF/Kopie/image.img /mnt/mount
 
