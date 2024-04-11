@@ -50,4 +50,5 @@ Aktionen:
 
 4) sudo mount -a ~/Desktop/DIF/Kopie/image.img /mnt/mount
 
-5) 
+5) lässt sich nicht mounten, da Probleme beim Lesen des Superblocks (Inhalt vermutlich beschädigt) auftreten
+6) 
