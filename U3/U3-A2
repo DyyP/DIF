@@ -7,6 +7,13 @@ Genutzte Programme:
 Aktionen:
  i) Partitionen: 
     - fdsik: Linux, swap, home, uefi, raid, lvm (Mit Hash-Codes hinterlegt)
+           linux          - 0FC63DAF-8483-4772-8E79-3D69D8477DE4
+           swap           - 0657FD6D-A4AB-43C4-84E5-0933C84B4F4F
+           home           - 933AC7E1-2EB4-4F13-B844-0E14E2AEF915
+           uefi           - C12A7328-F81F-11D2-BA4B-00A0C93EC93B
+           raid           - A19D880F-05FC-4D3B-A006-743F0F84911E
+           lvm            - E6D6D379-F507-44C2-A23C-238F2A3DF928
+        
     - mmls : Zeigt Sektoren an, mit Start-/End-Bit des Registers und Länge
               Descriptions: Safety Tables, Unallocated, GPT Header, Partition Table, __ , EFI System Partition, __ , Unallocated
 ii) 
