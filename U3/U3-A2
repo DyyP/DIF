@@ -64,14 +64,17 @@ sr0    1024M rom
    /home/kali/Desktop/DIF/Übung2/image.img2    4096  1054719  1050624  513M EFI System
    /home/kali/Desktop/DIF/Übung2/image.img3 1054720 41940991 40886272 19.5G Linux filesystem
                                                                                                                       
-   ┌──(kali㉿kali)-[~]
-   └─$ sudo dd if=~/Desktop/DIF/Übung2/image.img bs=512 skip=1052672 count=40886272 of=~/Desktop/DIF/Kopie/imageC.img conv=notrunc,sync,noerror
+   ┌──(kali㉿kali)-[/mnt/mount]
+   └─$ sudo dd if=~/Desktop/DIF/Übung2/image.img of=~/Desktop/DIF/Kopie/imageC.img bs=512 skip=1054720 status=progress conv=notrunc,sync,noerror 
    
-   40886272+0 records in
-   40886272+0 records out
-   20933771264 bytes (21 GB, 19 GiB) copied, 176.036 s, 119 MB/s
+   20872644096 bytes (21 GB, 19 GiB) copied, 269 s, 77.6 MB/s 
+   40888320+0 records in
+   40888320+0 records out
+   20934819840 bytes (21 GB, 19 GiB) copied, 269.525 s, 77.7 MB/s
 
-4) sudo mount -a ~/Desktop/DIF/Kopie/image.img /mnt/mount
+
+4) ┌──(kali㉿kali)-[/mnt/mount]
+   └─$ sudo losetup /dev/loop0 ~/Desktop/DIF/Kopie/imageC.img
 
 5) lässt sich nicht mounten, da Probleme beim Lesen des Superblocks (Inhalt vermutlich beschädigt) auftreten
 6) 
