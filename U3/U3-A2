@@ -42,11 +42,20 @@ Aktionen:
           001:  -------   0000000000   0000000000   0000000001   Unallocated
           002:  000:000   0000000001   0041943039   0041943039   GPT Safety Partition (0xee)
 
+lsblk -o NAME,SIZE,TYPE,MOUNTPOINT
+NAME    SIZE TYPE M
+loop0  37.2G loop 
+sda    80.1G disk 
+└─sda1 80.1G part /
+sr0    1024M rom  
 
-3) dd if=~/Desktop/DIF/Übung2/image.img of=~/Desktop/DIF/Kopie/image.img bs=4M seek=4763 count=4763 conv=notrunc,sync,noerror      
-   4763+0 records in
-   4763+0 records out
-   19977469952 bytes (20 GB, 19 GiB) copied, 84.9873 s, 235 MB/s
+
+3) sudo dd if=/dev/sda1 of=~/Desktop/DIF/Kopie/image.img bs=4M conv=notrunc,sync,noerror
+dd: error writing '/home/kali/Desktop/DIF/Kopie/image.img': No space left on device
+4559+0 records in
+4558+0 records out
+19117715456 bytes (19 GB, 18 GiB) copied, 85.9531 s, 222 MB/s
+
 
 4) sudo mount -a ~/Desktop/DIF/Kopie/image.img /mnt/mount
 
