@@ -43,4 +43,9 @@ Aktionen:
           002:  000:000   0000000001   0041943039   0041943039   GPT Safety Partition (0xee)
 
 
-3) 
+3) dd if=~/Desktop/DIF/Übung2/image.img of=~/Desktop/DIF/Kopie/image.img bs=4M seek=4763 count=4763 conv=notrunc,sync,noerror      
+   4763+0 records in
+   4763+0 records out
+   19977469952 bytes (20 GB, 19 GiB) copied, 84.9873 s, 235 MB/s
+
+4)
