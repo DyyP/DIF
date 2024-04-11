@@ -1,7 +1,12 @@
 Übungsblatt: U3
-Datum: 2024-04-09T17:08:00+02:00 	
+Datum: 2024-04-11T08:08:00+02:00 	
 Datein: image.img / image.zip
 Genutzte Programme:
 
 
 Aktionen:
+ i) Partitionen: 
+    - fdsik: Linux, swap, home, uefi, raid, lvm (Mit Hash-Codes hinterlegt)
+    - mmls : Zeigt Sektoren an, mit Start-/End-Bit des Registers und Länge
+              Descriptions: Safety Tables, Unallocated, GPT Header, Partition Table, __ , EFI System Partition, __ , Unallocated
+ii) 
