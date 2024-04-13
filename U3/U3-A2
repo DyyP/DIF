@@ -75,6 +75,9 @@ sr0    1024M rom
 
 4) ┌──(kali㉿kali)-[/mnt/mount]
    └─$ sudo losetup /dev/loop0 ~/Desktop/DIF/Kopie/imageC.img
+   
+   sudo mount -o loop /dev/loop0 /mnt/mount/    
+   
    ┌──(kali㉿kali)-[/mnt/mount]
    └─$ cd /mnt/mount
 
