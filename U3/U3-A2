@@ -88,7 +88,10 @@ Datum: 2024-04-12T08:09:50+02:00
    root:$y$j9T$OICpkba7ZTAB83GpRSyxx1$520cYTVLu0eiA3nWC3yjbg4qevI.vf0nHNx91Vlh9a2
    rest: 19778
 
-6) Benutzername: Kali
+6) id -nu 1000
+
+   kali
+
 
 7/8) sudo crunch 7 7 01234defghi -t @@@@@@@ -o passwortliste.txt
 
