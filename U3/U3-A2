@@ -90,19 +90,15 @@ Datum: 2024-04-12T08:09:50+02:00
 
 6) Benutzername: Kali
 
-7) sudo crunch 7 7 01234defghi -t @@%%%%% -o passwortliste.txt
+7/8) sudo crunch 7 7 01234defghi -t @@@@@@@ -o passwortliste.txt
 
-   [sudo] password for kali: 
-   Crunch will now generate the following amount of data: 96800000 bytes
-   92 MB
-   0 GB
-   0 TB
-   0 PB
-   Crunch will now generate the following number of lines: 12100000 
-   
-   crunch: 100% completed generating output
+    Crunch will now generate the following amount of data: 155897368 bytes
+    148 MB
+    0 GB
+    0 TB
+    0 PB
+    Crunch will now generate the following number of lines: 19487171 
 
-8) Crunch will now generate the following number of lines: 12100000
 
 9) 
 
