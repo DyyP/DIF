@@ -99,6 +99,29 @@ Datum: 2024-04-12T08:09:50+02:00
     0 PB
     Crunch will now generate the following number of lines: 19487171 
 
+Datum: 2024-04-14T13:05:00+02:00
 
-9) 
+9)  sudo john --format=md5crypt --wordlist=/passwortliste.txt --pot=ergebnisse.txt --progress-every=10 /mnt/mount/etc/shadow
+    [sudo] password for kali: 
+    Using default input encoding: UTF-8
+    Loaded 1 password hash (md5crypt, crypt(3) $1$ (and variants) [MD5 128/128 SSE2 4x3])
+    Press 'q' or Ctrl-C to abort, almost any other key for status
+    0g 0:00:00:10 1.61% (ETA: 13:09:03) 0g/s 31214p/s 31214c/s 31214C/s 01i3ihd..01i3iid
+    0g 0:00:00:20 3.65% (ETA: 13:07:48) 0g/s 35514p/s 35514c/s 35514C/s 044e204..044e214
+    0g 0:00:00:30 5.72% (ETA: 13:07:24) 0g/s 37118p/s 37118c/s 37118C/s 0ei121g..0ei122g
+    0g 0:00:00:40 7.20% (ETA: 13:07:55) 0g/s 35041p/s 35041c/s 35041C/s 0gfgeeh..0gfgefh
+    0g 0:00:00:52 8.68% (ETA: 13:08:39) 0g/s 32508p/s 32508c/s 32508C/s 0idde1d..0idde2d
+    0g 0:00:01:02 10.35% (ETA: 13:08:39) 0g/s 32500p/s 32500c/s 32500C/s 11dff3i..11dff4i
+    0g 0:00:01:12 12.20% (ETA: 13:08:30) 0g/s 33015p/s 33015c/s 33015C/s 13g4d1e..13g4d2e
+    0g 0:00:01:22 14.23% (ETA: 13:08:16) 0g/s 33805p/s 33805c/s 33805C/s 1e241h3..1e241i3
+    0g 0:00:01:32 16.20% (ETA: 13:08:08) 0g/s 34296p/s 34296c/s 34296C/s 1gee12g..1gee13g
+    0g 0:00:01:42 18.29% (ETA: 13:07:57) 0g/s 34931p/s 34931c/s 34931C/s 2014de2..2014df2
+    0g 0:00:01:52 20.24% (ETA: 13:07:53) 0g/s 35214p/s 35214c/s 35214C/s 22d4fh1..22d4fi1
+    22dif04          (dif)     
+    1g 0:00:01:52 DONE (2024-04-14 13:00) 0.008907g/s 35209p/s 35209c/s 35209C/s 22dieih..22dif0h
+    Use the "--show" option to display all of the cracked passwords reliably
+    Session completed. 
+
+    Das Passwort Lautet: 22dif04
+    Es dauerte 1min52sec
 
