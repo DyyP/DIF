@@ -42,14 +42,6 @@ Aktionen:
           001:  -------   0000000000   0000000000   0000000001   Unallocated
           002:  000:000   0000000001   0041943039   0041943039   GPT Safety Partition (0xee)
 
-lsblk -o NAME,SIZE,TYPE,MOUNTPOINT
-NAME    SIZE TYPE M
-loop0  37.2G loop 
-sda    80.1G disk 
-└─sda1 80.1G part /
-sr0    1024M rom  
-
-
 3) ┌──(kali㉿kali)-[~]
    └─$ fdisk -l ~/Desktop/DIF/Übung2/image.img
    Disk /home/kali/Desktop/DIF/Übung2/image.img: 20 GiB, 21474836480 bytes, 41943040 sectors
