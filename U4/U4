@@ -9,43 +9,43 @@ SHA256: 2c9c0f5117cdc3e8f3b9156bb5eef7d9563f46b4e0e4e51123711d828c89e8a2
 CRC32: ae3d049c
 
 
-1)
-dd:
-
-    Syntax: dd if=input_file of=output_file [options]
-    Funktion: Kopiert Daten von einer Datei oder einem Gerät auf eine andere Datei oder ein anderes Gerät.
-    Optionen:
-        bs=blocksize: Blockgröße für die Kopie (Standard: 512 Byte)
-        count=number: Anzahl der zu kopierenden Blöcke
-        skip=count: Anzahl der zu überspringenden Blöcke am Anfang
-        status=progress: Zeigt den Kopiervorgang als Fortschrittsbalken an
-
-dc3dd:
-
-    Syntax: dc3dd if=input_file of=output_file [options]
-    Funktion: Kopiert Daten von einer Datei oder einem Gerät auf eine andere Datei oder ein anderes Gerät, ist aber optimiert für SquashFS-Dateisysteme.
-    Optionen:
-        bs=blocksize: Blockgröße für die Kopie (Standard: 1048576 Byte)
-        count=number: Anzahl der zu kopierenden Blöcke
-        skip=count: Anzahl der zu überspringenden Blöcke am Anfang
-        status=progress: Zeigt den Kopiervorgang als Fortschrittsbalken an
-
-dcfldd:
-
-    Syntax: dcfldd if=input_file of=output_file [options]
-    Funktion: Kopiert Daten von einer Datei oder einem Gerät auf eine andere Datei oder ein anderes Gerät, ist aber optimiert für SquashFS-Dateisysteme und ermöglicht die Komprimierung oder Dekomprimierung während des Kopiervorgangs.
-    Optionen:
-        bs=blocksize: Blockgröße für die Kopie (Standard: 1048576 Byte)
-        count=number: Anzahl der zu kopierenden Blöcke
-        skip=count: Anzahl der zu überspringenden Blöcke am Anfang
-        compress: Komprimiert die Daten während der Kopie
-2)
-    Die Option conv=noerror beim Befehl dd weist das Tool an, den Kopiervorgang fortzusetzen, selbst wenn Lesefehler auftreten.
-
-    Standardverhalten: Ohne conv=noerror stoppt dd den Kopiervorgang bei einem Lesefehler und meldet einen Fehler.
-    Verhalten mit conv=noerror:
-        Fehlerhafte Stellen: Bei Lesefehlern füllt dd die betroffenen Stellen im Zielmedium mit Nullen (0-Bytes) auf.
-        Fortsetzung: Der Kopiervorgang wird trotz der Fehler fortgesetzt, um eine möglichst vollständige Kopie der Quelle zu erstellen.
-
-        decompress: Dekomprimiert die Daten während der Kopie
+1.1)
+        dd:
+        
+            Syntax: dd if=input_file of=output_file [options]
+            Funktion: Kopiert Daten von einer Datei oder einem Gerät auf eine andere Datei oder ein anderes Gerät.
+            Optionen:
+                bs=blocksize: Blockgröße für die Kopie (Standard: 512 Byte)
+                count=number: Anzahl der zu kopierenden Blöcke
+                skip=count: Anzahl der zu überspringenden Blöcke am Anfang
+                status=progress: Zeigt den Kopiervorgang als Fortschrittsbalken an
+        
+        dc3dd:
+        
+            Syntax: dc3dd if=input_file of=output_file [options]
+            Funktion: Kopiert Daten von einer Datei oder einem Gerät auf eine andere Datei oder ein anderes Gerät, ist aber optimiert für SquashFS-Dateisysteme.
+            Optionen:
+                bs=blocksize: Blockgröße für die Kopie (Standard: 1048576 Byte)
+                count=number: Anzahl der zu kopierenden Blöcke
+                skip=count: Anzahl der zu überspringenden Blöcke am Anfang
+                status=progress: Zeigt den Kopiervorgang als Fortschrittsbalken an
+        
+        dcfldd:
+        
+            Syntax: dcfldd if=input_file of=output_file [options]
+            Funktion: Kopiert Daten von einer Datei oder einem Gerät auf eine andere Datei oder ein anderes Gerät, ist aber optimiert für SquashFS-Dateisysteme und ermöglicht die Komprimierung oder Dekomprimierung während des Kopiervorgangs.
+            Optionen:
+                bs=blocksize: Blockgröße für die Kopie (Standard: 1048576 Byte)
+                count=number: Anzahl der zu kopierenden Blöcke
+                skip=count: Anzahl der zu überspringenden Blöcke am Anfang
+                compress: Komprimiert die Daten während der Kopie
+1.2)
+        Die Option conv=noerror beim Befehl dd weist das Tool an, den Kopiervorgang fortzusetzen, selbst wenn Lesefehler auftreten.
+    
+        Standardverhalten: Ohne conv=noerror stoppt dd den Kopiervorgang bei einem Lesefehler und meldet einen Fehler.
+        Verhalten mit conv=noerror:
+            Fehlerhafte Stellen: Bei Lesefehlern füllt dd die betroffenen Stellen im Zielmedium mit Nullen (0-Bytes) auf.
+            Fortsetzung: Der Kopiervorgang wird trotz der Fehler fortgesetzt, um eine möglichst vollständige Kopie der Quelle zu erstellen.
+    
+            decompress: Dekomprimiert die Daten während der Kopie
         status=progress: Zeigt den Kopiervorgang als Fortschrittsbalken an
