@@ -31,17 +31,6 @@ Aktionen:
            Desktop/DIF/Übung2/image.img2    4096  1054719  1050624 C12A7328-F81F-11D2-BA4B-00A0C93EC93B 0A1C8B60-1CC7-4C26-B6C5-BA683514FAEA EFI System Partition 
            Desktop/DIF/Übung2/image.img3 1054720 41940991 40886272 0FC63DAF-8483-4772-8E79-3D69D8477DE4 421A1937-EAD4-4A4E-8E76-BCCA72F2F6EE 
 
-- mmls : Zeigt Sektoren an, mit Start-/End-Bit des Registers und Länge
-              Descriptions: Safety Tables, Unallocated, GPT Header, Partition Table, __ , EFI System Partition, __ , Unallocated
-          DOS Partition Table
-          Offset Sector: 0
-          Units are in 512-byte sectors
-          
-                Slot      Start        End          Length       Description
-          000:  Meta      0000000000   0000000000   0000000001   Primary Table (#0)
-          001:  -------   0000000000   0000000000   0000000001   Unallocated
-          002:  000:000   0000000001   0041943039   0041943039   GPT Safety Partition (0xee)
-
 3) ┌──(kali㉿kali)-[~]
    └─$ fdisk -l ~/Desktop/DIF/Übung2/image.img
    Disk /home/kali/Desktop/DIF/Übung2/image.img: 20 GiB, 21474836480 bytes, 41943040 sectors
