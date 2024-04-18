@@ -33,7 +33,7 @@ Datum: 2024-04-18T09:00:00+02:00
                 skip=count: Anzahl der zu überspringenden Blöcke am Anfang
                 compress: Komprimiert die Daten während der Kopie
                 decompress: Dekomprimiert die Daten während der Kopie
-                status=progress: Zeigt den Kopiervorgang als Fortschrittsbalken an
+                
 1.3)
         Die Option conv=noerror beim Befehl dd weist das Tool an, den Kopiervorgang fortzusetzen, selbst wenn Lesefehler auftreten.
     
