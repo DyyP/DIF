@@ -9,7 +9,7 @@ SHA256: 2c9c0f5117cdc3e8f3b9156bb5eef7d9563f46b4e0e4e51123711d828c89e8a2
 CRC32: ae3d049c
 
 
-1.1)
+1.2)
         dd:
         
             Syntax: dd if=input_file of=output_file [options]
@@ -39,13 +39,26 @@ CRC32: ae3d049c
                 count=number: Anzahl der zu kopierenden Blöcke
                 skip=count: Anzahl der zu überspringenden Blöcke am Anfang
                 compress: Komprimiert die Daten während der Kopie
-1.2)
+                decompress: Dekomprimiert die Daten während der Kopie
+                status=progress: Zeigt den Kopiervorgang als Fortschrittsbalken an
+1.3)
         Die Option conv=noerror beim Befehl dd weist das Tool an, den Kopiervorgang fortzusetzen, selbst wenn Lesefehler auftreten.
     
         Standardverhalten: Ohne conv=noerror stoppt dd den Kopiervorgang bei einem Lesefehler und meldet einen Fehler.
         Verhalten mit conv=noerror:
             Fehlerhafte Stellen: Bei Lesefehlern füllt dd die betroffenen Stellen im Zielmedium mit Nullen (0-Bytes) auf.
             Fortsetzung: Der Kopiervorgang wird trotz der Fehler fortgesetzt, um eine möglichst vollständige Kopie der Quelle zu erstellen.
-    
-            decompress: Dekomprimiert die Daten während der Kopie
-        status=progress: Zeigt den Kopiervorgang als Fortschrittsbalken an
+
+1.4)
+            Standardverhalten: Ohne conv=sync schreibt dd die Daten in Puffer und synchronisiert diese ggf. verzögert.
+            Verhalten mit conv=sync:
+                Synchroner Schreibvorgang: Jeder Datenblock wird unmittelbar nach dem Lesen vom Quellmedium auf das Zielmedium geschrieben und synchronisiert.
+                Verzögerungen: Dies kann zu Verzögerungen beim Kopiervorgang führen, da die Schreibgeschwindigkeit des Zielmediums den Prozess limitieren kann.
+
+        +
+            Datenintegrität: Die Option conv=sync gewährleistet die Datenintegrität des Abbilds, da jeder geschriebene Datenblock synchronisiert wird.
+            Zuverlässigkeit: Dies erhöht die Zuverlässigkeit des Abbilds und minimiert das Risiko von Datenverlusten oder Beschädigungen.
+
+        -
+            Geschwindigkeit: Die Verwendung von conv=sync kann den Kopiervorgang deutlich verlangsamen, da die Schreibgeschwindigkeit des Zielmediums den Prozess limitiert.
+            Ressourcenverbrauch: Der synchrone Schreibvorgang kann die Systemressourcen stärker belasten, insbesondere bei großen Datenträgern
