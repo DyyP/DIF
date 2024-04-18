@@ -1,0 +1,11 @@
+i)   Mit welchem Betriebssystem hat der Benutzer vermutlich gearbeitet?
+    Der Benutzer hat vermutlich mit Linux gearbeitet, da dies der größte Partitionsbereich ist.
+
+ii)  Wie lautet vermutlich der Benutzername?
+    Der Benutzername in dem Linux Filesystem ist "DIF"
+
+iii) Welches Passwort hat der Benutzer vermutlich verwendet?
+    Über eine Passwortliste, welche mit crunch erstellt wurde, konnte mit dem john Befehl das Passwort ermittelt werden. Das gefundene Passwort lautet 22dif04.
+
+iv)  Welche Dateien hat der Benutzer gespeichert und was waren die Inhalte?
+    In dem gespeicherten "Pictures"-Verzeichnis konnte zwei Bilder von einem Schuhschnabel gefunden werden.
