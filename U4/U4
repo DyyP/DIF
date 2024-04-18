@@ -61,13 +61,15 @@ Datum: 2024-04-18T09:00:00+02:00
             Es gibt verschiedene Optionen, um das Verhalten von dc3dd bei fehlerhaften Sektoren zu steuern.
             dc3dd bietet keine integrierte Funktion zur Wiederherstellung von Daten aus fehlerhaften Sektoren.
 
-2.1)        Datum: 2024-04-18T09:00:00+02:00
+2.1)    Datum: 2024-04-18T09:00:00+02:00        
         Datei: vUSB.img
         Genutzt GTKHash
         MD5: 01f7fd777cc239b0c87c81fc2253a219
         SHA1: 1f5dd4cd5f9209f11bdaef31bd88d2c011244581
         SHA256: 2c9c0f5117cdc3e8f3b9156bb5eef7d9563f46b4e0e4e51123711d828c89e8a2
         CRC32: ae3d049c
-
+2.2)    mit alle 4 tools kopie erstellt
+2.3)    sudo mksquashfs ~/Desktop/DIF/Uebung4/vUSB.img ~/Desktop/DIF/Uebung4/kopien/vusb_squash.squashfs
+        fand ich schon allein wegen Fortschrittsbalken dabei war und viele infos
 
 
