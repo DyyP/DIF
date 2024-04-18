@@ -22,7 +22,6 @@ Datum: 2024-04-18T09:00:00+02:00
                 bs=blocksize: Blockgröße für die Kopie (Standard: 1048576 Byte)
                 count=number: Anzahl der zu kopierenden Blöcke
                 skip=count: Anzahl der zu überspringenden Blöcke am Anfang
-                status=progress: Zeigt den Kopiervorgang als Fortschrittsbalken an
         
         dcfldd:
         
