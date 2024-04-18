@@ -1,12 +1,13 @@
-i)   Mit welchem Betriebssystem hat der Benutzer vermutlich gearbeitet?
-    Mithilfe der fdisk- und mmls-Bfehle konnten die Partitionen
+i)   Mit welchem Betriebssystem hat der Benutzer vermutlich gearbeitet?            2024-04-11T08:08:00+02:00
+    Mithilfe der fdisk- und mmls-Bfehle konnten die Partitionen angezeigt werden, und deren Größe im Speicher.
     Der Benutzer hat vermutlich mit Linux gearbeitet, da dies der größte Partitionsbereich ist.
 
-ii)  Wie lautet vermutlich der Benutzername?
-    Der Benutzername in dem Linux Filesystem ist "DIF"
+ii)  Wie lautet vermutlich der Benutzername?                                       2024-04-12T08:09:50+02:00
+    Nachdem das Image kopiert und gemounted ist, kann in das Verzeichnissystem eingegriffen werden. Hier findet man unter /etc/shadow einen Benutzter dif und das zugehörige Passwort als Hashcode.
+    Der Benutzername in dem Linux Filesystem ist "dif"
 
-iii) Welches Passwort hat der Benutzer vermutlich verwendet?
+iii) Welches Passwort hat der Benutzer vermutlich verwendet?                        2024-04-14T13:05:00+02:00
     Über eine Passwortliste, welche mit crunch erstellt wurde, konnte mit dem john Befehl das Passwort ermittelt werden. Das gefundene Passwort lautet 22dif04.
 
-iv)  Welche Dateien hat der Benutzer gespeichert und was waren die Inhalte?
+iv)  Welche Dateien hat der Benutzer gespeichert und was waren die Inhalte?         2024-04-18T08:30:00+02:00
     In dem gespeicherten "Pictures"-Verzeichnis konnte zwei Bilder von einem Schuhschnabel gefunden werden.
