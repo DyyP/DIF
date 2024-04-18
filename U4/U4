@@ -39,5 +39,13 @@ dcfldd:
         count=number: Anzahl der zu kopierenden Blöcke
         skip=count: Anzahl der zu überspringenden Blöcke am Anfang
         compress: Komprimiert die Daten während der Kopie
+2)
+    Die Option conv=noerror beim Befehl dd weist das Tool an, den Kopiervorgang fortzusetzen, selbst wenn Lesefehler auftreten.
+
+    Standardverhalten: Ohne conv=noerror stoppt dd den Kopiervorgang bei einem Lesefehler und meldet einen Fehler.
+    Verhalten mit conv=noerror:
+        Fehlerhafte Stellen: Bei Lesefehlern füllt dd die betroffenen Stellen im Zielmedium mit Nullen (0-Bytes) auf.
+        Fortsetzung: Der Kopiervorgang wird trotz der Fehler fortgesetzt, um eine möglichst vollständige Kopie der Quelle zu erstellen.
+
         decompress: Dekomprimiert die Daten während der Kopie
         status=progress: Zeigt den Kopiervorgang als Fortschrittsbalken an
