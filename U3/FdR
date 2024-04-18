@@ -1,4 +1,5 @@
 i)   Mit welchem Betriebssystem hat der Benutzer vermutlich gearbeitet?
+    Mithilfe der fdisk- und mmls-Bfehle konnten die Partitionen
     Der Benutzer hat vermutlich mit Linux gearbeitet, da dies der größte Partitionsbereich ist.
 
 ii)  Wie lautet vermutlich der Benutzername?
