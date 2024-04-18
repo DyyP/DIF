@@ -62,3 +62,8 @@ CRC32: ae3d049c
         -
             Geschwindigkeit: Die Verwendung von conv=sync kann den Kopiervorgang deutlich verlangsamen, da die Schreibgeschwindigkeit des Zielmediums den Prozess limitiert.
             Ressourcenverbrauch: Der synchrone Schreibvorgang kann die Systemressourcen stärker belasten, insbesondere bei großen Datenträgern
+        
+1.5)        dc3dd erkennt und protokolliert standardmäßig fehlerhafte Sektoren.
+            Es versucht standardmäßig, den fehlerhaften Sektor erneut zu lesen.
+            Es gibt verschiedene Optionen, um das Verhalten von dc3dd bei fehlerhaften Sektoren zu steuern.
+            dc3dd bietet keine integrierte Funktion zur Wiederherstellung von Daten aus fehlerhaften Sektoren.
