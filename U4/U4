@@ -71,5 +71,11 @@ Datum: 2024-04-18T09:00:00+02:00
 2.2)    mit alle 4 tools kopie erstellt
 2.3)    sudo mksquashfs ~/Desktop/DIF/Uebung4/vUSB.img ~/Desktop/DIF/Uebung4/kopien/vusb_squash.squashfs
         fand ich schon allein wegen Fortschrittsbalken dabei war und viele infos
+2.4)    file Desktop/DIF/Uebung4/vusb_dcfldd.img
+
+                --> Desktop/DIF/Uebung4/vusb_dcfldd.img: DOS/MBR boot sector, code offset 0x58+2, OEM-ID "mkfs.fat",
+                sectors/cluster 8, Media descriptor 0xf8, sectors/track 63, heads 255, sectors 6291456 (volumes > 32 MB), FAT (32 bit),
+                sectors/FAT 6136, serial number 0x3700c1ae, unlabeled
+
 
 
