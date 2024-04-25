@@ -76,6 +76,18 @@ Datum: 2024-04-18T09:00:00+02:00
                 --> Desktop/DIF/Uebung4/vusb_dcfldd.img: DOS/MBR boot sector, code offset 0x58+2, OEM-ID "mkfs.fat",
                 sectors/cluster 8, Media descriptor 0xf8, sectors/track 63, heads 255, sectors 6291456 (volumes > 32 MB), FAT (32 bit),
                 sectors/FAT 6136, serial number 0x3700c1ae, unlabeled
+Datum: 2024-04-25T08:28:00+02:00
+
+2.5)    sudo dcfldd if=~/Desktop/DIF/vUSB.img  of=~/Desktop/DIF/Uebung4/vusb_dcfldd_2.img hash=sha1 hashlog=~/Desktop/DIF/Uebung4/protokoll.txt hashwindow=1M 
+
+2.6)    sudo fls -F ~/Desktop/DIF/Uebung4/vusb_dcfldd_2.img
+        r/r 4:  Bild1.jpg
+        r/r 6:  Bild2.jpeg
+        r/r 8:  Blue.png
+        v/v 100466435:  $MBR
+        v/v 100466436:  $FAT1
+        v/v 100466437:  $FAT2
+
 
 
 
