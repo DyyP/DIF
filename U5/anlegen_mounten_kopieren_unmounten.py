@@ -1,63 +1,103 @@
 import os
 import subprocess
 import shutil
+import time
 
-# Pfad zum virtuellen Laufwerk
-disk_file = "/home/kali/Desktop/DIF/virtual_disk.img"
+# Pfad zum Verzeichnis, in dem der virtuelle Datenträger erstellt wird
+disk_directory = "/home/kali/Desktop/DIF"
 
 # Pfad zum Mount-Punkt
-mount_point = "/home/kali/Desktop/DIF/mount_point"
+mount_point = os.path.join(disk_directory, "mount_point")
 
-# Create a 1GB virtual disk
-disk_size = 1024 * 1024 * 1024 # 1 GB
-disk_file = "virtual_disk.img"
-with open(disk_file, "wb") as f:
-    f.seek(disk_size - 1)
-    f.write(b"\0")
+# Funktion zum Erstellen und Mounten eines virtuellen Datenträgers mit einer angegebenen Größe (in MB)
+def create_and_mount_virtual_disk(disk_size_mb):
+    disk_file_path = os.path.join(disk_directory, "virtual_disk.img")
 
-# Format the virtual disk with FAT32
-format_command = f"mkfs.fat -F 32 {disk_file}"
-subprocess.run(format_command.split(" "))
-print(f"Virtual disk created: {disk_file}")
-print("Formatted with FAT32")
+    # Erstellen des virtuellen Datenträgers
+    with open(disk_file_path, "wb") as f:
+        f.seek(disk_size_mb * 1024 * 1024 - 1)
+        f.write(b"\0")
 
-# Create a mount point
-mount_point = "./mount_point"
-if os.path.exists(mount_point):
-    # If the mount point exists, delete it
-    os.rmdir(mount_point)
-os.mkdir(mount_point)
+    # Formatieren des virtuellen Datenträgers mit FAT32
+    format_command = f"mkfs.fat -F 32 {disk_file_path}"
+    subprocess.run(format_command.split(), check=True)
 
-# Erstellen eines Loop-Geräts für das virtuelle Laufwerk
-loop_device = subprocess.check_output(["losetup", "-f"]).decode().strip()
-subprocess.run(["losetup", "-P", "--show", disk_file], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-print(f"Loop-Gerät erstellt: {loop_device}")
+    print(f"Virtueller Datenträger erstellt: {disk_file_path}")
+    print("Formatiert mit FAT32")
 
-# Montieren des virtuellen Laufwerks
-mount_command = f"mount {loop_device} {mount_point}"
-subprocess.run(mount_command.split(" "))
-print(f"Virtuelles Laufwerk an: {mount_point} gemountet.")
+    # Erstellen des Mount-Punkts, falls noch nicht vorhanden
+    if not os.path.exists(mount_point):
+        os.makedirs(mount_point)
+        print(f"Mount-Punkt erstellt: {mount_point}")
 
-# Kopieren des Verzeichnisses in das virtuelle Laufwerk
-source_directory = "/home/kali/Desktop/DIF/data"
-destination_path = os.path.join(mount_point, os.path.basename(source_directory))
-shutil.copytree(source_directory, destination_path)
+    # Suche nach einem verfügbaren Loop-Gerät
+    loop_device_output = subprocess.run(["losetup", "-f"], capture_output=True, text=True, check=True)
+    loop_device = loop_device_output.stdout.strip()
 
-print(f"Das Verzeichnis '{source_directory}' wurde erfolgreich in das virtuelle Laufwerk kopiert.")
+    # Anschließen des virtuellen Datenträgers am Loop-Gerät
+    subprocess.run(["losetup", "-P", loop_device, disk_file_path], check=True)
+    print(f"Virtueller Datenträger an Loop-Gerät angeschlossen: {loop_device}")
 
- # Unmounten des Laufwerks
-unmount_command = f"umount {mount_point}"
-subprocess.run(unmount_command.split(" "))
-print(f"Virtuelles Laufwerk von: {mount_point} entmontet.")
+    # Mounten des virtuellen Datenträgers am Mount-Punkt
+    mount_command = f"sudo mount {loop_device} {mount_point}"
+    subprocess.run(mount_command.split(), check=True)
+    print(f"Virtueller Datenträger montiert an: {mount_point}")
 
- # Löschen des Loop-Geräts
-subprocess.run(["losetup", "-d", loop_device])
-print(f"Loop-Gerät {loop_device} gelöscht.")
+    # Rückgabe des Loop-Geräts und des Datenträgerpfads für das späterige Unmounten
+    return loop_device, disk_file_path
 
-# Löschen des Mount-Punkts und aller darin enthaltenen Unterverzeichnisse
-if os.path.exists(mount_point):
+try:
+    # Erstellen und Mounten eines einzelnen 3GB virtuellen Datenträgers
+    disk_size_mb = 3 * 1024  # 3GB in MB
+    loop_device, disk_file_path = create_and_mount_virtual_disk(disk_size_mb)
+
+    # Durchführen von Operationen auf dem gemounteten Datenträger (z.B. Kopieren von Dateien, etc.)
+    source_directory = "/home/kali/Desktop/DIF/data"
+    destination_path = os.path.join(mount_point, os.path.basename(source_directory))
+
+    shutil.copytree(source_directory, destination_path)
+    print(f"Verzeichnis '{source_directory}' kopiert auf virtuellen Datenträger an '{destination_path}'")
+
+    # Zusätzliche Print-Anweisung nach erfolgreicher Abschluss der Aufgaben
+    print("Alle Aufgaben erfolgreich abgeschlossen.")
+
+finally:
+    # Warten, bis der Mount-Punkt nicht mehr beschäftigt ist
+    while True:
+        check_open_files = subprocess.run(["lsof", "|", "grep", mount_point], capture_output=True, text=True, shell=True)
+        if "open" not in check_open_files.stdout.lower():
+            break
+        print("Warte, bis der Mount-Punkt nicht mehr beschäftigt ist...")
+        time.sleep(5)  # Warte 5 Sekunden, bevor die Überprüfung erneut durchgeführt wird
+
+    # Leeren des Mount-Punkts, bevor er unmounted wird
     shutil.rmtree(mount_point)
-    print(f"Mount-Punkt '{mount_point}' und alle darin enthaltenen Unterverzeichnisse wurden gelöscht.")
-else:
-    print(f"Mount-Punkt '{mount_point}' existiert nicht mehr.")
+    print(f"Mount-Punkt '{mount_point}' geleert.")
+
+    # Unmounten des virtuellen Datenträgers
+    unmount_command = f"sudo umount {mount_point}"
+    subprocess.run(unmount_command.split(), check=True)
+    print(f"Virtueller Datenträger vom: {mount_point} entmontiert")
+
+    # Trennen des Loop-Geräts
+    subprocess.run(["losetup", "-d", loop_device], check=True)
+    print(f"Loop-Gerät {loop_device} getrennt")
+
+    # Zwangsweise Löschen des Mount-Punkts
+    try:
+        subprocess.run(["sudo", "umount", "-l", mount_point], check=True)
+        print(f"Zwangsweise entmontiert: {mount_point}")
+    except subprocess.CalledProcessError as e:
+        print(f"Fehler beim Zwangsentfernen: {e}")
+
+    try:
+        os.rmdir(mount_point)
+        print(f"Mount-Punkt '{mount_point}' gelöscht")
+    except Exception as e:
+        print(f"Fehler beim Löschen des Mount-Punkts: {e}")
+
+# Reinigung des virtuellen Datenträger-Dateisystems
+#if os.path.exists(disk_file_path):
+    #os.remove(disk_file_path)
+    #print(f"Virtueller Datenträger-Datei '{disk_file_path}' gelöscht")
 
