@@ -1,0 +1,34 @@
+import os
+import subprocess
+import shutil
+
+
+# Pfad zum Verzeichnis, in dem der virtuelle Datenträger erstellt wird
+disk_directory = "/home/kali/Desktop/DIF"
+
+# Pfad zum Mount-Punkt
+mount_point = os.path.join(disk_directory, "mount_point")
+
+
+# Funktion zum Erstellen und Mounten eines virtuellen Datenträgers mit einer angegebenen Größe (in MB)
+def create_and_mount_virtual_disk(disk_size_mb):
+    # ... (rest of the create_and_mount_virtual_disk function remains unchanged)
+
+
+try:
+    # ... (rest of the code up to copying files remains unchanged)
+
+    # Copy files to virtual disk using dd (assuming source and destination are set)
+    copy_command = f"dd if={source_directory} of={mount_point} bs=1M conv=sync"
+    subprocess.run(copy_command.split(), check=True)
+    print(f"Verzeichnis '{source_directory}' auf virtuellen Datenträger kopiert.")
+
+    # Unmount the virtual disk (assuming loop device and disk path are available)
+    unmount_command = f"sudo umount {mount_point}"
+    subprocess.run(unmount_command.split(), check=True)
+    print(f"Virtueller Datenträger vom: {mount_point} entmontiert")
+
+    # ... (rest of the cleanup code for loop device, mount point, and virtual disk file)
+
+except subprocess.CalledProcessError as e:
+    print(f"Fehler: {e}")
