@@ -22,3 +22,10 @@ Ergebnisse wurden im Foremost_audit und Scalpel_audit zusammengefasst.
 
 Foremost war bei uns schneller als Scalpel und hat 5 files extrected, wie in der zugehörigen datei zu sehen.
 Keiner von beiden hat die MP4, die Powerpoint, das PNG, das Py file und die doc datei extrahiert.
+
+Anpassen der config dateien um ein besseres Ergebniss zu erziehlen
+
+Beide Programme haben, wie erwartet länger gebraucht.  Scalpel hat diesmal 167 Sec. gebraucht (ca. 50% langsamer) Formost hat diesmal 166 Sekunden gebrauchst (ca. 100% langsamer)
+
+Die Neuen egbeniss dateien sind Ebenfalls im U5 Ordner festgehalten 
+
