@@ -11,6 +11,14 @@ Datum: 2024-05-18T09:00:00+02:00
 1.4) 
 
 Datum: 2024-05-16T08:30:00+02:00
+
 Genutzte Tools: Scalpel V1.6 und Foremost V 1.5.7
 
 Extrahieren des Images von U5
+
+1.5) 
+
+Ergebnisse wurden im Foremost_audit und Scalpel_audit zusammengefasst.
+
+Foremost war bei uns schneller als Scalpel und hat 5 files extrected, wie in der zugehörigen datei zu sehen.
+Keiner von beiden hat die MP4, die Powerpoint, das PNG, das Py file und die doc datei extrahiert.
