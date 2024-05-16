@@ -1,0 +1,21 @@
+#!/bin/bash -e
+
+echo "Please enter a path to copy to the disk image." 
+read path
+echo "Please enter disk image Size in GB." 
+read s
+size=$((s*1000))
+
+sudo dd if=/dev/zero of=VHD.img bs=1M count=$size
+sudo mkfs.fat -F 32 VHD.img
+
+sudo mkdir -p /mnt/VHD/
+
+sudo findmnt /mnt/VHD && sudo umount /mnt/VHD/
+sudo mount -o loop VHD.img /mnt/VHD/
+
+sudo cp -r $path /mnt/VHD/
+
+sudo findmnt /mnt/VHD && sudo umount /mnt/VHD/
+
+echo "Erflogreich ausgeführt"
