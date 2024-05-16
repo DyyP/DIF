@@ -1,0 +1,30 @@
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Thu May 16 08:33:11 2024
+Invocation: foremost -v -o /home/kali/Desktop/DIF/extract/foremost /home/kali/Desktop/DIF/virtual_disk.img 
+Output directory: /home/kali/Desktop/DIF/extract/foremost
+Configuration file: /etc/foremost.conf
+------------------------------------------------------------------
+File: /home/kali/Desktop/DIF/virtual_disk.img
+Start: Thu May 16 08:33:11 2024
+Length: 3 GB (3221225472 bytes)
+ 
+Num	 Name (bs=512)	       Size	 File Offset	 Comment 
+
+0:	00013872.jpg 	      53 KB 	    7102464 	 
+1:	00014000.jpg 	      53 KB 	    7168000 	 
+2:	00012320.mov 	     768 KB 	    6307864 	 
+3:	00014208.htm 	     154 KB 	    7274529 	 
+4:	00014128.pdf 	      36 KB 	    7233536 	 
+Finish: Thu May 16 08:34:19 2024
+
+5 FILES EXTRACTED
+	
+jpg:= 2
+mov:= 1
+htm:= 1
+pdf:= 1
+------------------------------------------------------------------
+
+Foremost finished at Thu May 16 08:34:19 2024
