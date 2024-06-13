@@ -5,7 +5,11 @@ Datum: 2024-06-13T08:20:00+02:00
 1) a) - Zeitstempel, wie zB. Erstellungsdatum, letzte Änderung
       - Dateityp, Dateigröße
       - Dateiberechtigungen, Lese-/Schreib-/Ausführberechtigungen der einzelnen User
-   b)
+   b) Ein Cluster im Dateisystem ist die kleinste Zuordnungseinheit, die das Dateisystem verwendet, 
+      um Speicherplatz auf einem Datenträger (wie einer Festplatte, SSD, oder USB-Stick) zu organisieren und zu verwalten. 
+      Er stellt einen oder mehrere zusammenhängende Sektoren dar und spielt eine entscheidende Rolle bei der Dateispeicherung und 
+      -verwaltung.
+   c) 
 
 2)
     w / f: Unter UNIX haben Dateiendungen schon immer eine große Bedeutung.
