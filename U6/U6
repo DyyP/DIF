@@ -16,6 +16,11 @@ Datum: 2024-06-13T08:20:00+02:00
    d) - Bootstrappingcode: Code, der das Starten des Betriebssystems einleitet
       - Dateisysteminformationen: Dateisystemtyp, Clustergröße, Sektoren pro Cluster, Bytes pro Sektor
       - Anzahl der FATs
+   e) Eine Clusterkette ist ein Konzept in Dateisystemen, insbesondere in solchen, die eine Dateizuordnungstabelle verwenden, 
+      wie z.B. FAT (File Allocation Table), um die Daten einer Datei, die über mehrere nicht zusammenhängende Cluster verteilt sind, 
+      zu verknüpfen und zu verwalten. Die Clusterkette ermöglicht es, die Fragmentierung von Dateien zu handhaben und sicherzustellen, 
+      dass eine Datei vollständig gelesen oder geschrieben werden kann, selbst wenn sie nicht in aufeinanderfolgenden Speicherbereichen 
+      gespeichert ist.
 
 2)
     w / f: Unter UNIX haben Dateiendungen schon immer eine große Bedeutung.
