@@ -2,7 +2,10 @@ U6
 
 Datum: 2024-06-13T08:20:00+02:00
 
-1)
+1) a) - Zeitstempel, wie zB. Erstellungsdatum, letzte Änderung
+      - Dateityp, Dateigröße
+      - Dateiberechtigungen, Lese-/Schreib-/Ausführberechtigungen der einzelnen User
+   b)
 
 2)
     w / f: Unter UNIX haben Dateiendungen schon immer eine große Bedeutung.
