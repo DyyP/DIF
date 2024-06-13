@@ -1,21 +1,58 @@
-#!/bin/bash -e
+import os
+import time
 
-echo "Please enter a path to copy to the disk image." 
-read path
-echo "Please enter disk image Size in GB." 
-read s
-size=$((s*1000))
+# Dateigröße des Images in GB
+image_size = 3
 
-sudo dd if=/dev/zero of=VHD.img bs=1M count=$size
-sudo mkfs.fat -F 32 VHD.img
+# Zielpfad für das Image
+image_path = "/home/kali/Desktop/DIF/image.img"
 
-sudo mkdir -p /mnt/VHD/
+# Quellpfad des Ordners zum Kopieren
+data_path = "/home/kali/Desktop/DIF/data"
 
-sudo findmnt /mnt/VHD && sudo umount /mnt/VHD/
-sudo mount -o loop VHD.img /mnt/VHD/
+# Konvertieren der Dateigröße in Bytes
+image_size_bytes = image_size * 1024 * 1024 * 1024
 
-sudo cp -r $path /mnt/VHD/
+# Erstellen einer leeren Datei mit der gewünschten Größe
+with open(image_path, "wb") as f:
+    for _ in range(image_size_bytes):
+        f.write(b"\0")
 
-sudo findmnt /mnt/VHD && sudo umount /mnt/VHD/
+# Bestimmen der Gesamtzahl der zu kopierenden Dateien
+total_files = sum([1 for root, _, files in os.walk(data_path) for _ in files])
 
-echo "Erflogreich ausgeführt"
+# Initialisierung des Kopiervorgangs
+copied_files = 0
+
+# Kopieren des Inhalts des Quellordners in das Image
+for root, dirs, files in os.walk(data_path):
+    # Erstellen der Verzeichnisstruktur im Image (ohne Trailing Slash)
+    image_dir = os.path.join(image_path, root[len(data_path) + 1:])
+    os.makedirs(image_dir, exist_ok=True)  # Erstellen der Verzeichnisstruktur
+
+    for file in files:
+        source_path = os.path.join(root, file)
+        destination_path = os.path.join(image_dir, file)
+
+        # Kopieren der Datei
+        with open(source_path, "rb") as rf, open(destination_path, "wb") as wf:
+            # ... (rest of the copying logic remains the same)
+
+            while True:
+                # Lesen von Daten aus der Quelldatei
+                data = rf.read(1024)
+
+                # Schreiben von Daten in die Zieldatei
+                if not data:
+                    break
+                wf.write(data)
+
+                # Aktualisieren des Fortschritts
+                copied_files += 1
+                progress = int((copied_files / total_files) * 100)
+                print(f"Fortschritt: {progress}%", end="\r")
+
+# Erfolgsmeldung
+print(f"\nImage '{image_path}' erfolgreich erstellt und mit Daten aus '{data_path}' gefüllt.")
+
+  
