@@ -9,7 +9,13 @@ Datum: 2024-06-13T08:20:00+02:00
       um Speicherplatz auf einem Datenträger (wie einer Festplatte, SSD, oder USB-Stick) zu organisieren und zu verwalten. 
       Er stellt einen oder mehrere zusammenhängende Sektoren dar und spielt eine entscheidende Rolle bei der Dateispeicherung und 
       -verwaltung.
-   c) 
+   c) Vorteile:
+            Kleine Cluster verschwenden weniger Speicherplatz
+      Nachteile:
+            Kleine Cluster verlangen größeren Verwaltungsaufwand
+   d) - Bootstrappingcode: Code, der das Starten des Betriebssystems einleitet
+      - Dateisysteminformationen: Dateisystemtyp, Clustergröße, Sektoren pro Cluster, Bytes pro Sektor
+      - Anzahl der FATs
 
 2)
     w / f: Unter UNIX haben Dateiendungen schon immer eine große Bedeutung.
