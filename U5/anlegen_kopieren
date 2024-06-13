@@ -1,8 +1,9 @@
 import os
 import time
+import shutil
 
-# Dateigröße des Images in GB
-image_size = 3
+# Dateigröße des Images in MB
+image_size_mb = 20
 
 # Zielpfad für das Image
 image_path = "/home/kali/Desktop/DIF/image.img"
@@ -11,48 +12,35 @@ image_path = "/home/kali/Desktop/DIF/image.img"
 data_path = "/home/kali/Desktop/DIF/data"
 
 # Konvertieren der Dateigröße in Bytes
-image_size_bytes = image_size * 1024 * 1024 * 1024
+image_size_bytes = image_size_mb * 1024 * 1024
 
 # Erstellen einer leeren Datei mit der gewünschten Größe
 with open(image_path, "wb") as f:
-    for _ in range(image_size_bytes):
-        f.write(b"\0")
+    f.write(b"\0" * image_size_bytes)
 
 # Bestimmen der Gesamtzahl der zu kopierenden Dateien
-total_files = sum([1 for root, _, files in os.walk(data_path) for _ in files])
+total_files = sum([len(files) for _, _, files in os.walk(data_path)])
 
 # Initialisierung des Kopiervorgangs
 copied_files = 0
 
 # Kopieren des Inhalts des Quellordners in das Image
 for root, dirs, files in os.walk(data_path):
-    # Erstellen der Verzeichnisstruktur im Image (ohne Trailing Slash)
-    image_dir = os.path.join(image_path, root[len(data_path) + 1:])
-    os.makedirs(image_dir, exist_ok=True)  # Erstellen der Verzeichnisstruktur
-
     for file in files:
         source_path = os.path.join(root, file)
-        destination_path = os.path.join(image_dir, file)
+        destination_path = os.path.join(image_path, root[len(data_path) + 1:], file)
+        
+        # Erstellen der Verzeichnisstruktur im Image (ohne Trailing Slash)
+        os.makedirs(os.path.dirname(destination_path), exist_ok=True)
 
         # Kopieren der Datei
-        with open(source_path, "rb") as rf, open(destination_path, "wb") as wf:
-            # ... (rest of the copying logic remains the same)
+        shutil.copy2(source_path, destination_path)
 
-            while True:
-                # Lesen von Daten aus der Quelldatei
-                data = rf.read(1024)
-
-                # Schreiben von Daten in die Zieldatei
-                if not data:
-                    break
-                wf.write(data)
-
-                # Aktualisieren des Fortschritts
-                copied_files += 1
-                progress = int((copied_files / total_files) * 100)
-                print(f"Fortschritt: {progress}%", end="\r")
+        # Aktualisieren des Fortschritts
+        copied_files += 1
+        progress = int((copied_files / total_files) * 100)
+        print(f"Fortschritt: {progress}%", end="\r")
 
 # Erfolgsmeldung
 print(f"\nImage '{image_path}' erfolgreich erstellt und mit Daten aus '{data_path}' gefüllt.")
 
-  
