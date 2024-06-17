@@ -1,1 +1,116 @@
+scalpel -c /etc/scalpel/scalpel.conf -o /home/kali/Desktop/DIF/extract/scalpel /home/kali/Desktop/DIF/VHD.img 
+Scalpel version 1.60
+Written by Golden G. Richard III, based on Foremost 0.69.
+
+Opening target "/home/kali/Desktop/DIF/VHD.img"
+
+Image file pass 1/2.
+/home/kali/Desktop/DIF/VHD.img: 100.0% |****************************************************|    7.0 MB    00:00 ETAAllocating work queues...
+Work queues allocation complete. Building carve lists...
+Carve lists built.  Workload:
+� with header "\x46\x4f\x52\x45\x4d\x4f\x53\x54" and footer "" --> 0 files
+gif with header "\x47\x49\x46\x38\x37\x61" and footer "\x00\x3b" --> 0 files
+gif with header "\x47\x49\x46\x38\x39\x61" and footer "\x00\x3b" --> 0 files
+jpg with header "\xff\xd8\xff\x3f\x3f\x3f\x45\x78\x69\x66" and footer "\xff\xd9" --> 2 files
+jpg with header "\xff\xd8\xff\x3f\x3f\x3f\x4a\x46\x49\x46" and footer "\xff\xd9" --> 18 files
+png with header "\x50\x4e\x47\x3f" and footer "\xff\xfc\xfd\xfe" --> 0 files
+bmp with header "\x42\x4d\x3f\x3f\x00\x00\x00" and footer "" --> 0 files
+avi with header "\x52\x49\x46\x46\x3f\x3f\x3f\x3f\x41\x56\x49" and footer "" --> 0 files
+mov with header "\x3f\x3f\x3f\x3f\x6d\x6f\x6f\x76" and footer "" --> 1 files
+mov with header "\x3f\x3f\x3f\x3f\x6d\x64\x61\x74" and footer "" --> 1 files
+mov with header "\x3f\x3f\x3f\x3f\x77\x69\x64\x65\x76" and footer "" --> 0 files
+mov with header "\x3f\x3f\x3f\x3f\x73\x6b\x69\x70" and footer "" --> 1 files
+mov with header "\x3f\x3f\x3f\x3f\x66\x72\x65\x65" and footer "" --> 37 files
+mov with header "\x3f\x3f\x3f\x3f\x69\x64\x73\x63" and footer "" --> 0 files
+mov with header "\x3f\x3f\x3f\x3f\x70\x63\x6b\x67" and footer "" --> 0 files
+mpg with header "\x00\x00\x01\xba" and footer "\x00\x00\x01\xb9" --> 0 files
+mpg with header "\x00\x00\x01\xb3" and footer "\x00\x00\x01\xb7" --> 0 files
+fws with header "\x46\x57\x53" and footer "" --> 0 files
+doc with header "\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00" and footer "\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00" --> 0 files
+doc with header "\xd0\xcf\x11\xe0\xa1\xb1" and footer "" --> 0 files
+wpc with header "\x3f\x57\x50\x43" and footer "" --> 0 files
+htm with header "\x3c\x68\x74\x6d\x6c" and footer "\x3c\x2f\x68\x74\x6d\x6c\x3e" --> 2 files
+pdf with header "\x25\x50\x44\x46" and footer "\x25\x45\x4f\x46\x0d" --> 0 files
+pdf with header "\x25\x50\x44\x46" and footer "\x25\x45\x4f\x46\x0a" --> 2 files
+pgd with header "\x50\x47\x50\x64\x4d\x41\x49\x4e\x60\x01" and footer "" --> 0 files
+pgp with header "\x99\x00" and footer "" --> 34 files
+pgp with header "\x95\x01" and footer "" --> 39 files
+pgp with header "\x95\x00" and footer "" --> 36 files
+pgp with header "\xa6\x00" and footer "" --> 45 files
+txt with header "\x2d\x2d\x2d\x2d\x2d\x42\x45\x47\x49\x4e\x20\x50\x47\x50" and footer "" --> 0 files
+rpm with header "\xed\xab" and footer "" --> 35 files
+wav with header "\x52\x49\x46\x46\x3f\x3f\x3f\x3f\x57\x41\x56\x45" and footer "" --> 0 files
+ra with header "\x2e\x72\x61\xfd" and footer "" --> 0 files
+ra with header "\x2e\x52\x4d\x46" and footer "" --> 0 files
+zip with header "\x50\x4b\x03\x04" and footer "\x3c\xac" --> 0 files
+java with header "\xca\xfe\xba\xbe" and footer "" --> 0 files
+max with header "\x56\x69\x47\x46\x6b\x1a\x00\x00\x00\x00" and footer "\x00\x00\x05\x80\x00\x00" --> 0 files
+pins with header "\x50\x49\x4e\x53\x20\x34\x2e\x32\x30\x0d" and footer "" --> 0 files
+Carving files from image.
+Image file pass 2/2.
+/home/kali/Desktop/DIF/VHD.img: 100.0% |****************************************************|    7.0 MB    00:00 ETAProcessing of image file complete. Cleaning up...
+Done.
+Scalpel is done, files carved = 253, elapsed = 1 seconds.
+                                                                                                                    
+┌──(root㉿kali)-[/home/kali/Desktop/DIF]
+└─# sudo umount /mnt/img
+
+                                                                                                                    
+┌──(root㉿kali)-[/home/kali/Desktop/DIF]
+└─# sudo losetup -d /dev/loop0
+                                                                                                                    
+┌──(root㉿kali)-[/home/kali/Desktop/DIF]
+└─# scalpel -c /etc/scalpel/scalpel.conf -o /home/kali/Desktop/DIF/extract/scalpel_del /home/kali/Desktop/DIF/VHD.img
+Scalpel version 1.60
+Written by Golden G. Richard III, based on Foremost 0.69.
+
+Opening target "/home/kali/Desktop/DIF/VHD.img"
+
+Image file pass 1/2.
+/home/kali/Desktop/DIF/VHD.img: 100.0% |****************************************************|    7.0 MB    00:00 ETAAllocating work queues...
+Work queues allocation complete. Building carve lists...
+Carve lists built.  Workload:
+� with header "\x46\x4f\x52\x45\x4d\x4f\x53\x54" and footer "" --> 0 files
+gif with header "\x47\x49\x46\x38\x37\x61" and footer "\x00\x3b" --> 0 files
+gif with header "\x47\x49\x46\x38\x39\x61" and footer "\x00\x3b" --> 0 files
+jpg with header "\xff\xd8\xff\x3f\x3f\x3f\x45\x78\x69\x66" and footer "\xff\xd9" --> 1 files
+jpg with header "\xff\xd8\xff\x3f\x3f\x3f\x4a\x46\x49\x46" and footer "\xff\xd9" --> 19 files
+png with header "\x50\x4e\x47\x3f" and footer "\xff\xfc\xfd\xfe" --> 0 files
+bmp with header "\x42\x4d\x3f\x3f\x00\x00\x00" and footer "" --> 0 files
+avi with header "\x52\x49\x46\x46\x3f\x3f\x3f\x3f\x41\x56\x49" and footer "" --> 0 files
+mov with header "\x3f\x3f\x3f\x3f\x6d\x6f\x6f\x76" and footer "" --> 0 files
+mov with header "\x3f\x3f\x3f\x3f\x6d\x64\x61\x74" and footer "" --> 2 files
+mov with header "\x3f\x3f\x3f\x3f\x77\x69\x64\x65\x76" and footer "" --> 0 files
+mov with header "\x3f\x3f\x3f\x3f\x73\x6b\x69\x70" and footer "" --> 1 files
+mov with header "\x3f\x3f\x3f\x3f\x66\x72\x65\x65" and footer "" --> 37 files
+mov with header "\x3f\x3f\x3f\x3f\x69\x64\x73\x63" and footer "" --> 0 files
+mov with header "\x3f\x3f\x3f\x3f\x70\x63\x6b\x67" and footer "" --> 0 files
+mpg with header "\x00\x00\x01\xba" and footer "\x00\x00\x01\xb9" --> 0 files
+mpg with header "\x00\x00\x01\xb3" and footer "\x00\x00\x01\xb7" --> 0 files
+fws with header "\x46\x57\x53" and footer "" --> 0 files
+doc with header "\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00" and footer "\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00" --> 0 files
+doc with header "\xd0\xcf\x11\xe0\xa1\xb1" and footer "" --> 0 files
+wpc with header "\x3f\x57\x50\x43" and footer "" --> 0 files
+htm with header "\x3c\x68\x74\x6d\x6c" and footer "\x3c\x2f\x68\x74\x6d\x6c\x3e" --> 2 files
+pdf with header "\x25\x50\x44\x46" and footer "\x25\x45\x4f\x46\x0d" --> 0 files
+pdf with header "\x25\x50\x44\x46" and footer "\x25\x45\x4f\x46\x0a" --> 2 files
+pgd with header "\x50\x47\x50\x64\x4d\x41\x49\x4e\x60\x01" and footer "" --> 0 files
+pgp with header "\x99\x00" and footer "" --> 32 files
+pgp with header "\x95\x01" and footer "" --> 50 files
+pgp with header "\x95\x00" and footer "" --> 67 files
+pgp with header "\xa6\x00" and footer "" --> 56 files
+txt with header "\x2d\x2d\x2d\x2d\x2d\x42\x45\x47\x49\x4e\x20\x50\x47\x50" and footer "" --> 0 files
+rpm with header "\xed\xab" and footer "" --> 55 files
+wav with header "\x52\x49\x46\x46\x3f\x3f\x3f\x3f\x57\x41\x56\x45" and footer "" --> 0 files
+ra with header "\x2e\x72\x61\xfd" and footer "" --> 0 files
+ra with header "\x2e\x52\x4d\x46" and footer "" --> 0 files
+zip with header "\x50\x4b\x03\x04" and footer "\x3c\xac" --> 43 files
+java with header "\xca\xfe\xba\xbe" and footer "" --> 0 files
+max with header "\x56\x69\x47\x46\x6b\x1a\x00\x00\x00\x00" and footer "\x00\x00\x05\x80\x00\x00" --> 0 files
+pins with header "\x50\x49\x4e\x53\x20\x34\x2e\x32\x30\x0d" and footer "" --> 0 files
+Carving files from image.
+Image file pass 2/2.
+/home/kali/Desktop/DIF/VHD.img: 100.0% |****************************************************|    7.0 MB    00:00 ETAProcessing of image file complete. Cleaning up...
+Done.
+Scalpel is done, files carved = 367, elapsed = 1 seconds.
 
