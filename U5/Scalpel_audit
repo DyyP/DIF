@@ -1,100 +1,53 @@
+scalpel -c /etc/scalpel/scalpel.conf -o /home/kali/Desktop/DIF/extract/scalpel /home/kali/Desktop/DIF/VHD.img 
+Scalpel version 1.60
+Written by Golden G. Richard III, based on Foremost 0.69.
 
-Scalpel version 1.60 audit file
-Started at Thu May 16 08:29:36 2024
-Command line:
-scalpel -c /etc/scalpel/scalpel.conf -o /home/kali/Desktop/DIF/extract/scalpel /home/kali/Desktop/DIF/virtual_disk.img 
+Opening target "/home/kali/Desktop/DIF/VHD.img"
 
-Output directory: /home/kali/Desktop/DIF/extract/scalpel
-Configuration file: /etc/scalpel/scalpel.conf
-
-Opening target "/home/kali/Desktop/DIF/virtual_disk.img"
-
-The following files were carved:
-File		  Start			Chop		Length		Extracted From
-00000083.rpm      7245364		YES         1000000		virtual_disk.img
-00000082.rpm      6824868		YES         1000000		virtual_disk.img
-00000081.rpm      6693794		YES         1000000		virtual_disk.img
-00000080.rpm      6652918		YES         1000000		virtual_disk.img
-00000079.rpm      6649865		YES         1000000		virtual_disk.img
-00000078.rpm      6556791		YES         1000000		virtual_disk.img
-00000077.rpm      6555475		YES         1000000		virtual_disk.img
-00000076.rpm      6553936		YES         1000000		virtual_disk.img
-00000075.rpm      6515419		YES         1000000		virtual_disk.img
-00000074.rpm      6488708		YES         1000000		virtual_disk.img
-00000073.rpm      6475913		YES         1000000		virtual_disk.img
-00000072.rpm      6472907		YES         1000000		virtual_disk.img
-00000071.rpm      6424819		YES         1000000		virtual_disk.img
-00000070.rpm      6347739		YES         1000000		virtual_disk.img
-00000069.pgp      7088855		YES          100000		virtual_disk.img
-00000068.pgp      7050497		YES          100000		virtual_disk.img
-00000067.pgp      6942654		YES          100000		virtual_disk.img
-00000066.pgp      6804021		YES          100000		virtual_disk.img
-00000065.pgp      6783457		YES          100000		virtual_disk.img
-00000064.pgp      6776084		YES          100000		virtual_disk.img
-00000063.pgp      6732512		YES          100000		virtual_disk.img
-00000062.pgp      6722814		YES          100000		virtual_disk.img
-00000061.pgp      6693352		YES          100000		virtual_disk.img
-00000060.pgp      6669758		YES          100000		virtual_disk.img
-00000059.pgp      6637203		YES          100000		virtual_disk.img
-00000058.pgp      6534898		YES          100000		virtual_disk.img
-00000057.pgp      6511627		YES          100000		virtual_disk.img
-00000056.pgp      6448532		YES          100000		virtual_disk.img
-00000055.pgp      6446729		YES          100000		virtual_disk.img
-00000054.pgp      6446668		YES          100000		virtual_disk.img
-00000053.pgp      3158676		YES          100000		virtual_disk.img
-00000052.pgp        17044		YES          100000		virtual_disk.img
-00000051.pgp      7220991		YES          100000		virtual_disk.img
-00000050.pgp      7155455		YES          100000		virtual_disk.img
-00000049.pgp      7035868		YES          100000		virtual_disk.img
-00000048.pgp      6868183		YES          100000		virtual_disk.img
-00000047.pgp      6754955		YES          100000		virtual_disk.img
-00000046.pgp      6663991		YES          100000		virtual_disk.img
-00000045.pgp      6640365		YES          100000		virtual_disk.img
-00000044.pgp      6432819		YES          100000		virtual_disk.img
-00000043.pgp      6416896		YES          100000		virtual_disk.img
-00000042.pgp      6408244		YES          100000		virtual_disk.img
-00000041.pgp      6318247		YES          100000		virtual_disk.img
-00000040.pgp      3158608		YES          100000		virtual_disk.img
-00000039.pgp        16976		YES          100000		virtual_disk.img
-00000038.pgp      7214453		YES          100000		virtual_disk.img
-00000037.pgp      7209546		YES          100000		virtual_disk.img
-00000036.pgp      7148917		YES          100000		virtual_disk.img
-00000035.pgp      7144010		YES          100000		virtual_disk.img
-00000034.pgp      7057917		YES          100000		virtual_disk.img
-00000033.pgp      6827966		YES          100000		virtual_disk.img
-00000032.pgp      6746991		YES          100000		virtual_disk.img
-00000031.pgp      6730300		YES          100000		virtual_disk.img
-00000030.pgp      6695770		YES          100000		virtual_disk.img
-00000029.pgp      6689437		YES          100000		virtual_disk.img
-00000028.pgp      6665190		YES          100000		virtual_disk.img
-00000027.pgp      6525116		YES          100000		virtual_disk.img
-00000026.pgp      6464814		YES          100000		virtual_disk.img
-00000025.pgp      6450277		YES          100000		virtual_disk.img
-00000024.pgp      6398088		YES          100000		virtual_disk.img
-00000023.pgp      6330514		YES          100000		virtual_disk.img
-00000022.pgp      6965088		YES          100000		virtual_disk.img
-00000021.pgp      6949251		YES          100000		virtual_disk.img
-00000020.pgp      6881988		YES          100000		virtual_disk.img
-00000019.pgp      6869349		YES          100000		virtual_disk.img
-00000018.pgp      6863222		YES          100000		virtual_disk.img
-00000017.pgp      6835770		YES          100000		virtual_disk.img
-00000016.pgp      6716062		YES          100000		virtual_disk.img
-00000015.pgp      6648551		YES          100000		virtual_disk.img
-00000014.pgp      6618100		YES          100000		virtual_disk.img
-00000013.pgp      6612781		YES          100000		virtual_disk.img
-00000012.pgp      6597205		YES          100000		virtual_disk.img
-00000011.pgp      6512607		YES          100000		virtual_disk.img
-00000010.pgp      6493152		YES          100000		virtual_disk.img
-00000009.pgp      6482947		YES          100000		virtual_disk.img
-00000008.pgp      6468814		YES          100000		virtual_disk.img
-00000007.pgp      6398276		YES          100000		virtual_disk.img
-00000006.pgp      6351617		YES          100000		virtual_disk.img
-00000005.pgp      6311224		YES          100000		virtual_disk.img
-00000004.pgp      3158624		YES          100000		virtual_disk.img
-00000003.pgp        16992		YES          100000		virtual_disk.img
-00000002.pdf      7233536		NO            37045		virtual_disk.img
-00000001.jpg      7168000		NO            54757		virtual_disk.img
-00000000.jpg      7102464		NO           120293		virtual_disk.img
-
-
-Completed at Thu May 16 08:31:34 2024
+Image file pass 1/2.
+/home/kali/Desktop/DIF/VHD.img: 100.0% |****************************************************|    7.0 MB    00:00 ETAAllocating work queues...
+Work queues allocation complete. Building carve lists...
+Carve lists built.  Workload:
+� with header "\x46\x4f\x52\x45\x4d\x4f\x53\x54" and footer "" --> 0 files
+gif with header "\x47\x49\x46\x38\x37\x61" and footer "\x00\x3b" --> 0 files
+gif with header "\x47\x49\x46\x38\x39\x61" and footer "\x00\x3b" --> 0 files
+jpg with header "\xff\xd8\xff\x3f\x3f\x3f\x45\x78\x69\x66" and footer "\xff\xd9" --> 2 files
+jpg with header "\xff\xd8\xff\x3f\x3f\x3f\x4a\x46\x49\x46" and footer "\xff\xd9" --> 18 files
+png with header "\x50\x4e\x47\x3f" and footer "\xff\xfc\xfd\xfe" --> 0 files
+bmp with header "\x42\x4d\x3f\x3f\x00\x00\x00" and footer "" --> 0 files
+avi with header "\x52\x49\x46\x46\x3f\x3f\x3f\x3f\x41\x56\x49" and footer "" --> 0 files
+mov with header "\x3f\x3f\x3f\x3f\x6d\x6f\x6f\x76" and footer "" --> 1 files
+mov with header "\x3f\x3f\x3f\x3f\x6d\x64\x61\x74" and footer "" --> 1 files
+mov with header "\x3f\x3f\x3f\x3f\x77\x69\x64\x65\x76" and footer "" --> 0 files
+mov with header "\x3f\x3f\x3f\x3f\x73\x6b\x69\x70" and footer "" --> 1 files
+mov with header "\x3f\x3f\x3f\x3f\x66\x72\x65\x65" and footer "" --> 37 files
+mov with header "\x3f\x3f\x3f\x3f\x69\x64\x73\x63" and footer "" --> 0 files
+mov with header "\x3f\x3f\x3f\x3f\x70\x63\x6b\x67" and footer "" --> 0 files
+mpg with header "\x00\x00\x01\xba" and footer "\x00\x00\x01\xb9" --> 0 files
+mpg with header "\x00\x00\x01\xb3" and footer "\x00\x00\x01\xb7" --> 0 files
+fws with header "\x46\x57\x53" and footer "" --> 0 files
+doc with header "\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00" and footer "\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1\x00\x00" --> 0 files
+doc with header "\xd0\xcf\x11\xe0\xa1\xb1" and footer "" --> 0 files
+wpc with header "\x3f\x57\x50\x43" and footer "" --> 0 files
+htm with header "\x3c\x68\x74\x6d\x6c" and footer "\x3c\x2f\x68\x74\x6d\x6c\x3e" --> 2 files
+pdf with header "\x25\x50\x44\x46" and footer "\x25\x45\x4f\x46\x0d" --> 0 files
+pdf with header "\x25\x50\x44\x46" and footer "\x25\x45\x4f\x46\x0a" --> 2 files
+pgd with header "\x50\x47\x50\x64\x4d\x41\x49\x4e\x60\x01" and footer "" --> 0 files
+pgp with header "\x99\x00" and footer "" --> 34 files
+pgp with header "\x95\x01" and footer "" --> 39 files
+pgp with header "\x95\x00" and footer "" --> 36 files
+pgp with header "\xa6\x00" and footer "" --> 45 files
+txt with header "\x2d\x2d\x2d\x2d\x2d\x42\x45\x47\x49\x4e\x20\x50\x47\x50" and footer "" --> 0 files
+rpm with header "\xed\xab" and footer "" --> 35 files
+wav with header "\x52\x49\x46\x46\x3f\x3f\x3f\x3f\x57\x41\x56\x45" and footer "" --> 0 files
+ra with header "\x2e\x72\x61\xfd" and footer "" --> 0 files
+ra with header "\x2e\x52\x4d\x46" and footer "" --> 0 files
+zip with header "\x50\x4b\x03\x04" and footer "\x3c\xac" --> 0 files
+java with header "\xca\xfe\xba\xbe" and footer "" --> 0 files
+max with header "\x56\x69\x47\x46\x6b\x1a\x00\x00\x00\x00" and footer "\x00\x00\x05\x80\x00\x00" --> 0 files
+pins with header "\x50\x49\x4e\x53\x20\x34\x2e\x32\x30\x0d" and footer "" --> 0 files
+Carving files from image.
+Image file pass 2/2.
+/home/kali/Desktop/DIF/VHD.img: 100.0% |****************************************************|    7.0 MB    00:00 ETAProcessing of image file complete. Cleaning up...
+Done.
+Scalpel is done, files carved = 253, elapsed = 1 seconds.
