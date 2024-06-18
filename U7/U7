@@ -12,7 +12,7 @@ Datum: 2024-06-18T17:10:00+02:00
      Im letzten Teil, dem Datenbereich, werden die tatsächlichen Daten gespeichert.
   
   b) FAT12, FAT16, FAT32
-     Die Nummer gibt dabei die Anzahl der Bits pro Sektor an.
+     Die Nummer gibt dabei die Anzahl der Bytes pro Sektor an.
 
   c) Die einzelnen Blöcke sind nummeriert, beginnt mit dem Bootsektor (Sektor 0). Demnach ist das Stammverzeichnis der Sektor 2.
 
@@ -21,4 +21,38 @@ Datum: 2024-06-18T17:10:00+02:00
   e) Die Größe des Stammverzeichnises kann durch den BIOS Parameter Block (BPB) im Bootsektor festgelegt werden. Typischerweise handelt es 
      sich um 512 Einträge. Jeder eintrag belegt hierbei eine Größe von 32 Bytes.
 
-  f) 
+  f) Das Stammverzeichnis bei FAT32 unterscheidet sich in seiner Größe von FAT12 und FAT16, da dieses dynamisch nach Bedarf wächst.
+     Auch die Positionierung ist grundlegend unterschiedlich, da kein eigener Bereich angelegt wird, wie bei FAT12 und FAT16. Stattdessen
+     ist das Stammverzeichnis bei FAT32 im Datenbereich hinterlegt, und belegt dort die nötigen Cluster. Der Startcluster ist hier im BPB
+     hinterlegt.
+
+  g) Ein Eintrag im Stammverzeichnis enthält folgende Inhalte:
+    - Dateiname (11 Bytes)
+    - Atribute der Datei; read only, hidden, directory, archive,... (1 Byte)
+    - Reservierte Bytes, die je nach FAT-Version anders genutzt werden (10 Bytes)
+    - Zeitstempel; Erstellungsdatum/-zeit (4 Bytes)
+    - Datum des letzten Zugriffs (2 Bytes)
+    - Startcluster in FAT12/FAT16 oder niedriger Teil des Startclusters in FAT32 (2 Bytes)
+    - Zeit und Datum der letzten Änderung (4 Bytes)
+?
++-------------+----------+------------------------------+
+| Byte Offset | Größe    | Beschreibung                 |
++-------------+----------+------------------------------+
+| 0           | 8        | Dateiname                    |
+| 8           | 3        | Erweiterung                  |
+| 11          | 1        | Attribute                    |
+| 12          | 2        | Erstellungszeit              |
+| 14          | 2        | Erstellungsdatum             |
+| 16          | 2        | Zugriffsdatum                |
+| 18          | 2        | Höherwertiger Teil des       |
+|             |          | Startclusters (FAT32)        |
+| 20          | 2        | Zeit der letzten Änderung    |
+| 22          | 2        | Datum der letzten Änderung   |
+| 24          | 2        | Niedrigwertiger Teil des     |
+|             |          | Startclusters                |
+| 26          | 4        | Dateigröße                   |
+| 30          | 2        | 
++-------------+----------+------------------------------+
+?
+
+  
