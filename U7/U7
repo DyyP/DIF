@@ -10,3 +10,6 @@ Datum: 2024-06-18T17:10:00+02:00
      Der dritte Block ist das Root-Verzeichnis, der Verzeichniseinträge für Dateien und Verzeichnisse enthält. Die Struktur und Größe dieses 
      Bereichs variiert je nach FAT-Version.
      Im letzten Teil, dem Datenbereich, werden die tatsächlichen Daten gespeichert.
+  
+  b) FAT12, FAT16, FAT32
+     Die Nummer gibt dabei die Anzahl der Bits pro Sektor an.
