@@ -1,3 +1,12 @@
 U7
 
-Datum: 2024-06-13T09:00:00+02:00
+Datum: 2024-06-18T17:10:00+02:00
+
+1)
+  a) Anfang eines FAT-Dateisystems steht ein Bootsektor, der Auskunft gibt über die Größe des Root-Verzeichnises, die Anzahl der Sektoren pro 
+     Cluster, Anzahl der FAT Kopien, etc. Hier stehen auch die nötigen Anweisungen um das System zu starten. 
+     Darauf folgt eine Tabelle, die Informationen über die Zuordnung der Cluster enthält. Jedes Cluster enthält entweder einen Verweis über 
+     den nächsten Cluster einer Datei oder verweist auf das Ende der Datei.
+     Der dritte Block ist das Root-Verzeichnis, der Verzeichniseinträge für Dateien und Verzeichnisse enthält. Die Struktur und Größe dieses 
+     Bereichs variiert je nach FAT-Version.
+     Im letzten Teil, dem Datenbereich, werden die tatsächlichen Daten gespeichert.
