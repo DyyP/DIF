@@ -35,5 +35,8 @@ Datum: 2024-06-13T08:20:00+02:00
       
       w: Eine Dateizuordnungstabelle (FAT) erfasst die belegten und freien Cluster im Dateisystem.
       
-      w: FAT12 erschien 1980 mit dem Betriebssystem QDOS (Quick and Dirty Operating System), welches später in MS-DOS umbenannt wurd
+      w: FAT12 erschien 1980 mit dem Betriebssystem QDOS (Quick and Dirty Operating System), welches später in MS-DOS umbenannt wurde
+
+3)      
+      
 
