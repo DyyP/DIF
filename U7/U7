@@ -70,7 +70,12 @@ A2
 3)
    a) Das Root Verzeichnis umfasst 14 Sektoren. Mit 512 Einträgen pro Sektor, und 32 Bytes pro Einträg, ergiben sich eine maximale Anzahl
       von 224 Einträgen.
-   b) Datei mit Startcluster 1 : 1- 292
-      Datei mit Sartcluster 12: 12 - EOF
-      Datei mit Startcluster 45: 45 - EOF
-   c) 
+   b) Datei mit Startcluster 1 : 1 & 292
+      Datei mit Sartcluster 12: 12 (EOF)
+      Datei mit Startcluster 45: 45 (EOF)
+   c) Datei hat 2 Sektoren, Datei 2 und 3 haben 1 Sektor
+   d) Das Root-directory beinhaltet 3 Dateien
+   e) pi, wurzel2 und e
+   f) e und pi existieren, wurzel2 wurde entfernt
+   g) wurzel2 beginnt mit e5 -> gelöschte Datei
+   h) 
