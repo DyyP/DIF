@@ -1,0 +1,76 @@
+# Um die Metadaten, Sektorinhalte und FAT-Inhalte eines Datenträgerabbilds unter Kali Linux zu untersuchen, 
+  können Sie die folgenden Werkzeuge und Befehle verwenden: fsstat, fls, istat, icat, und blkls. 
+  Hier ist eine Schritt-für-Schritt-Anleitung, wie Sie dies tun können:
+--------------------------------------------------------------------
+
+# 1. fsstat - Dateisystemstatistik anzeigen
+# Der Befehl fsstat zeigt Informationen über das Dateisystem des Datenträgerabbilds an.
+--------------------------------------------------------------------
+fsstat <pfad_zum_datenträgerabbild>
+--------------------------------------------------------------------
+# Beispiel:
+fsstat /path/to/image.dd
+-----------------------------------------------------------------------------------------------------------------------
+
+# 2. fls - Dateien und Verzeichnisse auflisten
+# Der Befehl fls listet die Dateien und Verzeichnisse des Dateisystems auf.
+--------------------------------------------------------------------
+fls -r <pfad_zum_datenträgerabbild>
+--------------------------------------------------------------------
+# Beispiel:
+fls -r /path/to/image.dd
+-----------------------------------------------------------------------------------------------------------------------
+
+# 3. istat - Metadaten eines bestimmten Eintrags anzeigen
+# Mit istat können Sie die Metadaten eines bestimmten Eintrags (z.B. einer Datei) anzeigen. 
+  Sie benötigen die Inode-Nummer oder die Dateinummer, die Sie mit fls ermittelt haben.
+--------------------------------------------------------------------
+istat <pfad_zum_datenträgerabbild> <inode_nummer>
+--------------------------------------------------------------------
+# Beispiel:
+istat /path/to/image.dd 128
+-----------------------------------------------------------------------------------------------------------------------
+
+# 4. icat - Dateiinhalt extrahieren
+# Der Befehl icat extrahiert den Inhalt einer Datei basierend auf der Inode-Nummer.
+--------------------------------------------------------------------
+icat <pfad_zum_datenträgerabbild> <inode_nummer> > <ziel_datei>
+--------------------------------------------------------------------
+# Beispiel:
+icat /path/to/image.dd 128 > extracted_file.txt
+-----------------------------------------------------------------------------------------------------------------------
+
+# 5. blkls - Unallozierten Speicherplatz extrahieren
+# Mit blkls können Sie unallozierten Speicherplatz des Datenträgerabbilds extrahieren.
+--------------------------------------------------------------------
+blkls <pfad_zum_datenträgerabbild> > <ziel_datei>
+--------------------------------------------------------------------
+# Beispiel:
+blkls /path/to/image.dd > unallocated_space.dd
+-----------------------------------------------------------------------------------------------------------------------
+
+# 6. FAT-Tabelleninhalt untersuchen
+# Um die Inhalte der FAT (File Allocation Table) zu untersuchen, verwenden Sie fsstat. Suchen Sie in der Ausgabe nach der FAT-Information.
+--------------------------------------------------------------------
+fsstat <pfad_zum_datenträgerabbild>
+--------------------------------------------------------------------
+# Beispiel:
+fsstat /path/to/image.dd
+--------------------------------------------------------------------
+# Beispielablauf
+# Anzeige der Dateisystemstatistik
+fsstat /path/to/image.dd
+--------------------------------------------------------------------
+# Auflisten der Dateien und Verzeichnisse
+fls -r /path/to/image.dd
+--------------------------------------------------------------------
+# Metadaten eines bestimmten Eintrags anzeigen
+istat /path/to/image.dd 128
+--------------------------------------------------------------------
+# Inhalt einer Datei extrahieren
+icat /path/to/image.dd 128 > extracted_file.txt
+--------------------------------------------------------------------
+# Unallozierten Speicherplatz extrahieren
+blkls /path/to/image.dd > unallocated_space.dd
+
+
