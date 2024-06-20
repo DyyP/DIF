@@ -36,3 +36,14 @@
           Sicherheit:
               Unterstützt ACLs und EFS (Encrypting File System)
 
+1.2 a) Es handelt sich um eine MBR Partitionierung
+    b) Es gibt eine Partition von Typ HPFS/NTFS/exFAT
+
+1.3 a) Der Bootblock beginnt beim Offset 0x0
+    b) Die Diskette speichert 512 Bytes pro Sektor
+    c) Ein Cluster besteht aus 8 Sektoren
+    d) Es handelt sich um eine Bootdisk mit Kapazität von 8 MB, formatiert mit NTFS
+    e) Die MFT beginnt bei Cluster 426
+    f) Pro MTF-Record wird ein Viertel eines Clusters verwendet
+
+1.4 a) 
