@@ -29,4 +29,7 @@ Beide Programme haben, wie erwartet länger gebraucht.  Scalpel hat diesmal 167 
 
 Die Neuen egbeniss dateien sind Ebenfalls im U5 Ordner festgehalten 
 
-2.1) 
+2) Dumps wurden erzeugt mit Formemost und Scalpel. Einmal von dem imagen und dann wurde von dem image was entfernt und jeweils ein dump erstellt. Die Dumps wurden hier angehängt.
+    man sah auch nach dem "Löschen" das die Datei noch vorhanden war da nur der zeiger auf die position entfernt wird.
+3) Dumps wurden erzeugt mit Formemost und Scalpel. Einmal von dem imagen bis zum maximum beschrieben, dann eine Datei entfernt und mit einer neuen gleich großen Datei wiederbeschrieben. Danach ein dump erstellt
+  dieser mit den vorherige tools untersucht die "gelöschte" Datei wurde nicht mehr angezeigt.
