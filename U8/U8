@@ -49,3 +49,29 @@ MTF1.1   NTFS-Dateisystem aufgebau:
 1.4 a) Der MTF-Eintrag beeinhaltet 4 Attribute in Cluster 962 und 963
     b) Standartinformationen (Typ-ID 0x10) und Datenattribute (Typ-ID 0x60/0x64)
     c) Die $DATA Attribute in den Clustern 962 und 963 sind beide resident und speichern sehr kleine Datenmengen direkt im MFT-Eintrag
+    d) Die Hex-Dumps der Cluster 962 & 963 zeigen, dass die $DATA Attribute bei Offset ´0x60/0x64' beginnen und resident sind
+    e) Die absolute Größe des Attributs umfasst die Gesamtlänge des Attributs einschließlich seines Headers und aller Daten. Die Länge der Attributsdaten.
+       Durch die Analyse der Hex-Dumps und der Attribut-Header können wir die Struktur und die Inhalte der Attribute im MFT-Eintrag verstehen.
+          analysieren wir das erste Attribut:
+          
+          Offset 0x38: Beginn des ersten Attributs
+          Attributstyp: 0x10 ($STANDARD_INFORMATION)
+          Länge des Attributs: 0x40 (64 Bytes)
+          Resident-Flag: 0x00 (Resident)
+          Länge des Namens: 0x00 (kein Name)
+          Offset zum Namen: 0x00 (kein Name)
+          Flags: 0x00
+          Attribut-ID: 0x0000
+          Die Länge des Attributs (0x40 oder 64 Bytes) umfasst den Header und die Daten. Die tatsächlichen Daten beginnen nach dem Header
+          
+          analysieren wir das zweite Attribut:
+          
+          Offset 0x64: Beginn des zweiten Attributs
+          Attributstyp: 0x80 ($DATA)
+          Länge des Attributs: 0x02 (2 Bytes)
+          Resident-Flag: 0x00 (Resident)
+          Länge des Namens: 0x00 (kein Name)
+          Offset zum Namen: 0x00 (kein Name)
+          Flags: 0x00
+          Attribut-ID: 0x0000
+          Die Länge des Attributs (0x02 oder 2 Bytes) umfasst den Header und die Daten. Da dieses Attribut resident ist, befinden sich die Daten direkt im MFT-Eintrag.
