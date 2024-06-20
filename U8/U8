@@ -1,0 +1,38 @@
+1.1   NTFS-Dateisystem aufgebau:
+
+          Bootsektor:
+              Enthält den Master Boot Record (MBR) und den BIOS Parameter Block (BPB)
+              Informationen über Dateisystem und Bootkonfiguration
+      
+          Master File Table (MFT):
+              Zentrales Verwaltungselement
+              Speichert alle Dateien und Verzeichnisse als 1024 Byte große Einträge
+      
+          MFT-Spiegelung (MFTMirr):
+              Sicherungskopie der ersten vier Einträge der MFT
+              Ermöglicht Wiederherstellung bei Beschädigung
+      
+          Log-Datei ($LogFile):
+              Enthält Transaktionsprotokolle
+              Ermöglicht Wiederherstellung nach Absturz
+      
+          Attributdateien:
+              $Bitmap: Verfolgt belegte und freie Cluster
+              $Boot: Enthält Bootsektor
+              $BadClus: Listet defekte Cluster auf
+              $Secure: Verwaltet Sicherheitsinformationen und ACLs
+      
+          Cluster:
+              Kleinste Zuordnungseinheit, meist 4 KB groß
+              Dateien erstrecken sich über mehrere Cluster
+      
+          Attribute:
+              Beschreiben Dateien und Verzeichnisse, z.B. $STANDARD_INFORMATION, $FILE_NAME, $DATA
+              Daten resident (innerhalb des MFT-Eintrags) oder non-resident (außerhalb)
+      
+          Indizes:
+              Verzeichnisse verwenden B-Bäume für schnelle Dateisuche
+      
+          Sicherheit:
+              Unterstützt ACLs und EFS (Encrypting File System)
+
