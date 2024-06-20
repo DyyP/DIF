@@ -1,46 +1,21 @@
-import os
-import time
-import shutil
+#!/bin/bash -e
 
-# Dateigröße des Images in MB
-image_size_mb = 20
+echo "Please enter a path to copy to the disk image." 
+read path
+echo "Please enter disk image Size in MB." 
+read s
+size=$s
 
-# Zielpfad für das Image
-image_path = "/home/kali/Desktop/DIF/image.img"
+sudo dd if=/dev/zero of=VHD.img bs=1M count=$size
+sudo mkfs.fat -F 32 VHD.img
 
-# Quellpfad des Ordners zum Kopieren
-data_path = "/home/kali/Desktop/DIF/data"
+sudo mkdir -p /mnt/VHD/
 
-# Konvertieren der Dateigröße in Bytes
-image_size_bytes = image_size_mb * 1024 * 1024
+sudo findmnt /mnt/VHD && sudo umount /mnt/VHD/
+sudo mount -o loop VHD.img /mnt/VHD/
 
-# Erstellen einer leeren Datei mit der gewünschten Größe
-with open(image_path, "wb") as f:
-    f.write(b"\0" * image_size_bytes)
+sudo cp -r $path /mnt/VHD/
 
-# Bestimmen der Gesamtzahl der zu kopierenden Dateien
-total_files = sum([len(files) for _, _, files in os.walk(data_path)])
+sudo findmnt /mnt/VHD && sudo umount /mnt/VHD/
 
-# Initialisierung des Kopiervorgangs
-copied_files = 0
-
-# Kopieren des Inhalts des Quellordners in das Image
-for root, dirs, files in os.walk(data_path):
-    for file in files:
-        source_path = os.path.join(root, file)
-        destination_path = os.path.join(image_path, root[len(data_path) + 1:], file)
-        
-        # Erstellen der Verzeichnisstruktur im Image (ohne Trailing Slash)
-        os.makedirs(os.path.dirname(destination_path), exist_ok=True)
-
-        # Kopieren der Datei
-        shutil.copy2(source_path, destination_path)
-
-        # Aktualisieren des Fortschritts
-        copied_files += 1
-        progress = int((copied_files / total_files) * 100)
-        print(f"Fortschritt: {progress}%", end="\r")
-
-# Erfolgsmeldung
-print(f"\nImage '{image_path}' erfolgreich erstellt und mit Daten aus '{data_path}' gefüllt.")
-
+echo "Erflogreich ausgeführt"
