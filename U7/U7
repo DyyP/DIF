@@ -2,7 +2,7 @@ U7
 
 Datum: 2024-06-18T17:10:00+02:00
 
-1)
+A1
   a) Anfang eines FAT-Dateisystems steht ein Bootsektor, der Auskunft gibt über die Größe des Root-Verzeichnises, die Anzahl der Sektoren pro 
      Cluster, Anzahl der FAT Kopien, etc. Hier stehen auch die nötigen Anweisungen um das System zu starten. 
      Darauf folgt eine Tabelle, die Informationen über die Zuordnung der Cluster enthält. Jedes Cluster enthält entweder einen Verweis auf 
@@ -19,7 +19,7 @@ Datum: 2024-06-18T17:10:00+02:00
   d) siehe a)
 
   e) Die Größe des Stammverzeichnises kann durch den BIOS Parameter Block (BPB) im Bootsektor festgelegt werden. Typischerweise handelt es 
-     sich um 512 Einträge. Jeder eintrag belegt hierbei eine Größe von 32 Bytes.
+     sich um 512 Einträge. Jeder Eintrag belegt hierbei eine Größe von 32 Bytes.
 
   f) Das Stammverzeichnis bei FAT32 unterscheidet sich in seiner Größe von FAT12 und FAT16, da dieses dynamisch nach Bedarf wächst.
      Auch die Positionierung ist grundlegend unterschiedlich, da kein eigener Bereich angelegt wird, wie bei FAT12 und FAT16. Stattdessen
@@ -55,4 +55,22 @@ Datum: 2024-06-18T17:10:00+02:00
 +-------------+----------+------------------------------+
 ?
 
-  
+A2
+1)
+   a) Nein, es steht im Image drin, dass es sich nicht um ein bootbares Image handelt. 
+   b) 512 Bytes pro Sektor
+   c) 512 (Untersucht mit Autopsy)
+   d) FAT
+   e) FAT12
+
+2)
+   a) Sektoren 13 - 24
+   b) Sektoren 25 - 38
+
+3)
+   a) Das Root Verzeichnis umfasst 14 Sektoren. Mit 512 Einträgen pro Sektor, und 32 Bytes pro Einträg, ergiben sich eine maximale Anzahl
+      von 224 Einträgen.
+   b) Datei mit Startcluster 1 : 1- 292
+      Datei mit Sartcluster 12: 12 - EOF
+      Datei mit Startcluster 45: 45 - EOF
+   c) 
