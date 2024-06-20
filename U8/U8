@@ -48,4 +48,4 @@ MTF1.1   NTFS-Dateisystem aufgebau:
 
 1.4 a) Der MTF-Eintrag beeinhaltet 4 Attribute in Cluster 962 und 963
     b) Standartinformationen (Typ-ID 0x10) und Datenattribute (Typ-ID 0x60/0x64)
-    c)
+    c) Die $DATA Attribute in den Clustern 962 und 963 sind beide resident und speichern sehr kleine Datenmengen direkt im MFT-Eintrag
