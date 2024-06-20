@@ -17,3 +17,6 @@ sudo fdisk -l /dev/loop0
 
 # Mit parted
 sudo parted /dev/loop0 print
+
+# Loops leeren
+sudo losetup -d /dev/loop0
