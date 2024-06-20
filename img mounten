@@ -1,0 +1,19 @@
+# Erstellen Sie ein Loop-Device für das Image
+sudo losetup -fP disk.img
+
+# Finden Sie heraus, welches Loop-Device verwendet wurde
+sudo losetup -l
+
+# Die Ausgabe könnte etwa so aussehen:
+# NAME       SIZELIMIT  OFFSET AUTOCLEAR RO BACK-FILE
+# /dev/loop0         0      0         0  0 /path/to/disk.img
+
+# Verwenden Sie fdisk, um die Partitionstabelle des Loop-Devices zu analysieren
+sudo fdisk -l /dev/loop0
+
+# Schritt 2: Partitionierungsinformationen betrachten
+# Mit fdisk
+sudo fdisk -l /dev/loop0
+
+# Mit parted
+sudo parted /dev/loop0 print
