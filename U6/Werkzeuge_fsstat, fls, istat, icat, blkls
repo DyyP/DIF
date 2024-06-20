@@ -1,76 +1,75 @@
 # Um die Metadaten, Sektorinhalte und FAT-Inhalte eines Datenträgerabbilds unter Kali Linux zu untersuchen, 
-  können Sie die folgenden Werkzeuge und Befehle verwenden: fsstat, fls, istat, icat, und blkls. 
-  Hier ist eine Schritt-für-Schritt-Anleitung, wie Sie dies tun können:
---------------------------------------------------------------------
+# können folgenden Werkzeuge und Befehle verwendendet werden: fsstat, fls, istat, icat, und blkls. 
 
+--------------------------------------------------------------------------------------------------------------------------------------
 # 1. fsstat - Dateisystemstatistik anzeigen
 # Der Befehl fsstat zeigt Informationen über das Dateisystem des Datenträgerabbilds an.
---------------------------------------------------------------------
-fsstat <pfad_zum_datenträgerabbild>
---------------------------------------------------------------------
+----------------------------------------------------------------------------------
+fsstat /dev/loop0
+----------------------------------------------------------------------------------
 # Beispiel:
-fsstat /path/to/image.dd
------------------------------------------------------------------------------------------------------------------------
+fsstat /dev/loop0
 
+--------------------------------------------------------------------------------------------------------------------------------------
 # 2. fls - Dateien und Verzeichnisse auflisten
 # Der Befehl fls listet die Dateien und Verzeichnisse des Dateisystems auf.
---------------------------------------------------------------------
-fls -r <pfad_zum_datenträgerabbild>
---------------------------------------------------------------------
+----------------------------------------------------------------------------------
+fls -r /dev/loop0
+----------------------------------------------------------------------------------
 # Beispiel:
-fls -r /path/to/image.dd
------------------------------------------------------------------------------------------------------------------------
+fls -r /dev/loop0
 
+--------------------------------------------------------------------------------------------------------------------------------------
 # 3. istat - Metadaten eines bestimmten Eintrags anzeigen
 # Mit istat können Sie die Metadaten eines bestimmten Eintrags (z.B. einer Datei) anzeigen. 
-  Sie benötigen die Inode-Nummer oder die Dateinummer, die Sie mit fls ermittelt haben.
---------------------------------------------------------------------
-istat <pfad_zum_datenträgerabbild> <inode_nummer>
---------------------------------------------------------------------
+# Sie benötigen die Inode-Nummer oder die Dateinummer, die Sie mit fls ermittelt haben.
+----------------------------------------------------------------------------------
+istat /dev/loop0 <inode_nummer>
+----------------------------------------------------------------------------------
 # Beispiel:
-istat /path/to/image.dd 128
------------------------------------------------------------------------------------------------------------------------
+istat /dev/loop0 128
 
+--------------------------------------------------------------------------------------------------------------------------------------
 # 4. icat - Dateiinhalt extrahieren
 # Der Befehl icat extrahiert den Inhalt einer Datei basierend auf der Inode-Nummer.
---------------------------------------------------------------------
-icat <pfad_zum_datenträgerabbild> <inode_nummer> > <ziel_datei>
---------------------------------------------------------------------
+----------------------------------------------------------------------------------
+icat /dev/loop0 <inode_nummer> > <ziel_datei>
+----------------------------------------------------------------------------------
 # Beispiel:
-icat /path/to/image.dd 128 > extracted_file.txt
------------------------------------------------------------------------------------------------------------------------
+icat /dev/loop0 128 > extracted_file.txt
 
+--------------------------------------------------------------------------------------------------------------------------------------
 # 5. blkls - Unallozierten Speicherplatz extrahieren
 # Mit blkls können Sie unallozierten Speicherplatz des Datenträgerabbilds extrahieren.
---------------------------------------------------------------------
-blkls <pfad_zum_datenträgerabbild> > <ziel_datei>
---------------------------------------------------------------------
+----------------------------------------------------------------------------------
+blkls /dev/loop0 > <ziel_datei>
+----------------------------------------------------------------------------------
 # Beispiel:
-blkls /path/to/image.dd > unallocated_space.dd
------------------------------------------------------------------------------------------------------------------------
+blkls /dev/loop0 > unallocated_space.dd
 
+--------------------------------------------------------------------------------------------------------------------------------------
 # 6. FAT-Tabelleninhalt untersuchen
-# Um die Inhalte der FAT (File Allocation Table) zu untersuchen, verwenden Sie fsstat. Suchen Sie in der Ausgabe nach der FAT-Information.
---------------------------------------------------------------------
-fsstat <pfad_zum_datenträgerabbild>
---------------------------------------------------------------------
+# Um die Inhalte der FAT (File Allocation Table) zu untersuchen, verwenden Sie fsstat. 
+#  Suchen Sie in der Ausgabe nach der FAT-Information.
+----------------------------------------------------------------------------------
+fsstat /dev/loop0
+----------------------------------------------------------------------------------
 # Beispiel:
-fsstat /path/to/image.dd
---------------------------------------------------------------------
+fsstat /dev/loop0
+--------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
 # Beispielablauf
 # Anzeige der Dateisystemstatistik
-fsstat /path/to/image.dd
---------------------------------------------------------------------
+fsstat /dev/loop0
+----------------------------------------------------------------------------------
 # Auflisten der Dateien und Verzeichnisse
-fls -r /path/to/image.dd
---------------------------------------------------------------------
+fls -r /dev/loop0
+----------------------------------------------------------------------------------
 # Metadaten eines bestimmten Eintrags anzeigen
-istat /path/to/image.dd 128
---------------------------------------------------------------------
+istat /dev/loop0 128
+----------------------------------------------------------------------------------
 # Inhalt einer Datei extrahieren
-icat /path/to/image.dd 128 > extracted_file.txt
---------------------------------------------------------------------
+icat /dev/loop0 128 > extracted_file.txt
+----------------------------------------------------------------------------------
 # Unallozierten Speicherplatz extrahieren
-blkls /path/to/image.dd > unallocated_space.dd
-
-
+blkls /dev/loop0 > unallocated_space.dd
