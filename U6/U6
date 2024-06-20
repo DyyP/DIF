@@ -38,5 +38,17 @@ Datum: 2024-06-13T08:20:00+02:00
       w: FAT12 erschien 1980 mit dem Betriebssystem QDOS (Quick and Dirty Operating System), welches später in MS-DOS umbenannt wurde
 
 3)      
-      
+      -sudo fsstat /dev/loop2      
+      Possible encryption detected (High entropy (7.69))
+      -sudo fsstat /dev/loop2
+      Possible encryption detected (High entropy (7.69))
+      -sudo istat /dev/loop2 128
+      Possible encryption detected (High entropy (7.69))
+      -sudo icat /dev/loop1 128 > extracted_file.txt
+      Possible encryption detected (High entropy (7.69))
+      -sudo blkls /dev/loop1 > unallocated_space.dd
+      Possible encryption detected (High entropy (7.69))
+
+
+
 
