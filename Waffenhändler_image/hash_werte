@@ -1,0 +1,37 @@
+PS D:\vm_puffer> $hash = Get-FileHash -Path .\ForImage4.img -Algorithm SHA256
+PS D:\vm_puffer> $hash | Format-List
+
+
+Algorithm : SHA256
+Hash      : 00CFC45334997B1DD764D06129345F22DD5E6211CB82AA12A35D1F3F5838C9A7
+Path      : D:\vm_puffer\ForImage4.img
+
+
+
+PS D:\vm_puffer> $hash = Get-FileHash -Path .\ForImage4.img -Algorithm MD5
+PS D:\vm_puffer> $hash | Format-List
+
+
+Algorithm : MD5
+Hash      : 30BF1ADCDC4F8F7A44CA2B30967686EB
+Path      : D:\vm_puffer\ForImage4.img
+
+
+
+PS D:\vm_puffer> $hash = Get-FileHash -Path E:\ForImage4.img -Algorithm MD5
+PS D:\vm_puffer> $hash | Format-List
+
+
+Algorithm : MD5
+Hash      : 30BF1ADCDC4F8F7A44CA2B30967686EB
+Path      : E:\ForImage4.img
+
+
+
+PS D:\vm_puffer> $hash = Get-FileHash -Path E:\ForImage4.img -Algorithm SHA256
+PS D:\vm_puffer> $hash | Format-List
+
+
+Algorithm : SHA256
+Hash      : 00CFC45334997B1DD764D06129345F22DD5E6211CB82AA12A35D1F3F5838C9A7
+Path      : E:\ForImage4.img
