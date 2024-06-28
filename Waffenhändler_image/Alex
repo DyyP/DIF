@@ -1,0 +1,26 @@
+Datum: 2024-06-28T15:01:00+02:00 	
+Datei: ForImage4.img
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Genutzte Programme:
+
+    Programm 1: GTK Hash MD5: 30BF1ADCDC4F8F7A44CA2B30967686EB
+    Programm 2: fdisk from util-linux 2.40
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+sudo fdisk -l /dev/loop7
+
+Disk /dev/loop7: 33 GiB, 35433480192 bytes, 69206016 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 7AB35F56-8FB0-407B-AC62-FD7C3E10AB6A
+
+Device          Start      End  Sectors  Size Type
+/dev/loop7p1     2048     4095     2048    1M BIOS boot
+/dev/loop7p2     4096  1054719  1050624  513M EFI System
+/dev/loop7p3  1054720 46135295 45080576 21.5G Linux filesystem
+/dev/loop7p4 47656960 68360191 20703232  9.9G Microsoft basic data
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
