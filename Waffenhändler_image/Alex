@@ -8,6 +8,12 @@ Genutzte Programme:
     Programm 2: fdisk from util-linux 2.40
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+qemu-img convert -O raw /home/kali/Desktop/DIF/Projekt_waffenhändler/ForImage4.img /home/kali/Desktop/DIF/Projekt_waffenhändler/ForImage4.raw
+sudo losetup /dev/loop7 /home/kali/Desktop/DIF/Projekt_waffenhändler/ForImage4.raw
+sudo partx -a /dev/loop7
+
+
+
 sudo fdisk -l /dev/loop7
 
 Disk /dev/loop7: 33 GiB, 35433480192 bytes, 69206016 sectors
@@ -24,3 +30,14 @@ Device          Start      End  Sectors  Size Type
 /dev/loop7p4 47656960 68360191 20703232  9.9G Microsoft basic data
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+sudo mkdir -p /mnt/linux_partition
+sudo mount /dev/loop7p3 /mnt/linux_partition
+
+sudo mkdir -p /mnt/microsoft_partition
+sudo mount /dev/loop7p4 /mnt/microsoft_partition
+
+ls /mnt/linux_partition
+ls /mnt/microsoft_partition
+
+
