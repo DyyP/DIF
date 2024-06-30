@@ -54,11 +54,12 @@ Datei: ForImage4.img
 Genutzte Programme:
 
     Programm 1: dumpe2fs 1.47.0 (5-Feb-2023)
-    Programm 2: fdisk from util-linux 2.40
+    Programm 2: tune2fs 1.47.0 (5-Feb-2023)
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 sudo dumpe2fs /dev/loop7p3 > linux_partition_dumpe2fs.txt
-
+-----------------------------------------------------------------------------------------------
+sudo tune2fs -l /dev/loop7p3 > tune2fs.txt
 
 
 
