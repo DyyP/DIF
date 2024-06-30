@@ -1,0 +1,15 @@
+0|/mnt/linux_partition/EFI|3|d/drwxrwxrwx|0|0|4096|1656712800|1656765900|0|1656765901
+0|/mnt/linux_partition/EFI/ubuntu|134|d/drwxrwxrwx|0|0|4096|1656712800|1656765900|0|1656765901
+0|/mnt/linux_partition/EFI/ubuntu/grubx64.efi|262|r/rrwxrwxrwx|0|0|1742728|1656712800|1656765900|0|1656765901
+0|/mnt/linux_partition/EFI/ubuntu/shimx64.efi|264|r/rrwxrwxrwx|0|0|955656|1656712800|1656765900|0|1656765901
+0|/mnt/linux_partition/EFI/ubuntu/mmx64.efi|266|r/rrwxrwxrwx|0|0|856232|1656712800|1656765900|0|1656765901
+0|/mnt/linux_partition/EFI/ubuntu/BOOTX64.CSV|267|r/rrwxrwxrwx|0|0|108|1656712800|1656765900|0|1656765901
+0|/mnt/linux_partition/EFI/ubuntu/grub.cfg|269|r/rrwxrwxrwx|0|0|117|1656712800|1656765900|0|1656765901
+0|/mnt/linux_partition/EFI/BOOT|135|d/drwxrwxrwx|0|0|4096|1656712800|1656765900|0|1656765901
+0|/mnt/linux_partition/EFI/BOOT/BOOTX64.EFI|112005|r/rrwxrwxrwx|0|0|955656|1656712800|1656765900|0|1656765901
+0|/mnt/linux_partition/EFI/BOOT/fbx64.efi|112007|r/rrwxrwxrwx|0|0|85672|1656712800|1656765900|0|1656765901
+0|/mnt/linux_partition/EFI/BOOT/mmx64.efi|112009|r/rrwxrwxrwx|0|0|856232|1656712800|1656765900|0|1656765901
+0|/mnt/linux_partition/$MBR|16776131|v/v---------|0|0|512|0|0|0|0
+0|/mnt/linux_partition/$FAT1|16776132|v/v---------|0|0|524288|0|0|0|0
+0|/mnt/linux_partition/$FAT2|16776133|v/v---------|0|0|524288|0|0|0|0
+0|/mnt/linux_partition/$OrphanFiles|16776134|V/V---------|0|0|0|0|0|0|0

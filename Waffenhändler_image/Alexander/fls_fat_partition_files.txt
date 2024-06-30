@@ -1,0 +1,6 @@
+0|/mnt/linux_partition/secFiles|4|d/drwxrwxrwx|0|0|8192|1656885600|1656952012|0|1656952012
+0|/mnt/linux_partition/secFiles/secFiles|262|r/rrwxrwxrwx|0|0|209715200|1656885600|1656952014|0|1656959448
+0|/mnt/linux_partition/$MBR|330926883|v/v---------|0|0|512|0|0|0|0
+0|/mnt/linux_partition/$FAT1|330926884|v/v---------|0|0|5177344|0|0|0|0
+0|/mnt/linux_partition/$FAT2|330926885|v/v---------|0|0|5177344|0|0|0|0
+0|/mnt/linux_partition/$OrphanFiles|330926886|V/V---------|0|0|0|0|0|0|0
