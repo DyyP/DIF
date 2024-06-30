@@ -152,6 +152,44 @@ sudo mount -o ro /dev/nbd0p4 /mnt/microsoft_partition
 ------------------------------------------------------------------------------------------------
 sudo mount -o ro /dev/nbd0p2 /mnt/efi_partition
 ------------------------------------------------------------------------------------------------
+ sudo fls -r -m /mnt/linux_partition /dev/nbd0p3 > /home/kali/Desktop/DIF/Projekt_waffenhändler/linux_partition_files.txt
+------------------------------------------------------------------------------------------------
+ sudo fls -r -m /mnt/linux_partition /dev/nbd0p4 > /home/kali/Desktop/DIF/Projekt_waffenhändler/micro_partition_files.txt
+------------------------------------------------------------------------------------------------
+ sudo fls -r -m /mnt/linux_partition /dev/nbd0p2 > /home/kali/Desktop/DIF/Projekt_waffenhändler/efi_partition_files.txt
+------------------------------------------------------------------------------------------------
+sudo mkdir -p /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/
+------------------------------------------------------------------------------------------------
+sudo icat /dev/nbd0p2 262 > /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/grubx64.efi
+sudo icat /dev/nbd0p2 264 > /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/shimx64.efi
+sudo icat /dev/nbd0p2 266 > /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/mmx64.efi
+sudo icat /dev/nbd0p2 267 > /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/BOOTX64.CSV
+sudo icat /dev/nbd0p2 269 > /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/grub.cfg
+sudo icat /dev/nbd0p2 112005 > /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/BOOTX64.EFI
+sudo icat /dev/nbd0p2 112007 > /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/fbx64.efi
+sudo icat /dev/nbd0p2 112009 > /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/mmx64.efi
+------------------------------------------------------------------------------------------------
+sudo cat /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/grub.cfg                      
+search.fs_uuid 4021d3ac-2d89-4f83-a171-7fc98d05ba72 root 
+set prefix=($root)'/boot/grub'
+configfile $prefix/grub.cfg
+------------------------------------------------------------------------------------------------
+sudo cat /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/BOOTX64.CSV                        
+
+shimx64.efi,ubuntu,,This is the boot entry for ubuntu
+------------------------------------------------------------------------------------------------
+exiftool /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/grubx64.efi
+exiftool /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/shimx64.efi
+exiftool /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/mmx64.efi
+exiftool /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/BOOTX64.CSV
+exiftool /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/grub.cfg
+exiftool /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/BOOTX64.EFI
+exiftool /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/fbx64.efi
+exiftool /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/mmx64.efi
+------------------------------------------------------------------------------------------------
+md5sum /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/*
+sha256sum /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/*
+------------------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------
