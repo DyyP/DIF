@@ -29,6 +29,10 @@ Device          Start      End  Sectors  Size Type
 /dev/loop7p3  1054720 46135295 45080576 21.5G Linux filesystem
 /dev/loop7p4 47656960 68360191 20703232  9.9G Microsoft basic data
 -----------------------------------------------------------------------------------------------
+sudo mkdir -p /mnt/efi_partition
+-----------------------------------------------------------------------------------------------
+sudo mount /dev/loop7p2 /mnt/efi_partition
+-----------------------------------------------------------------------------------------------
 sudo mkdir -p /mnt/linux_partition
 -----------------------------------------------------------------------------------------------
 sudo mount /dev/loop7p3 /mnt/linux_partition
@@ -89,6 +93,95 @@ sudo fls -r -m /mnt/linux_partition/ -o 1054720 /home/kali/Desktop/DIF/Projekt_w
 -----------------------------------------------------------------------------------------------
 sudo fls -r -m /mnt/linux_partition/ -o 47656960 -f fat /home/kali/Desktop/DIF/Projekt_waffenhändler/ForImage4.raw > fls_fat_partition_files.txt
 -----------------------------------------------------------------------------------------------
+mkdir -p /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/
+-----------------------------------------------------------------------------------------------
+sudo icat /dev/loop7p3 262 > /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/grubx64.efi && \
+sudo icat /dev/loop7p3 264 > /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/shimx64.efi && \
+sudo icat /dev/loop7p3 266 > /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/mmx64.efi && \
+sudo icat /dev/loop7p3 267 > /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/BOOTX64.CSV && \
+sudo icat /dev/loop7p3 269 > /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/grub.cfg && \
+sudo icat /dev/loop7p3 112005 > /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/BOOTX64.EFI && \
+sudo icat /dev/loop7p3 112007 > /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/fbx64.efi && \
+sudo icat /dev/loop7p3 112009 > /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/mmx64.efi
+------------------------------------------------------------------------------------------------
+!!!!! icat hat nicht funktioniert wird erstmal hinten angestellt.
+------------------------------------------------------------------------------------------------
+sudo ntfsinfo -m /mnt/microsoft_partition
+
+Error reading bootsector: Is a directory
+Failed to mount '/mnt/microsoft_partition': Is a directory
+Failed to open '/mnt/microsoft_partition'.
+------------------------------------------------------------------------------------------------
+mount | grep /mnt
+
+/dev/loop7p3 on /mnt/linux_partition type ext4 (ro,relatime)
+/dev/loop7p2 on /mnt/efi_partition type vfat (rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro)
+------------------------------------------------------------------------------------------------
+sudo mkdir -p /mnt/microsoft_partition
+------------------------------------------------------------------------------------------------
+sudo mount -o loop,ro /dev/loop7p4 /mnt/microsoft_partition
+------------------------------------------------------------------------------------------------
+ount | grep /mnt
+
+/dev/loop7p3 on /mnt/linux_partition type ext4 (ro,relatime)
+/dev/loop7p2 on /mnt/efi_partition type vfat (rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro)
+/dev/loop7p4 on /mnt/microsoft_partition type vfat (ro,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro)
+------------------------------------------------------------------------------------------------
+sudo modprobe nbd max_part=16
+------------------------------------------------------------------------------------------------
+sudo qemu-nbd --connect=/dev/nbd0 /home/kali/Desktop/DIF/Projekt_waffenhändler/Backup_ForImage4.dd
+------------------------------------------------------------------------------------------------
+sudo fdisk -l /dev/nbd0
+
+Disk /dev/nbd0: 33 GiB, 35433480192 bytes, 69206016 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: 7AB35F56-8FB0-407B-AC62-FD7C3E10AB6A
+
+Device         Start      End  Sectors  Size Type
+/dev/nbd0p1     2048     4095     2048    1M BIOS boot
+/dev/nbd0p2     4096  1054719  1050624  513M EFI System
+/dev/nbd0p3  1054720 46135295 45080576 21.5G Linux filesystem
+/dev/nbd0p4 47656960 68360191 20703232  9.9G Microsoft basic data                                                                 
+------------------------------------------------------------------------------------------------
+sudo mount -o ro /dev/nbd0p3 /mnt/linux_partition
+------------------------------------------------------------------------------------------------
+sudo mount -o ro /dev/nbd0p4 /mnt/microsoft_partition
+------------------------------------------------------------------------------------------------
+sudo mount -o ro /dev/nbd0p2 /mnt/efi_partition
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
