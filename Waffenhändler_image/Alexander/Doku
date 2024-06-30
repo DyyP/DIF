@@ -190,13 +190,46 @@ exiftool /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/mmx64.efi
 md5sum /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/*
 sha256sum /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr/*
 ------------------------------------------------------------------------------------------------
+sudo find /mnt/linux_partition -type f -iname "*.jpg" -o -iname "*.png" -o -iname "*.mp4" -o -iname "*.avi" > linux_media_files.txt
+------------------------------------------------------------------------------------------------
+sudo find /mnt/linux_partition -type f -iname "*.docx" -o -iname "*.pdf" -o -iname "*.eml" -o -iname "*.pst" > linux_documents_emails.txt
+------------------------------------------------------------------------------------------------
+sudo find /mnt/microsoft_partition -type f -iname "*.jpg" -o -iname "*.png" -o -iname "*.mp4" -o -iname "*.avi" > microsoft_media_files.txt
+------------------------------------------------------------------------------------------------
+sudo find /mnt/microsoft_partition -type f -iname "*.docx" -o -iname "*.pdf" -o -iname "*.eml" -o -iname "*.pst" > microsoft_documents_emails.txt
+------------------------------------------------------------------------------------------------
+sudo exiftool -r /mnt/linux_partition > linux_partition_exif_metadata.txt
+sudo exiftool -r /mnt/microsoft_partition > microsoft_partition_exif_metadata.txt
+------------------------------------------------------------------------------------------------
+sudo bulk_extractor -R -o linux_email_output /mnt/linux_partition
+sudo bulk_extractor -R -o microsoft_email_output /mnt/microsoft_partition
+------------------------------------------------------------------------------------------------
+sudo sqlitebrowser /mnt/linux_partition/path_to_chat_database.db
+sudo sqlitebrowser /mnt/microsoft_partition/path_to_chat_database.db??
+------------------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------------------------
+
 ------------------------------------------------------------------------------------------------
+
 ------------------------------------------------------------------------------------------------
+
 ------------------------------------------------------------------------------------------------
+
 ------------------------------------------------------------------------------------------------
+
 ------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
 
 
 
