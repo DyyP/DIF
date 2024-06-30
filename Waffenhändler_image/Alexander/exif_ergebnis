@@ -1,0 +1,174 @@
+ExifTool Version Number         : 12.76
+File Name                       : grubx64.efi
+Directory                       : /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr
+File Size                       : 1743 kB
+File Modification Date/Time     : 2024:06:30 14:33:22+02:00
+File Access Date/Time           : 2024:06:30 14:04:28+02:00
+File Inode Change Date/Time     : 2024:06:30 14:33:22+02:00
+File Permissions                : -rw-rw-r--
+File Type                       : Win64 EXE
+File Type Extension             : exe
+MIME Type                       : application/octet-stream
+Machine Type                    : AMD AMD64
+Time Stamp                      : 2015:01:01 01:00:00+01:00
+Image File Characteristics      : Executable, No line numbers, No symbols, No debug
+PE Type                         : PE32+
+Linker Version                  : 0.0
+Code Size                       : 49152
+Initialized Data Size           : 1683456
+Uninitialized Data Size         : 0
+Entry Point                     : 0x1000
+OS Version                      : 0.0
+Image Version                   : 0.0
+Subsystem Version               : 0.0
+Subsystem                       : EFI application
+Warning                         : Error processing PE data dictionary
+ExifTool Version Number         : 12.76
+File Name                       : shimx64.efi
+Directory                       : /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr
+File Size                       : 956 kB
+File Modification Date/Time     : 2024:06:30 14:33:23+02:00
+File Access Date/Time           : 2024:06:30 14:03:20+02:00
+File Inode Change Date/Time     : 2024:06:30 14:33:23+02:00
+File Permissions                : -rw-rw-r--
+File Type                       : Win64 EXE
+File Type Extension             : exe
+MIME Type                       : application/octet-stream
+Machine Type                    : AMD AMD64
+Time Stamp                      : 0000:00:00 00:00:00
+Image File Characteristics      : Executable, No line numbers, No debug
+PE Type                         : PE32+
+Linker Version                  : 2.36
+Code Size                       : 388096
+Initialized Data Size           : 433152
+Uninitialized Data Size         : 0
+Entry Point                     : 0x22000
+OS Version                      : 0.0
+Image Version                   : 0.0
+Subsystem Version               : 0.0
+Subsystem                       : EFI application
+Warning                         : Error processing PE data dictionary
+ExifTool Version Number         : 12.76
+File Name                       : mmx64.efi
+Directory                       : /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr
+File Size                       : 856 kB
+File Modification Date/Time     : 2024:06:30 14:33:23+02:00
+File Access Date/Time           : 2024:06:30 14:02:50+02:00
+File Inode Change Date/Time     : 2024:06:30 14:33:23+02:00
+File Permissions                : -rw-rw-r--
+File Type                       : Win64 EXE
+File Type Extension             : exe
+MIME Type                       : application/octet-stream
+Machine Type                    : AMD AMD64
+Time Stamp                      : 0000:00:00 00:00:00
+Image File Characteristics      : Executable, No line numbers, No debug
+PE Type                         : PE32+
+Linker Version                  : 2.36
+Code Size                       : 350720
+Initialized Data Size           : 385024
+Uninitialized Data Size         : 0
+Entry Point                     : 0x1f000
+OS Version                      : 0.0
+Image Version                   : 0.0
+Subsystem Version               : 0.0
+Subsystem                       : EFI application
+Warning                         : Error processing PE data dictionary
+ExifTool Version Number         : 12.76
+File Name                       : BOOTX64.CSV
+Directory                       : /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr
+File Size                       : 108 bytes
+File Modification Date/Time     : 2024:06:30 14:33:23+02:00
+File Access Date/Time           : 2024:06:30 14:35:40+02:00
+File Inode Change Date/Time     : 2024:06:30 14:33:23+02:00
+File Permissions                : -rw-rw-r--
+Error                           : File format error
+ExifTool Version Number         : 12.76
+File Name                       : grub.cfg
+Directory                       : /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr
+File Size                       : 117 bytes
+File Modification Date/Time     : 2024:06:30 14:33:23+02:00
+File Access Date/Time           : 2024:06:30 14:35:40+02:00
+File Inode Change Date/Time     : 2024:06:30 14:33:23+02:00
+File Permissions                : -rw-rw-r--
+File Type                       : TXT
+File Type Extension             : txt
+MIME Type                       : text/plain
+MIME Encoding                   : us-ascii
+Newlines                        : Unix LF
+Line Count                      : 3
+Word Count                      : 7
+ExifTool Version Number         : 12.76
+File Name                       : BOOTX64.EFI
+Directory                       : /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr
+File Size                       : 956 kB
+File Modification Date/Time     : 2024:06:30 14:33:23+02:00
+File Access Date/Time           : 2024:06:30 14:02:50+02:00
+File Inode Change Date/Time     : 2024:06:30 14:33:23+02:00
+File Permissions                : -rw-rw-r--
+File Type                       : Win64 EXE
+File Type Extension             : exe
+MIME Type                       : application/octet-stream
+Machine Type                    : AMD AMD64
+Time Stamp                      : 0000:00:00 00:00:00
+Image File Characteristics      : Executable, No line numbers, No debug
+PE Type                         : PE32+
+Linker Version                  : 2.36
+Code Size                       : 388096
+Initialized Data Size           : 433152
+Uninitialized Data Size         : 0
+Entry Point                     : 0x22000
+OS Version                      : 0.0
+Image Version                   : 0.0
+Subsystem Version               : 0.0
+Subsystem                       : EFI application
+Warning                         : Error processing PE data dictionary
+ExifTool Version Number         : 12.76
+File Name                       : fbx64.efi
+Directory                       : /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr
+File Size                       : 86 kB
+File Modification Date/Time     : 2024:06:30 14:33:23+02:00
+File Access Date/Time           : 2024:06:30 14:02:50+02:00
+File Inode Change Date/Time     : 2024:06:30 14:33:23+02:00
+File Permissions                : -rw-rw-r--
+File Type                       : Win64 EXE
+File Type Extension             : exe
+MIME Type                       : application/octet-stream
+Machine Type                    : AMD AMD64
+Time Stamp                      : 0000:00:00 00:00:00
+Image File Characteristics      : Executable, No line numbers, No debug
+PE Type                         : PE32+
+Linker Version                  : 2.36
+Code Size                       : 35840
+Initialized Data Size           : 33280
+Uninitialized Data Size         : 0
+Entry Point                     : 0x5000
+OS Version                      : 0.0
+Image Version                   : 0.0
+Subsystem Version               : 0.0
+Subsystem                       : EFI application
+Warning                         : Error processing PE data dictionary
+ExifTool Version Number         : 12.76
+File Name                       : mmx64.efi
+Directory                       : /home/kali/Desktop/DIF/Projekt_waffenhändler/icat_extr
+File Size                       : 856 kB
+File Modification Date/Time     : 2024:06:30 14:33:23+02:00
+File Access Date/Time           : 2024:06:30 14:37:45+02:00
+File Inode Change Date/Time     : 2024:06:30 14:33:23+02:00
+File Permissions                : -rw-rw-r--
+File Type                       : Win64 EXE
+File Type Extension             : exe
+MIME Type                       : application/octet-stream
+Machine Type                    : AMD AMD64
+Time Stamp                      : 0000:00:00 00:00:00
+Image File Characteristics      : Executable, No line numbers, No debug
+PE Type                         : PE32+
+Linker Version                  : 2.36
+Code Size                       : 350720
+Initialized Data Size           : 385024
+Uninitialized Data Size         : 0
+Entry Point                     : 0x1f000
+OS Version                      : 0.0
+Image Version                   : 0.0
+Subsystem Version               : 0.0
+Subsystem                       : EFI application
+Warning                         : Error processing PE data dictionary
