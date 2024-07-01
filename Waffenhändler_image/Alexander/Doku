@@ -206,12 +206,24 @@ sudo bulk_extractor -R -o microsoft_email_output /mnt/microsoft_partition
 ------------------------------------------------------------------------------------------------
 sudo sqlitebrowser /mnt/linux_partition/path_to_chat_database.db
 sudo sqlitebrowser /mnt/microsoft_partition/path_to_chat_database.db??
+probleme mit sqlitebrowser wird nachträglich geprüft.        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ------------------------------------------------------------------------------------------------
-
+bulk bleibt bei 3,8% hängen.
 ------------------------------------------------------------------------------------------------
+Datum: 2024-07-01T10:01:00+02:00 	
+Datei: ForImage4.img
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Genutzte Programme:
+
+    Programm 1: bulk_extractor 2.1.1
+    Programm 2: fdisk from util-linux 2.40
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+sudo bulk_extractor -R -o /home/kali/Desktop/DIF/Projekt_waffenhändler/linux_email_output_etc /mnt/linux_partition/etc
+bricht bei 49% ab wird noch analysiert wieso                !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ------------------------------------------------------------------------------------------------
-
+sudo bulk_extractor -R -o /home/kali/Desktop/DIF/Projekt_waffenhändler/linux_email_output_home /mnt/linux_partition/home
 ------------------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------------------------
