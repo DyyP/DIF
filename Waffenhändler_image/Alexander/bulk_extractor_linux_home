@@ -1,0 +1,15 @@
+All data read; waiting for threads to finish...
+Phase 2. Shutting down scanners
+Computing final histograms and shutting down...
+Phase 3. Generating stats and printing final usage information
+All Threads Finished!
+Elapsed time: 25.19 sec.
+Total MB processed: 138
+Overall performance: 5.497 MBytes/sec 1.374 (MBytes/sec/thread)
+sbufs created:   856922
+sbufs unaccounted: 0
+Time producer spent waiting for scanners to process data:         0:00:24 (24.13 seconds)
+Time consumer scanners spent waiting for data from producer:      0:00:00 (0.20 seconds)
+Average time each consumer spent waiting for data from producer:  0:00:00 (0.00 seconds)
+*** More time spent waiting for workers. You need a faster CPU or more cores for improved performance.
+Total email features found: 3668
