@@ -254,8 +254,10 @@ Genutzte Programme:
  sudo find /mnt/microsoft_partition -type f > /home/kali/Desktop/DIF/file_paths_microsoft.txt 
 ------------------------------------------------------------------------------------------------
 sudo cp /mnt/linux_partition/etc/shadow /home/kali/Desktop/DIF/Projekt_waffenhändler/shadow_copy
+sudo cp /mnt/linux_partition/etc/passwd /home/kali/Desktop/DIF/Projekt_waffenhändler/passwd_copy
+sudo unshadow /home/kali/Desktop/DIF/Projekt_waffenhändler/passwd_copy /home/kali/Desktop/DIF/Projekt_waffenhändler/shadow_copy > /home/kali/Desktop/DIF/Projekt_waffenhändler/unshadowed.txt
 ------------------------------------------------------------------------------------------------
-sudo john --wordlist=/home/kali/Desktop/DIF/Projekt_waffenhändler/password_list.txt /home/kali/Desktop/DIF/Projekt_waffenhändler/shadow_copy
+sudo john --wordlist=/home/kali/Desktop/DIF/Projekt_waffenhändler/passwörter_projekt.txt /home/kali/Desktop/DIF/Projekt_waffenhändler/unshadowed.txt
 ------------------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------------------------
