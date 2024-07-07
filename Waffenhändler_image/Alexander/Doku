@@ -259,11 +259,77 @@ sudo unshadow /home/kali/Desktop/DIF/Projekt_waffenhändler/passwd_copy /home/ka
 ------------------------------------------------------------------------------------------------
 sudo john --wordlist=/home/kali/Desktop/DIF/Projekt_waffenhändler/passwörter_projekt.txt /home/kali/Desktop/DIF/Projekt_waffenhändler/unshadowed.txt
 ------------------------------------------------------------------------------------------------
+hatt alles nichts gebracht etliche versuche mit hashcat und john.
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Datum: 2024-07-07T20:19:00+02:00 	
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Genutzte Programme:
+
+    Programm 1: 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+git clone https://github.com/openwall/yescrypt
+cd yescrypt
+make
+./phc-test
+touch yescrypt_cracker.sh
+gedit yescrypt_cracker.sh
 ------------------------------------------------------------------------------------------------
+#yescrypt_cracker.sh
+#!/bin/bash
 
+HASHES_FILE="/home/kali/Desktop/DIF/Projekt_waffenhändler/hashes.txt"
+WORDLIST="/home/kali/Desktop/DIF/Projekt_waffenhändler/passwörter_projekt.txt"
 
+while IFS= read -r line; do
+  hash=$(echo "$line" | cut -d':' -f2)
+  while IFS= read -r password; do
+    echo -n "$password" | ./phc-test "$hash" > /dev/null 2>&1
+    if [ $? -eq 0 ]; then
+      echo "Password found for hash $hash: $password"
+      break
+    fi
+  done < "$WORDLIST"
+done < "$HASHES_FILE"
+------------------------------------------------------------------------------------------------
+chmod +x yescrypt_cracker.sh
+------------------------------------------------------------------------------------------------
+$username:$y$cost$salt$hash
+pc:$y$j9T$graH6StsN64vZy4TX6DLO1$jFAPKwPTtCP25YeK6fiAIcbse.xZb3XaFXnIuwfaej4
+dopey:$y$j9T$PvbZIk5C5Oz.CFD6m56mR0$Ato/67rlJjcn7E6KBwFRPgjOvWNaBIqg7.m/j1USII7
+ella:$y$j9T$b8KliX1FgPvuKb09j0FOa.$S8KNnnJ8xRisFA8Sann8/wnMgvHXYGn.V.FCcHjv1y8
+------------------------------------------------------------------------------------------------
+sudo ./yescrypt_cracker.sh
+-->58 c/s real, 58 c/s virtual (258 hashes in 4.38 seconds)
+Password found: Iech7ied
+------------------------------------------------------------------------------------------------
+touch which_user.sh
+chmod +x which_user.sh
+gedit which_user.sh
+------------------------------------------------------------------------------------------------
+#wich_user.sh
+#!/bin/bash
 
+PASSWORD="Iech7ied"
+HASHES_FILE="/home/kali/Desktop/DIF/Projekt_waffenhändler/hashes.txt"
+
+while IFS= read -r line; do
+  user=$(echo "$line" | cut -d':' -f1)
+  hash=$(echo "$line" | cut -d':' -f2)
+  
+  # Verwenden Sie phc-test oder eine andere Verifizierungsmethode hier
+  echo -n "$PASSWORD" | ./phc-test "$hash" > /dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    echo "Passwort gefunden für Benutzer $user: $PASSWORD"
+    break
+  fi
+done < "$HASHES_FILE"
+------------------------------------------------------------------------------------------------
+sudo ./which_user.sh
+Passwort gefunden für Benutzer pc: Iech7ied
+------------------------------------------------------------------------------------------------
 
 
 
