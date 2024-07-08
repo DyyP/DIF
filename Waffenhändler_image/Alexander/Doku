@@ -18,9 +18,26 @@ Genutzte Programme:
 
     Programm 1: GTK Hash MD5: 30BF1ADCDC4F8F7A44CA2B30967686EB
     Programm 2: fdisk from util-linux 2.40
+    Programm 3: dc3dd 7.2.646 --> MD5: 30bf1adcdc4f8f7a44ca2b30967686eb
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-qemu-img convert -O raw /home/kali/Desktop/DIF/Projekt_waffenhändler/ForImage4.img /home/kali/Desktop/DIF/Projekt_waffenhändler/ForImage4.raw
+dc3dd if=/media/sf_vm_puffer/ForImage4.img of=/home/kali/Desktop/DIF/Projekt_waffenhändler/backup_ForImage4.dd
+
+dc3dd 7.2.646 started at 2024-07-08 15:07:53 +0200
+compiled options:
+command line dc3dd if=/media/sf_vm_puffer/ForImage4.img of=/home/kali/Desktop/DIF/Projekt_waffenhändler/backup_ForImage4.dd
+sector size: 512 bytes (assumed)
+ 11601117184 bytes ( 11 G ) copied ( 100% ), 1013 s, 11 M/s                   
+
+input results for file `/media/sf_vm_puffer/ForImage4.img':
+   22658432 sectors in
+
+output results for file `/home/kali/Desktop/DIF/Projekt_waffenhändler/backup_ForImage4.dd':
+   22658432 sectors out
+
+dc3dd completed at 2024-07-08 15:24:46 +0200
+-----------------------------------------------------------------------------------------------
+qemu-img convert -O raw /home/kali/Desktop/DIF/Projekt_waffenhändler/ForImage4.dd /home/kali/Desktop/DIF/Projekt_waffenhändler/ForImage4.raw
 -----------------------------------------------------------------------------------------------
 sudo losetup /dev/loop7 /home/kali/Desktop/DIF/Projekt_waffenhändler/ForImage4.raw
 -----------------------------------------------------------------------------------------------
