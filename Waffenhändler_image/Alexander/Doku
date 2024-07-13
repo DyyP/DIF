@@ -464,7 +464,98 @@ echo "Entropy analysis completed. Results saved in $OUTPUT_FILE."
 ------------------------------------------------------------------------------------------------
 sudo bash entropy_analysis.sh
 ------------------------------------------------------------------------------------------------
+gedit extract_files.sh
+chmod +x extract_files.sh
 ------------------------------------------------------------------------------------------------
+#!/bin/bash
+
+# Zielverzeichnis für die extrahierten Dateien
+ZIELVERZEICHNIS="extract"
+
+# Sicherstellen, dass das Zielverzeichnis existiert
+mkdir -p "$ZIELVERZEICHNIS"
+
+# Liste der Dateien, die durchsucht werden sollen
+DATEIEN=(
+    "00942474.jpg"
+    "02283232.jpg"
+    "02283288.jpg"
+    "02318677.jpg"
+    "02366816.jpg"
+    "03185792.jpg"
+    "04552000.jpg"
+    "07053720.jpg"
+    "07053720_1.jpg"
+    "07053808.jpg"
+    "07053904.jpg"
+    "07053920.jpg"
+    "07053928.jpg"
+    "07053936.jpg"
+    "07053944.jpg"
+    "07053952.jpg"
+    "07053960.jpg"
+    "07053968.jpg"
+    "07053976.jpg"
+    "07053984.jpg"
+    "07053992.jpg"
+    "07054000.jpg"
+    "07054008.jpg"
+    "07054016.jpg"
+    "07054024.jpg"
+    "07054048.jpg"
+    "08677184.jpg"
+    "08720832.jpg"
+    "09215656.jpg"
+    "09227784.jpg"
+    "09265104.jpg"
+    "09276656.jpg"
+    "09285184.jpg"
+    "09300000.jpg"
+    "09306112.jpg"
+    "09334456.jpg"
+    "09358544.jpg"
+    "09359376.jpg"
+    "09361488.jpg"
+    "09361584.jpg"
+    "09362736.jpg"
+    "09362784.jpg"
+    "09363760.jpg"
+    "09367032.jpg"
+    "09367240.jpg"
+    "10017232.jpg"
+    "10809544.jpg"
+    "10809560.jpg"
+    "10878696.jpg"
+    "11280832.jpg"
+    "11738976.jpg"
+    "11771040.jpg"
+    "11820512.jpg"
+    "13339968.jpg"
+    "13410616.jpg"
+    "14625240.jpg"
+    "15806872.jpg"
+    "20978320.jpg"
+)
+
+# Binwalk für jede Datei ausführen und extrahierte Dateien verschieben
+for DATEI in "${DATEIEN[@]}"; do
+    if [ -f "$DATEI" ]; then
+        echo "Durchsuche $DATEI..."
+        sudo binwalk -e --run-as=root "$DATEI"
+        EXTRACT_DIR="_${DATEI}.extracted"
+        if [ -d "$EXTRACT_DIR" ]; then
+            echo "Verschiebe extrahierte Dateien von $EXTRACT_DIR nach $ZIELVERZEICHNIS..."
+            sudo mv "$EXTRACT_DIR"/* "$ZIELVERZEICHNIS"/
+            sudo rmdir "$EXTRACT_DIR"
+        else
+            echo "Keine extrahierten Dateien für $DATEI gefunden."
+        fi
+    else
+        echo "Datei $DATEI nicht gefunden."
+    fi
+done
+
+echo "Alle Dateien wurden durchsucht und die extrahierten Dateien wurden nach $ZIELVERZEICHNIS verschoben."
 ------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------
