@@ -75,9 +75,6 @@ ls /mnt/microsoft_partition
 -----------------------------------------------------------------------------------------------
 sudo mount -o remount,ro /mnt/linux_partition
 sudo mount -o remount,ro /mnt/microsoft_partition
-
-
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Datum: 2024-06-30T12:18:00+02:00 	
@@ -89,10 +86,6 @@ Genutzte Programme:
     Programm 1: dumpe2fs 1.47.0 (5-Feb-2023)
     Programm 2: tune2fs 1.47.0 (5-Feb-2023)
     Programm 3: The Sleuth Kit ver 4.12.1
-    Programm :
-    Programm :
-    Programm :
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 sudo dumpe2fs /dev/loop7p3 > linux_partition_dumpe2fs.txt
 -----------------------------------------------------------------------------------------------
@@ -277,14 +270,12 @@ sudo unshadow /home/kali/Desktop/DIF/Projekt_waffenhändler/passwd_copy /home/ka
 sudo john --wordlist=/home/kali/Desktop/DIF/Projekt_waffenhändler/passwörter_projekt.txt /home/kali/Desktop/DIF/Projekt_waffenhändler/unshadowed.txt
 ------------------------------------------------------------------------------------------------
 hatt alles nichts gebracht etliche versuche mit hashcat und john.
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Datum: 2024-07-07T20:19:00+02:00 	
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Datum: 2024-07-11T19:21:00+02:00 	
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Genutzte Programme:
 
-    Programm 1: 
+    Programm 1: selbst geschrieben
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 git clone https://github.com/openwall/yescrypt
@@ -347,9 +338,88 @@ done < "$HASHES_FILE"
 sudo ./which_user.sh
 Passwort gefunden für Benutzer pc: Iech7ied
 ------------------------------------------------------------------------------------------------
+passwort falsch code nicht korrekt.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Datum: 2024-07-12T20:10:02+02:00 	
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Genutzte Programme:
 
+    Programm 1: selbst geschrieben
+    Programm 2: foremmost 1.5.7
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+abgewandelter code, vieles wieder gelöscht.
+------------------------------------------------------------------------------------------------
+#foremost.conf
+jpg     y   20000000    \xff\xd8\xff\xe0\x00\x10    \xff\xd9
+pdf     y   5000000     %PDF-   %.PDF
+doc     y   5000000     \xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1 \xff\xff\xff\xff
+png     y   20000000    \x89PNG  \x49\x45\x4e\x44\xae\x42\x60\x82
+gif     y   10000000    GIF89a  GIF87a
+mp4     y   50000000    \x00\x00\x00\x18ftypmp42 \x00\x00\x00\x18ftypiso2
+txt     y   10000000    \x00\x00\x00\x20text \x00\x00\x00\x18ftypmp42
+html    y   10000000    <!DOCTYPE   <html
+email   y   200000  (\r\n|\n)(From|To|Subject|Date):(\r\n|\n)(.{0,3000})(\r\n|\n)
+------------------------------------------------------------------------------------------------
+sudo foremost -i /home/kali/Desktop/DIF/Projekt_waffenhändler/backup_ForImage4.dd -o /home/kali/Desktop/DIF/Projekt_waffenhändler/foremost_output_new -c /home/kali/Desktop/DIF/Projekt_waffenhändler/foremost.conf
+------------------------------------------------------------------------------------------------
+split -n l/6 passwörter_projekt.txt passwort_teil_
+mv passwort_teil_aa passwort_teil_1.txt
+mv passwort_teil_ab passwort_teil_2.txt
+mv passwort_teil_ac passwort_teil_3.txt
+mv passwort_teil_ad passwort_teil_4.txt
+mv passwort_teil_ae passwort_teil_5.txt
+mv passwort_teil_af passwort_teil_6.txt
+------------------------------------------------------------------------------------------------
+#yescrypt_cracker.sh
+#!/bin/bash
 
+HASHES_FILE="/home/kali/Desktop/DIF/Projekt_waffenhändler/hashes.txt"
+
+for i in {1..6}; do
+  WORDLIST="/home/kali/Desktop/DIF/Projekt_waffenhändler/passwort_teil_${i}.txt"
+  total_passwords=$(wc -l < "$WORDLIST")
+
+  gnome-terminal -- bash -c "
+    while IFS=: read -r user hash; do
+      echo \"Checking hash for user: \$user\"
+      found=0
+      password_count=0
+      while IFS= read -r password; do
+        password_count=\$((password_count + 1))
+        echo -n \"Trying password \$password_count of \$total_passwords for user \$user: \$password ... \"
+        result=\$(echo -n \"\$password\" | ./phc-test \"\$hash\" 2>/dev/null)
+        if [[ \$result == *\"\$hash\"* ]]; then
+          echo \"Success!\"
+          echo \"Password found for user \$user: \$password\"
+          found=1
+          break
+        else
+          echo \"Failed.\"
+        fi
+      done < \"$WORDLIST\"
+      if [ \$found -eq 0 ]; then
+        echo \"No password found for user: \$user\"
+      fi
+    done < \"$HASHES_FILE\"
+  " &
+done
+
+wait
+------------------------------------------------------------------------------------------------
+chmod +x yescrypt_cracker.sh
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Datum: 2024-07-13T10:19:00+02:00 	
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Genutzte Programme:
+
+    Programm 1: 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
 
 
 
