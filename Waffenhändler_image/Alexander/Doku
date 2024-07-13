@@ -363,24 +363,38 @@ email   y   200000  (\r\n|\n)(From|To|Subject|Date):(\r\n|\n)(.{0,3000})(\r\n|\n
 ------------------------------------------------------------------------------------------------
 sudo foremost -i /home/kali/Desktop/DIF/Projekt_waffenhändler/backup_ForImage4.dd -o /home/kali/Desktop/DIF/Projekt_waffenhändler/foremost_output_new -c /home/kali/Desktop/DIF/Projekt_waffenhändler/foremost.conf
 ------------------------------------------------------------------------------------------------
-split -n l/6 passwörter_projekt.txt passwort_teil_
-mv passwort_teil_aa passwort_teil_1.txt
-mv passwort_teil_ab passwort_teil_2.txt
-mv passwort_teil_ac passwort_teil_3.txt
-mv passwort_teil_ad passwort_teil_4.txt
-mv passwort_teil_ae passwort_teil_5.txt
-mv passwort_teil_af passwort_teil_6.txt
+gedit split_and_rename.sh
+------------------------------------------------------------------------------------------------
+chmod +x split_and_rename.sh
+------------------------------------------------------------------------------------------------
+# Datei in 20 Teile teilen
+split -n l/20 passwörter_projekt.txt passwort_teil_
+
+# Dateien umbenennen
+for i in {a..t}; do
+  mv passwort_teil_a$i passwort_teil_$(( $(printf '%d\n' "'$i") - 96 )).txt
+done
+------------------------------------------------------------------------------------------------
+sudo bash split_and_rename.sh
 ------------------------------------------------------------------------------------------------
 #yescrypt_cracker.sh
+# Datei in 20 Teile teilen und umbenennen
+split -n l/20 passwörter_projekt.txt passwort_teil_
+
+for i in {a..t}; do
+  mv passwort_teil_a$i passwort_teil_$(( $(printf '%d\n' "'$i") - 96 )).txt
+done
+
+# yescrypt_cracker.sh
 #!/bin/bash
 
 HASHES_FILE="/home/kali/Desktop/DIF/Projekt_waffenhändler/hashes.txt"
 
-for i in {1..6}; do
+for i in {1..20}; do
   WORDLIST="/home/kali/Desktop/DIF/Projekt_waffenhändler/passwort_teil_${i}.txt"
   total_passwords=$(wc -l < "$WORDLIST")
 
-  gnome-terminal -- bash -c "
+  gnome-terminal --tab -- bash -c "
     while IFS=: read -r user hash; do
       echo \"Checking hash for user: \$user\"
       found=0
@@ -404,8 +418,6 @@ for i in {1..6}; do
     done < \"$HASHES_FILE\"
   " &
 done
-
-wait
 ------------------------------------------------------------------------------------------------
 chmod +x yescrypt_cracker.sh
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
