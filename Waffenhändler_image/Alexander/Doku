@@ -423,11 +423,17 @@ chmod +x scan_polyglot.sh
 #!/bin/bash
 
 TARGET_DIR="/home/kali/Desktop/DIF/Projekt_waffenhändler/foremost_output_new/jpg"
+OUTPUT_FILE="scan_output.txt"
+
+echo "Starting polyglot scan..." > "$OUTPUT_FILE"
 
 for file in "$TARGET_DIR"/*.jpg; do
-    echo "Scanning $file"
-    binwalk "$file"
+    echo "Scanning $file" >> "$OUTPUT_FILE"
+    binwalk "$file" >> "$OUTPUT_FILE"
+    echo "" >> "$OUTPUT_FILE"
 done
+
+echo "Polyglot scan completed. Results saved in $OUTPUT_FILE."
 ------------------------------------------------------------------------------------------------
 sudo bash scan_polyglot.sh
 ------------------------------------------------------------------------------------------------
@@ -438,11 +444,17 @@ chmod +x entropy_analysis.sh
 #!/bin/bash
 
 TARGET_DIR="/home/kali/Desktop/DIF/Projekt_waffenhändler/foremost_output_new/jpg"
+OUTPUT_FILE="entropy_output.txt"
+
+echo "Starting entropy analysis..." > "$OUTPUT_FILE"
 
 for file in "$TARGET_DIR"/*.jpg; do
-    echo "Analyzing entropy for $file"
-    binwalk -E "$file"
+    echo "Analyzing entropy for $file" >> "$OUTPUT_FILE"
+    binwalk -E "$file" >> "$OUTPUT_FILE"
+    echo "" >> "$OUTPUT_FILE"
 done
+
+echo "Entropy analysis completed. Results saved in $OUTPUT_FILE."
 ------------------------------------------------------------------------------------------------
 sudo bash entropy_analysis.sh
 ------------------------------------------------------------------------------------------------
