@@ -559,8 +559,7 @@ echo "Alle Dateien wurden durchsucht und die extrahierten Dateien wurden nach $Z
 ------------------------------------------------------------------------------------------------
 gedit extract_combined.sh
 chmod +x extract_combined.sh
-------------------------------------------------------------------------------------------------
-#!/bin/bash
+------------------------------------------------------------------------------------------------#!/bin/bash
 
 # Verzeichnis zum Speichern der extrahierten Dateien
 OUTPUT_DIR="extract_combined"
@@ -593,7 +592,7 @@ for file in "${FILES[@]}"; do
 
     if [ -f "$file" ]; then
         # Finde die Offsets mit binwalk
-        OFFSETS=$(binwalk -q -e "$file" | grep -oE '^[0-9]+')
+        OFFSETS=$(binwalk -q --run-as=root -e "$file" | grep -oE '^[0-9]+')
         
         # Extrahiere die Bereiche mit dd
         for offset in $OFFSETS; do
