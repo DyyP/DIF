@@ -1,1 +1,8 @@
+21.07.24+15:20 (GMT+2)
+
+Genutzte Programme: autopsy
+
+Sichern, mounten, etc siehe Doku Alex
+
+In Autopsy wird statt dem ganzen Image nur die Linuxpartition aus /dev/loop7p3 eingehängt
 
