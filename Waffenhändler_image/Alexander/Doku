@@ -420,6 +420,7 @@ Datum: 2024-07-13T10:19:00+02:00
 Genutzte Programme:
 
     Programm 1: selbst geschrieben
+    Programm 2: binwalk v2.3.3
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 sudo gedit scan_polyglot.sh
@@ -692,8 +693,152 @@ done
 tar -cvzf extracted_files.tar.gz -C "$EXTRACT_DIR" .
 
 echo "Extraktion und Archivierung abgeschlossen. Die Dateien befinden sich in extracted_files.tar.gz."
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Datum: 2024-07-22T20:12:02+02:00 	
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Genutzte Programme:
+
+    Programm 1: dd (coreutils) 9.4
+    Programm 2: file-5.45
+    Programm 3: convert ImageMagick 6.9.12-98 Q16 x86_64 18038
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Extrahieren der Segmente mit Statusbericht
+dd if=03185792.jpg of=segment1.jpg bs=1 skip=0 count=336 status=progress
+dd if=03185792.jpg of=segment2.tiff bs=1 skip=30 count=306 status=progress
+dd if=03185792.jpg of=segment3.jpg bs=1 skip=336 status=progress
+
+# Überprüfen der extrahierten Segmente
+file segment1.jpg
+file segment2.tiff
+file segment3.jpg
+
+# Reparieren der JPEG-Segmente mit ImageMagick
+convert segment1.jpg repaired_segment1.jpg
+convert segment3.jpg repaired_segment3.jpg
+
+# (Optional) Öffnen und Reparieren der Segmente mit GIMP
+# Öffnen Sie GIMP und reparieren Sie die Dateien manuell.
+------------------------------------------------------------------------------------------------
+sudo apt-get install jpeginfo
+jpeginfo -c segment1.jpg
+jpeginfo -c segment3.jpg
+------------------------------------------------------------------------------------------------
+git clone https://github.com/kornelski/jpeg-archive.git
+cd jpeg-archive
+./jpeg-repair segment1.jpg repaired_segment1.jpg
+./jpeg-repair segment3.jpg repaired_segment3.jpg
+sudo apt-get install hexedit
+ls -lh segment1.jpg
+------------------------------------------------------------------------------------------------
+#!/bin/bash
+
+# Pfade anpassen
+input_file="/home/kali/Desktop/DIF/Projekt_waffenhändler/foremost_output_new/jpg/scan_report.txt"
+source_directory="/home/kali/Desktop/DIF/Projekt_waffenhändler/foremost_output_new/jpg/"
+target_directory="/home/kali/Desktop/DIF/Projekt_waffenhändler/foremost_output_new/extracted_segments/"
+
+# Zielordner erstellen, falls nicht vorhanden
+mkdir -p "$target_directory"
+
+# Datei lesen und verarbeiten
+current_file=""
+segment_counter=1
+
+while IFS= read -r line; do
+    if [[ $line == Scanning* ]]; then
+        # Extrahiere den Dateinamen
+        current_file=$(echo "$line" | awk '{print $3}')
+    elif [[ $line == 0* ]] && [[ -n $current_file ]]; then
+        # Extrahiere Segmentinformationen
+        start_offset=$(echo "$line" | awk '{print $1}')
+        hex_end_offset=$(echo "$line" | awk '{print $2}')
+        end_offset=$((16#$hex_end_offset))
+        length=$((end_offset - start_offset))
+
+        source_path="${source_directory}$(basename "$current_file")"
+        target_path="${target_directory}segment${segment_counter}.jpg"
+
+        # Verwende dd, um das Segment zu extrahieren
+        dd if="$source_path" of="$target_path" bs=1 skip="$start_offset" count="$length" status=progress
+
+        echo "Extrahiere Segment: $source_path -> $target_path"
+
+        segment_counter=$((segment_counter + 1))
+    fi
+done < "$input_file"
+
+echo "Alle relevanten Segmente wurden extrahiert."
+------------------------------------------------------------------------------------------------
+dd if=secFiles of=encoded_script_data.bin bs=1 skip=62783751 count=$((122486062-62783751))
+------------------------------------------------------------------------------------------------
+# Extrahieren der MISAM-Datenbankdatei
+dd if=secFiles of=mysql_misam_data.bin bs=1 skip=122486062 count=$((194568895-122486062))
+
+# Extrahieren der ISAM-Datenbankdatei
+dd if=secFiles of=mysql_isam_data.bin bs=1 skip=194568895
+------------------------------------------------------------------------------------------------
+# Beispiel für den Import in eine MySQL-Datenbank
+mysql -u [username] -p[password] -e "CREATE DATABASE my_database;"
+mysql -u [username] -p[password] my_database < mysql_misam_data.bin
+
+SHOW TABLES;
+SELECT * FROM [table_name] LIMIT 10;
+-----------------------------------------------------------------------------------------------------------------
+system zerschossen neu aufgesetzt alles was nicht im git war ist weg.
+-----------------------------------------------------------------------------------------------------------------
+neu aufgesetzt.
+------------------------------------------------------------------------------------------------
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------
+Details zu den Partitionen
+Partition 000
+
+Start: 2048, End: 4095, Length: 2048 Sektoren (1 MiB)
+Beschreibung: Typ nicht angegeben. Könnte ein BIOS-Boot-Partition sein, wenn das System dual bootfähig ist.
+Partition 001: EFI System Partition
+
+Start: 4096, End: 1054719, Length: 1050624 Sektoren (513 MiB)
+Beschreibung: Eine EFI-Systempartition, die üblicherweise Bootloader und andere Boot-bezogene Dateien enthält.
+Partition 002
+
+Start: 1054720, End: 46135295, Length: 45080576 Sektoren (21.5 GiB)
+Beschreibung: Keine spezifische Beschreibung. Vermutlich ein Linux-Dateisystem (EXT2/3/4).
+Unallocated Bereich
+
+Start: 46135296, End: 47656959, Length: 1521664 Sektoren (ungefähr 744 MiB)
+Partition 003: FAT
+
+Start: 47656960, End: 68360191, Length: 20703232 Sektoren (9.9 GiB)
+Beschreibung: Eine FAT-Partition, die oft für Austauschpartitionen zwischen verschiedenen Betriebssystemen oder zur Speicherung von Daten verwendet wird.
+Unallocated Bereich
+
+Start: 68360192, End: 69206015, Length: 845824 Sektoren (ungefähr 412 MiB)
 
 ------------------------------------------------------------------------------------------------
+# Erstellen einer Kopie des Datenträgers
+sudo dd if=/dev/loop8 of=/path/to/backup.img bs=4M
+
+# Installieren von forensischen Tools
+sudo apt-get install sleuthkit foremost bulk_extractor binwalk
+
+# Analyse des Dateisystems
+fls -r -m / /path/to/backup.img > filesystem.txt
+
+# Durchsuchen des Inhalts nach Schlüsselwörtern
+strings /path/to/backup.img | grep -iE "Waffen|Munition|Verkauf|Kauf"
+
+# E-Mail- und Chat-Verläufe extrahieren
+bulk_extractor -o output_directory /path/to/backup.img
+
+# Gelöschte Dateien wiederherstellen
+foremost -i /path/to/backup.img -o output_directory
+
+# Analyse von polygloten Dateien
+binwalk /path/to/backup.img
 
 
 
