@@ -789,7 +789,27 @@ system zerschossen neu aufgesetzt alles was nicht im git war ist weg.
 -----------------------------------------------------------------------------------------------------------------
 neu aufgesetzt.
 ------------------------------------------------------------------------------------------------
+#string_suche.sh
+#!/bin/bash
 
+input_file="/home/kali/Desktop/DIF/waffenhaendler/backup_ForImage4.raw"
+output_file="/home/kali/Desktop/DIF/waffenhaendler/string_output.txt"
+keywords_file="/home/kali/Desktop/DIF/waffenhaendler/string_wordlist.txt"
+
+# Clear output file
+> "$output_file"
+
+# Read keywords from file and construct the grep pattern
+keywords=$(tr '\n' '|' < "$keywords_file" | sed 's/|$//')
+
+# Extract strings and search for keywords, append file path to each line
+strings "$input_file" | grep -iE "$keywords" | while read -r line; do
+    echo "$input_file: $line" >> "$output_file"
+done
+------------------------------------------------------------------------------------------------
+word list aus git bei johnny
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
 
 
 -----------------------------------------------------------------------------------------------------------------
