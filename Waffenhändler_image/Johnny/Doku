@@ -9,7 +9,26 @@ In Autopsy wird statt dem ganzen Image nur die Linuxpartition aus /dev/loop7p3 (
 -> 3 Benutzer: Ela, Fred und PC
 Ela und PC haben keine Dateien
 Fred: - Passwörter.kdbx
-      - 3 Bilder ("
+      - 3 Bilder ("Marcel-Jardinier-Waffen-Ausbildung-im-Irak-Krav-Maga-Berlin-300x300.jpg", "schießen-und-waffen-ausbildung-42917225.jpg", "schreckschuss-pistolen.jpg")
+ Marcel-Jardinier-Waffen-Ausbildung-im-Irak-Krav-Maga-Berlin-300x300.jpg konnte nicht direkt geöffnet werden -> polyglotte Datei vermutet
 
 22.07.24+12:00 (GMT+2)
 
+Unsuchung der extrahierten Dateien mittels foremost
+
+JPGs:
+
+mögliche polyglote Dateien werden untersucht
+
+02097024.jpg: mit binwalk: 
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, JFIF standard 1.01
+30            0x1E            TIFF image data, big-endian, offset of first image directory: 8
+89895         0x15F27         mcrypt 2.2 encrypted data, algorithm: blowfish-448, mode: CBC, keymode: 8bit
+111519        0x1B39F         mcrypt 2.2 encrypted data, algorithm: blowfish-448, mode: CBC, keymode: 8bit
+131072        0x20000         JPEG image data, JFIF standard 1.01
+131102        0x2001E         TIFF image data, big-endian, offset of first image directory: 8
+
+alle Dateien wurden mit dd extrahiert
