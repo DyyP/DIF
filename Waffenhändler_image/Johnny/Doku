@@ -32,3 +32,4 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 131102        0x2001E         TIFF image data, big-endian, offset of first image directory: 8
 
 alle Dateien wurden mit dd extrahiert
+
