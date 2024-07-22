@@ -4,5 +4,12 @@ Genutzte Programme: autopsy
 
 Sichern, mounten, etc siehe Doku Alex
 
-In Autopsy wird statt dem ganzen Image nur die Linuxpartition aus /dev/loop7p3 eingehängt
+In Autopsy wird statt dem ganzen Image nur die Linuxpartition aus /dev/loop7p3 (Linux Prtition) eingehängt
+
+-> 3 Benutzer: Ela, Fred und PC
+Ela und PC haben keine Dateien
+Fred: - Passwörter.kdbx
+      - 3 Bilder ("
+
+22.07.24+12:00 (GMT+2)
 
