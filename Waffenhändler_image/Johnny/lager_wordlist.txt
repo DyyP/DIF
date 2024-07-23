@@ -1,0 +1,12 @@
+Lager
+lager
+Bestand
+bestand
+stock
+Stock
+Rest
+rest
+verkauft
+Verkauft
+Einkauf
+einkauf
