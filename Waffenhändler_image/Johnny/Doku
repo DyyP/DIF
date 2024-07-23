@@ -40,3 +40,5 @@ output des scripts: "string_output_with_offsets_lager.txt"
 Das Image wurde mittels dd befehlen auf einzelne Dateien untersucht, dabei sind Dateien mit den großgeschriebenen Strings aus der wordlist
 besonders interessant, da diese wahrscheinlich selbstgeschriebene Strings sind.
 Interessante Strings könnten sein: "Bestand", "Lager"
+Es wurde eine "StuffIt Deluxe Segment" - Datei gefunden, die "Bestand" beeinhalten soll, was auf eine gelöschte MacOS-Partition schließen 
+lässt.
