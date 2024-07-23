@@ -821,6 +821,41 @@ sudo ls -laR > /home/kali/Desktop/DIF/projekt/ls_laR_output.txt
 ------------------------------------------------------------------------------------------------
 sudo ./string_suche.sh
 ------------------------------------------------------------------------------------------------
+scalpel.conf
+erweitert mit:
+# Konfigurationsdatei für Scalpel
+# Kommentare beginnen mit #
+
+# Dokumente
+doc     y       20000000        \xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1
+docx    y       20000000        \x50\x4b\x03\x04\x14\x00\x06\x00
+pdf     y       20000000        \x25\x50\x44\x46
+txt     y       20000000        \x0a
+
+# Tabellenkalkulationen
+xls     y       20000000        \xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1
+xlsx    y       20000000        \x50\x4b\x03\x04\x14\x00\x06\x00
+csv     y       20000000        \x0a
+
+# Archive
+zip     y       20000000        \x50\x4b\x03\x04
+rar     y       20000000        \x52\x61\x72\x21\x1a\x07\x00
+
+# E-Mail und Nachrichten
+pst     y       20000000        \x21\x42\x44\x4e
+mbox    y       20000000        \x46\x72\x6f\x6d\x20
+
+# Datenbanken
+sqlite  y       20000000        \x53\x51\x4c\x69\x74\x65\x20\x66\x6f\x72\x6d\x61\x74\x20\x33\x00
+mdb     y       20000000        \x00\x01\x00\x00\x53\x74\x61\x6e\x64\x61\x72\x64\x20\x4a\x65\x74
+
+# Log-Dateien
+log     y       20000000        \x0a
+
+# Konfigurationsdateien
+xml     y       20000000        \x3c\x3f\x78\x6d\x6c
+json    y       20000000        \x7b
+
 ------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------
