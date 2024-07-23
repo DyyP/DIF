@@ -821,11 +821,7 @@ sudo ls -laR > /home/kali/Desktop/DIF/projekt/ls_laR_output.txt
 ------------------------------------------------------------------------------------------------
 sudo ./string_suche.sh
 ------------------------------------------------------------------------------------------------
-scalpel.conf
-erweitert mit:
-# Konfigurationsdatei für Scalpel
-# Kommentare beginnen mit #
-
+foremost.conf
 # Dokumente
 doc     y       20000000        \xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1
 docx    y       20000000        \x50\x4b\x03\x04\x14\x00\x06\x00
@@ -856,7 +852,50 @@ log     y       20000000        \x0a
 xml     y       20000000        \x3c\x3f\x78\x6d\x6c
 json    y       20000000        \x7b
 
+# jpeg files
+jpg     y       \xff\xd8\xff\xe0\x00\x10\x4a\x46\x49\x46       \xff\xd9
+jpeg    y       \xff\xd8\xff\xe0\x00\x10\x4a\x46\x49\x46       \xff\xd9
+
+# gif files
+gif     y       GIF87a                                          \x00\x3b
+gif     y       GIF89a                                          \x00\x3b
+
+# png files
+png     y       \x89\x50\x4e\x47\x0d\x0a\x1a\x0a                \x49\x45\x4e\x44\xae\x42\x60\x82
+
+# bmp files
+bmp     y       BM                                              (\x00\x00\x00\x00)?\x00\x00\x00\x00
+
+# avi files
+avi     y       RIFF                                            \x41\x56\x49\x20
+
+# mp3 files
+mp3     y       \x49\x44\x33                                    \xff\xfb
+
+# pdf files
+pdf     y       \x25\x50\x44\x46\x2d                            (\x0a\x25\x25\x45\x4f\x46|\x0a\x25\x25\x45\x4f\x46\x0a)
+
+# doc files (Microsoft Office)
+doc     y       \xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1                \x00\x00\x00\x00
+
+# ppt files (Microsoft Office)
+ppt     y       \xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1                \x00\x00\x00\x00
+
+# xls files (Microsoft Office)
+xls     y       \xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1                \x00\x00\x00\x00
+
+# zip files
+zip     y       PK\x03\x04                                      PK\x05\x06
+
+# tar files
+tar     y       \x75\x73\x74\x61\x72\x00\x30\x30                \x00\x20\x00\x20\x00\x00\x00\x00
+
+# db files
+db      y       \x44\x42                                        \x00\x00
+
+
 ------------------------------------------------------------------------------------------------
+foremost -c /home/kali/Desktop/DIF/waffenhaendler/foremost.conf -i /home/kali/Desktop/DIF/waffenhaendler/backup_ForImage4.dd -o /home/kali/Desktop/DIF/waffenhaendler/foremost_output
 ------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------
 
