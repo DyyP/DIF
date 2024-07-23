@@ -36,3 +36,7 @@ alle Dateien wurden mit dd extrahiert
 23.07.24+12:00 (GMT+2)
 
 das Imgage mit einer neuen wordlist durchsucht (siehe doku alex für das script, wordlist war "lager_wordlist.txt")
+output des scripts: "string_output_with_offsets_lager.txt"
+Das Image wurde mittels dd befehlen auf einzelne Dateien untersucht, dabei sind Dateien mit den großgeschriebenen Strings aus der wordlist
+besonders interessant, da diese wahrscheinlich selbstgeschriebene Strings sind.
+Interessante Strings könnten sein: "Bestand", "Lager"
