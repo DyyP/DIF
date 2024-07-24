@@ -42,3 +42,24 @@ besonders interessant, da diese wahrscheinlich selbstgeschriebene Strings sind.
 Interessante Strings könnten sein: "Bestand", "Lager"
 Es wurde eine "StuffIt Deluxe Segment" - Datei gefunden, die "Bestand" beeinhalten soll, was auf eine gelöschte MacOS-Partition schließen 
 lässt.
+
+24.07.24
+
+Mittels testdisk konnten in dem Image folgende Partitionstabelle erzeugt werden:
+
+TestDisk 7.1, Data Recovery Utility, July 2019                                   
+Christophe GRENIER <grenier@cgsecurity.org>                                      
+https://www.cgsecurity.org                                                       
+                                                                                 
+                                                                                 
+Disk /dev/loop7 - 35 GB / 33 GiB                                                 
+                                                                                 
+Please select the partition table type, press Enter when done.                   
+ [Intel  ] Intel/PC partition                                                    
+ [EFI GPT] EFI GPT partition map (Mac i386, some x86_64...)                      
+ [Humax  ] Humax partition table                                                 
+ [Mac    ] Apple partition map (legacy)                                          
+>[None   ] Non partitioned media                                                 
+ [Sun    ] Sun Solaris partition                                                 
+ [XBox   ] XBox partition                                                        
+ [Return ] Return to disk selection
