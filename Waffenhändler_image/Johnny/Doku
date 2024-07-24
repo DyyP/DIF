@@ -45,21 +45,32 @@ lässt.
 
 24.07.24
 
-Mittels testdisk konnten in dem Image folgende Partitionstabelle erzeugt werden:
+Mittels testdik konnten mehrere gelöschte partitionen gefunden werden, die teilweise doppelt sind, oder sich überschneiden.
+
+(Auszug aus dem Teskdisk-Programm)
 
 TestDisk 7.1, Data Recovery Utility, July 2019                                   
 Christophe GRENIER <grenier@cgsecurity.org>                                      
 https://www.cgsecurity.org                                                       
                                                                                  
-                                                                                 
-Disk /dev/loop7 - 35 GB / 33 GiB                                                 
-                                                                                 
-Please select the partition table type, press Enter when done.                   
- [Intel  ] Intel/PC partition                                                    
- [EFI GPT] EFI GPT partition map (Mac i386, some x86_64...)                      
- [Humax  ] Humax partition table                                                 
- [Mac    ] Apple partition map (legacy)                                          
->[None   ] Non partitioned media                                                 
- [Sun    ] Sun Solaris partition                                                 
- [XBox   ] XBox partition                                                        
- [Return ] Return to disk selection
+Disk /dev/loop7 - 35 GB / 33 GiB - 69206016 sectors                              
+     Partition               Start        End    Size in sectors                 
+>D EFI System                  4096    1054683    1050588 [EFI System Partition] 
+ D MS Data                     4102    1054689    1050588 [NO NAME]              
+ D Linux filesys. data      1054718   46135293   45080576                        
+ D Linux filesys. data      1054720   46135295   45080576                        
+ D Linux Swap               1333240    1333255         16                        
+ D Linux Swap               1333248    3419919    2086672                        
+ D Linux filesys. data     22297432   67378007   45080576                        
+ D Linux filesys. data     22332896   67413471   45080576                        
+ D Linux filesys. data     22366104   67446679   45080576                        
+ D Linux filesys. data     22369928   67450503   45080576                        
+ D Linux filesys. data     22370016   67450591   45080576                        
+ D Linux filesys. data     22370128   67450703   45080576                        
+ D Linux filesys. data     22370248   67450823   45080576                        
+ D Linux filesys. data     22370288   67450863   45080576                        
+ D Linux filesys. data     22370424   67450999   45080576
+
+Interessant ist hierbai zunächst eine gelöschte EFI System Partition, die wiederhergestellt werden soll
+
+
