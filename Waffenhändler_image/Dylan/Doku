@@ -1,4 +1,12 @@
 Datum: 2024-07-24T11:15:02+02:00 	
 ------------------------------------------------------------------------------------------
 Genutztes Programm: PhotoRec
-immage hash of Forimage4.raw
+immage hash of Forimage4.raw: 
+immage hash of Forimage4.dd:30bf1adcdc4f8f7a44ca2b30967686eb
+
+------------------------------------------------------------------------------------------
+Datum: 2024-07-24T15:15:02+02:00 	
+------------------------------------------------------------------------------------------
+sudo losetup /dev/loop7 /home/kali/Documents/ForImage4.raw                                                                                                                                                                                                                    
+sudo partx -a /dev/loop7                                                                                                                                                                                                                                           
+sudo mount /dev/loop7p4 /mnt/microsoft_partition
