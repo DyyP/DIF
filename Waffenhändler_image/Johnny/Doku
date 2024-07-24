@@ -73,4 +73,19 @@ Disk /dev/loop7 - 35 GB / 33 GiB - 69206016 sectors
 
 Interessant ist hierbai zunächst eine gelöschte EFI System Partition, die wiederhergestellt werden soll
 
+bulkextraktor wird genutzt, um das Image nach E-Mails zu durchuschen:
 
+Phase 2. Shutting down scanners
+Computing final histograms and shutting down...
+Phase 3. Generating stats and printing final usage information
+All Threads Finished!
+Elapsed time: 2764 sec.
+Total MB processed: 11601
+Overall performance: 4.197 MBytes/sec 2.098 (MBytes/sec/thread)
+sbufs created:   764387
+sbufs unaccounted: 0
+Time producer spent waiting for scanners to process data:         0:44:15 (2655.87 seconds)
+Time consumer scanners spent waiting for data from producer:      0:00:00 (0.89 seconds)
+Average time each consumer spent waiting for data from producer:  0:00:00 (0.00 seconds)
+*** More time spent waiting for workers. You need a faster CPU or more cores for improved performance.
+Total email features found: 336719
