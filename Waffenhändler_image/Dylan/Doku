@@ -1,12 +1,47 @@
 Datum: 2024-07-24T11:15:02+02:00 	
-------------------------------------------------------------------------------------------
-Genutztes Programm: PhotoRec
-immage hash of Forimage4.raw: 
-immage hash of Forimage4.dd:30bf1adcdc4f8f7a44ca2b30967686eb
-
-------------------------------------------------------------------------------------------
-Datum: 2024-07-24T15:15:02+02:00 	
-------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+hash of Forimage4.raw: 72e0687aa1e42264da6a7393d0ecb510
+hash of Forimage4.dd:30bf1adcdc4f8f7a44ca2b30967686eb
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 sudo losetup /dev/loop7 /home/kali/Documents/ForImage4.raw                                                                                                                                                                                                                    
 sudo partx -a /dev/loop7                                                                                                                                                                                                                                           
 sudo mount /dev/loop7p4 /mnt/microsoft_partition
+sudo mount /dev/loop7p3 /mnt/linux_partition
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+sudo binwalk -e --run-as=root --directory=/home/kali/Documents/WindowsSecFilesBinwalk /mnt/microsoft_partition/secFiles/secFiles
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+62783751      0x3BE0107       Windows Script Encoded Data (screnc.exe)
+122486062     0x74CFD2E       MySQL MISAM compressed data file Version 6
+194568895     0xB98E2BF       MySQL ISAM compressed data file Version 8
+
+ sudo dd if=/mnt/microsoft_partition/secFiles/secFiles of=/home/kali/Documents/WindowsSecFilesBinwalk/secFiles_0x3BE0107.bin bs=1 skip=62783751 count=59670211
+59670211+0 records in
+59670211+0 records out
+59670211 bytes (60 MB, 57 MiB) copied, 152.633 s, 391 kB/s
+                                                                                                     
+ sudo dd if=/mnt/microsoft_partition/secFiles/secFiles of=/home/kali/Documents/WindowsSecFilesBinwalk/secFiles_0x74CFD2E.bin bs=1 skip=122486062 count=72082833
+72082833+0 records in
+72082833+0 records out
+72082833 bytes (72 MB, 69 MiB) copied, 178.97 s, 403 kB/s
+                                                                                                     
+                                                                                                 
+ sudo dd if=/mnt/microsoft_partition/secFiles/secFiles of=/home/kali/Documents/WindowsSecFilesBinwalk/secFiles_0xB98E2BF.bin bs=1 skip=194568895
+15146305+0 records in
+15146305+0 records out
+15146305 bytes (15 MB, 14 MiB) copied, 39.5437 s, 383 kB/s
+
+Files not really usable unfortunatly- sec files needs to be decripted so see the insides fr 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
