@@ -8,6 +8,40 @@ sudo partx -a /dev/loop7
 sudo mount /dev/loop7p4 /mnt/microsoft_partition
 sudo mount /dev/loop7p3 /mnt/linux_partition
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Genutztes programm: PhotoRec
+sudo photorec um dann die Linux partition zu durchsuchen, erst nach allen Files -> Im ordner /home/kali/Documents/Linux whole custom raw/ zu finden 
+-> Zu viele dateien, viele system PNGs etc. 
+
+Erneut starten mit sehr eingeschränkten datei vorgaben. 
+
+neue extrahierte datein zu finden in -> me/kali/Documents/inux whole custum without png -> 437 items (435 files, 2 folders) 
+darunter waffen bilder und sus pdf files - welche man genauer betrachenten muss 
+maybe polyglotte dateien 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Versche die PDF datei f42747144.pdf Md5 hash:89c428ffe6e3240e335f322f45f1729b zu analysieren 
+qpdf nicht hilfreich da PDF nicht im klassichen sinne verschlüsselt 
+sudo binwalk -e --run-as=root f42747144.pdf
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             PDF document, version: "1.4"
+71            0x47            Zlib compressed data, default compression
+363           0x16B           Zlib compressed data, default compression
+19475         0x4C13          Zlib compressed data, default compression
+
+
+analyse der extrahierten datein mit hex editoren etc. hat zu keinen ergebnissen geführt 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Genutztes programm: PhotoRec
+sudo photorec um dann die Windows partition zu durchsuchen, keine datein gefunden mit den eingeschränkten parametern. vermutlich da Win. Partition verschlüsselt.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Versuch Sec files zu entschlüsseln / zu analysieren: 
+
+
 sudo binwalk -e --run-as=root --directory=/home/kali/Documents/WindowsSecFilesBinwalk /mnt/microsoft_partition/secFiles/secFiles
 
 DECIMAL       HEXADECIMAL     DESCRIPTION
