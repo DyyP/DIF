@@ -267,7 +267,11 @@ sudo cp /mnt/linux_partition/etc/shadow /home/kali/Desktop/DIF/Projekt_waffenhä
 sudo cp /mnt/linux_partition/etc/passwd /home/kali/Desktop/DIF/Projekt_waffenhändler/passwd_copy
 sudo unshadow /home/kali/Desktop/DIF/Projekt_waffenhändler/passwd_copy /home/kali/Desktop/DIF/Projekt_waffenhändler/shadow_copy > /home/kali/Desktop/DIF/Projekt_waffenhändler/unshadowed.txt
 ------------------------------------------------------------------------------------------------
-sudo john --wordlist=/home/kali/Desktop/DIF/Projekt_waffenhändler/passwörter_projekt.txt /home/kali/Desktop/DIF/Projekt_waffenhändler/unshadowed.txt
+sudo john --wordlist=/home/kali/Desktop/DIF/Projekt_waffenhändler/passwörter_projekt.txt /home/kali/Desktop/DIF/Projekt_waffenhändler/unshadowed.txt --format=crypt
+pc:$y$j9T$graH6StsN64vZy4TX6DLO1$jFAPKwPTtCP25YeK6fiAIcbse.xZb3XaFXnIuwfaej4:19175:0:99999:7:::
+dopey:$y$j9T$PvbZIk5C5Oz.CFD6m56mR0$Ato/67rlJjcn7E6KBwFRPgjOvWNaBIqg7.m/j1USII7:19177:0:99999:7:::
+ella:$y$j9T$b8KliX1FgPvuKb09j0FOa.$S8KNnnJ8xRisFA8Sann8/wnMgvHXYGn.V.FCcHjv1y8:19177:0:99999:7:::
+mit john und der erhalten passwortlist geprüft, keine treffer
 ------------------------------------------------------------------------------------------------
 hatt alles nichts gebracht etliche versuche mit hashcat und john.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -924,6 +928,9 @@ db      y   20000000    \x53\x51\x4c\x69\x74\x65\x20\x66\x6f\x72\x6d\x61\x74\x20
 sudo chmod -R 755 /home/kali/Desktop/DIF/waffenhaendler/foremost_output_new
 sudo chown -R $(whoami):$(whoami) /home/kali/Desktop/DIF/waffenhaendler/foremost_output_new
 -----------------------------------------------------------------------------------------------------------------
+pc:$y$j9T$graH6StsN64vZy4TX6DLO1$jFAPKwPTtCP25YeK6fiAIcbse.xZb3XaFXnIuwfaej4:19175:0:99999:7:::
+dopey:$6$mysalt$1b9uLjk6k7Gw0GD4KMQrLvEOGYPJWXjVoKTEUJ8TdumpptCFuwHxwtxJNPf6IRoIiGOZDQcsktrM0JK/HSBYt0:19177:0:99999:7:::
+mit john und der erhalten passwortlist geprüft, keine treffer
 -----------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
