@@ -37,7 +37,7 @@ output results for file `/home/kali/Desktop/DIF/Projekt_waffenhändler/backup_Fo
 
 dc3dd completed at 2024-07-08 15:24:46 +0200
 -----------------------------------------------------------------------------------------------
-qemu-img convert -O raw /home/kali/Desktop/DIF/Projekt_waffenhändler/backup_ForImage4.dd /home/kali/Desktop/DIF/Projekt_waffenhändler/backup_ForImage4.raw
+qemu-img convert -O raw /home/kali/Desktop/DIF/Projekt_waffenhändler/backup_ForImage4.dd /home/kali/Desktop/DIF/Projekt_waffenhändler/backup_ForImage4.raw --> neuer md5: 01f8e36d483d103c4f4f934bcdfd69a5
 -----------------------------------------------------------------------------------------------
 sudo losetup /dev/loop7 /home/kali/Desktop/DIF/Projekt_waffenhändler/backup_ForImage4.raw
 -----------------------------------------------------------------------------------------------
