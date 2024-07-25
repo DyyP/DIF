@@ -1,0 +1,81 @@
+──(kali㉿kali)-[~/Documents]
+└─$ sudo john --wordlist=passwort_teil_ab Hash1.txt --format=crypt                 
+[sudo] password for kali: 
+Created directory: /root/.john
+Using default input encoding: UTF-8
+Loaded 1 password hash (crypt, generic crypt(3) [?/64])
+Cost 1 (algorithm [1:descrypt 2:md5crypt 3:sunmd5 4:bcrypt 5:sha256crypt 6:sha512crypt]) is 0 for all loaded hashes
+Cost 2 (algorithm specific iterations) is 1 for all loaded hashes
+Will run 8 OpenMP threads
+Press 'q' or Ctrl-C to abort, almost any other key for status
+0g 0:00:00:19 0.07% (ETA: 12:55:19) 0g/s 75.35p/s 75.35c/s 75.35C/s aix0Eiru..Chahnae1
+0g 0:00:00:33 0.13% (ETA: 12:52:05) 0g/s 76.75p/s 76.75c/s 76.75C/s Ieyair6o..Oz5bohb5
+0g 0:00:01:45 0.41% (ETA: 12:57:22) 0g/s 79.30p/s 79.30c/s 79.30C/s Aik1Yohz..BaPee4oo
+0g 0:00:03:31 0.82% (ETA: 12:52:10) 0g/s 80.67p/s 80.67c/s 80.67C/s aifi0eVu..Kazaez1E
+0g 0:00:04:17 1.00% (ETA: 12:52:12) 0g/s 81.03p/s 81.03c/s 81.03C/s eiv1GaeY..Ooqu0eej
+0g 0:00:07:52 1.84% (ETA: 12:52:36) 0g/s 81.11p/s 81.11c/s 81.11C/s uuwie1uY..ohyiv0Ee
+0g 0:00:08:58 2.10% (ETA: 12:52:32) 0g/s 81.16p/s 81.16c/s 81.16C/s aet9ohCh..Oonaa9Im
+0g 0:00:15:46 3.60% (ETA: 13:03:21) 0g/s 79.23p/s 79.23c/s 79.23C/s ue0pooPh..uZ2OhZu5
+0g 0:00:18:25 4.23% (ETA: 13:01:11) 0g/s 79.65p/s 79.65c/s 79.65C/s UiXaf1oh..Ub6ziz6E
+0g 0:00:23:38 5.42% (ETA: 13:01:56) 0g/s 79.53p/s 79.53c/s 79.53C/s uiTein4s..Famong8i
+0g 0:00:25:03 5.72% (ETA: 13:03:52) 0g/s 79.19p/s 79.19c/s 79.19C/s ooWao5Su..Iqua0ahL
+0g 0:00:31:37 7.12% (ETA: 13:09:54) 0g/s 78.12p/s 78.12c/s 78.12C/s eefeef8M..ingeer9A
+0g 0:00:32:36 7.36% (ETA: 13:08:48) 0g/s 78.32p/s 78.32c/s 78.32C/s iud5ohZe..ePohk0oo
+0g 0:00:35:40 8.10% (ETA: 13:06:07) 0g/s 78.78p/s 78.78c/s 78.78C/s Chavev3f..Aiv2phie
+0g 0:00:36:21 8.27% (ETA: 13:05:31) 0g/s 78.89p/s 78.89c/s 78.89C/s IZ8ziNa3..noh1eeWu
+0g 0:00:39:53 9.12% (ETA: 13:03:10) 0g/s 79.34p/s 79.34c/s 79.34C/s Ohxo4paz..ra2ahDah
+0g 0:00:47:18 10.87% (ETA: 13:00:57) 0g/s 79.75p/s 79.75c/s 79.75C/s Mae3esh6..Sud3laiL
+0g 0:00:47:19 10.87% (ETA: 13:00:55) 0g/s 79.75p/s 79.75c/s 79.75C/s oweiD3Hu..ohNe5deu
+0g 0:00:51:48 11.95% (ETA: 12:59:20) 0g/s 80.06p/s 80.06c/s 80.06C/s wuoMud1i..aeb7Feeh
+0g 0:00:57:01 13.22% (ETA: 12:57:14) 0g/s 80.44p/s 80.44c/s 80.44C/s zuic3Aiw..Deegaf1z
+0g 0:01:00:53 14.15% (ETA: 12:56:11) 0g/s 80.65p/s 80.65c/s 80.65C/s eiHa3aez..ux4Ohthe
+0g 0:01:07:48 15.83% (ETA: 12:54:02) 0g/s 81.05p/s 81.05c/s 81.05C/s Wai0tahX..Koj0Engi
+0g 0:01:12:07 16.87% (ETA: 12:53:11) 0g/s 81.22p/s 81.22c/s 81.22C/s uPhoo4Xi..bi3BoiC0
+0g 0:01:13:43 17.26% (ETA: 12:53:00) 0g/s 81.24p/s 81.24c/s 81.24C/s eY1goine..Li8EZ5be
+0g 0:01:21:31 19.15% (ETA: 12:51:34) 0g/s 81.52p/s 81.52c/s 81.52C/s azuCh4ev..ahWu3Cah
+0g 0:01:55:55 27.05% (ETA: 12:54:17) 0g/s 81.01p/s 81.01c/s 81.01C/s Lahh6Ohd..eeD8Joh8
+0g 0:01:56:08 27.10% (ETA: 12:54:17) 0g/s 81.01p/s 81.01c/s 81.01C/s iiTa0eej..ahNg0Iet
+0g 0:01:59:06 27.81% (ETA: 12:54:01) 0g/s 81.06p/s 81.06c/s 81.06C/s othoc4Ie..Oop3feek
+0g 0:02:06:56 29.70% (ETA: 12:53:09) 0g/s 81.23p/s 81.23c/s 81.23C/s zahwic3V..koGh1cee
+0g 0:02:17:20 32.21% (ETA: 12:52:11) 0g/s 81.41p/s 81.41c/s 81.41C/s Iowu0Aef..Ohk6ooZe
+0g 0:02:20:21 32.93% (ETA: 12:51:58) 0g/s 81.46p/s 81.46c/s 81.46C/s Gi3iojei..eeG2joop
+0g 0:02:23:07 33.61% (ETA: 12:51:40) 0g/s 81.51p/s 81.51c/s 81.51C/s poh8IiL5..Oshooth0
+0g 0:02:24:50 34.02% (ETA: 12:51:32) 0g/s 81.54p/s 81.54c/s 81.54C/s uobohl6B..piju3Ohs
+0g 0:02:29:32 35.16% (ETA: 12:51:04) 0g/s 81.63p/s 81.63c/s 81.63C/s Oogh3xai..UGhai4Ta
+0g 0:02:35:56 36.72% (ETA: 12:50:30) 0g/s 81.74p/s 81.74c/s 81.74C/s ohw2AGae..Puch5iid
+0g 0:02:47:27 39.38% (ETA: 12:51:02) 0g/s 81.64p/s 81.64c/s 81.64C/s Ya7ion4i..amah9Nei
+0g 0:02:49:10 39.77% (ETA: 12:51:09) 0g/s 81.62p/s 81.62c/s 81.62C/s aiZ7aeti..Saedoi8l
+0g 0:03:35:08 50.27% (ETA: 12:53:47) 0g/s 81.12p/s 81.12c/s 81.12C/s Ooqu4air..Iey6Hec2
+0g 0:03:58:41 55.67% (ETA: 12:54:32) 0g/s 80.98p/s 80.98c/s 80.98C/s aTu7aech..ee7Mo6Oo
+0g 0:04:09:12 57.92% (ETA: 12:56:04) 0g/s 80.69p/s 80.69c/s 80.69C/s Ishai4Ch..Peeghai9
+0g 0:04:18:59 60.09% (ETA: 12:56:47) 0g/s 80.56p/s 80.56c/s 80.56C/s Ukeiph8g..hai9Atie
+0g 0:04:22:41 60.97% (ETA: 12:56:40) 0g/s 80.58p/s 80.58c/s 80.58C/s Zoochoo3..Boh7cohr
+0g 0:04:24:56 61.51% (ETA: 12:56:33) 0g/s 80.60p/s 80.60c/s 80.60C/s Ugech2pu..iekei6Be
+0g 0:04:43:41 65.68% (ETA: 12:57:43) 0g/s 80.38p/s 80.38c/s 80.38C/s beikar0N..OoN6Wuci
+0g 0:04:46:41 66.36% (ETA: 12:57:49) 0g/s 80.36p/s 80.36c/s 80.36C/s hee5Ahze..kieDaev5
+0g 0:04:55:49 68.53% (ETA: 12:57:29) 0g/s 80.42p/s 80.42c/s 80.42C/s ai4Ahhoo..ao7Ohmau
+0g 0:05:01:04 69.73% (ETA: 12:57:33) 0g/s 80.41p/s 80.41c/s 80.41C/s peey7Xoo..auPhae7U
+0g 0:05:14:24 72.36% (ETA: 13:00:17) 0g/s 79.91p/s 79.91c/s 79.91C/s Eiya2Ooj..Oeth3loa
+0g 0:05:24:55 74.50% (ETA: 13:01:57) 0g/s 79.60p/s 79.60c/s 79.60C/s eGeiG7ad..She3to4c
+0g 0:05:26:35 74.82% (ETA: 13:02:20) 0g/s 79.53p/s 79.53c/s 79.53C/s cooFo4ak..chooW4ae
+0g 0:05:27:10 74.93% (ETA: 13:02:26) 0g/s 79.51p/s 79.51c/s 79.51C/s Seet4ohL..jahDoa2k
+0g 0:05:27:22 74.97% (ETA: 13:02:29) 0g/s 79.51p/s 79.51c/s 79.51C/s oThu5shu..eiM7Tu1i                                                                                                                                                     
+0g 0:05:27:29 74.99% (ETA: 13:02:29) 0g/s 79.50p/s 79.50c/s 79.50C/s Ii5eghei..BeiC6aiw                                                                                                                                                     
+0g 0:05:27:33 75.01% (ETA: 13:02:29) 0g/s 79.50p/s 79.50c/s 79.50C/s vueP0Ahn..chai4ieF                                                                                                                                                     
+0g 0:05:31:02 75.70% (ETA: 13:03:07) 0g/s 79.39p/s 79.39c/s 79.39C/s iz3Eoc6z..noh6eiNu                                                                                                                                                     
+0g 0:05:33:20 76.17% (ETA: 13:03:27) 0g/s 79.33p/s 79.33c/s 79.33C/s aeha3Gah..sooZ2Iev                                                                                                                                                     
+0g 0:05:40:32 77.64% (ETA: 13:04:23) 0g/s 79.16p/s 79.16c/s 79.16C/s GaWais8u..ahz8Ecih                                                                                                                                                     
+0g 0:05:41:19 77.81% (ETA: 13:04:29) 0g/s 79.14p/s 79.14c/s 79.14C/s veiT4chu..Looque3i                                                                                                                                                     
+0g 0:05:44:09 78.36% (ETA: 13:04:59) 0g/s 79.05p/s 79.05c/s 79.05C/s CeY1amie..ohFai6ah                                                                                                                                                     
+0g 0:05:55:13 80.85% (ETA: 13:05:09) 0g/s 79.02p/s 79.02c/s 79.02C/s erae3Vai..Acaeg3ea                                                                                                                                                     
+0g 0:06:03:08 82.61% (ETA: 13:05:22) 0g/s 78.98p/s 78.98c/s 78.98C/s teiy8Woh..uo7AhNiw                                                                                                                                                     
+0g 0:06:04:34 82.85% (ETA: 13:05:51) 0g/s 78.89p/s 78.89c/s 78.89C/s qua2Hohs..aiY7aino                                                                                                                                                     
+0g 0:06:04:49 82.87% (ETA: 13:06:01) 0g/s 78.87p/s 78.87c/s 78.87C/s Koozai7u..iejai8Ne                                                                                                                                                     
+0g 0:06:06:43 83.23% (ETA: 13:06:24) 0g/s 78.80p/s 78.80c/s 78.80C/s Caesh4Ag..faeGah8n                                                                                                                                                     
+0g 0:06:10:01 83.99% (ETA: 13:06:20) 0g/s 78.81p/s 78.81c/s 78.81C/s Gaep6OhZ..Yah1unga                                                                                                                                                     
+0g 0:06:23:40 87.02% (ETA: 13:06:43) 0g/s 78.74p/s 78.74c/s 78.74C/s ahFieth7..xiu6Ipae                                                                                                                                                     
+0g 0:06:26:04 87.54% (ETA: 13:06:49) 0g/s 78.72p/s 78.72c/s 78.72C/s uv9De1th..Zohsoo8h                                                                                                                                                     
+ioRai6li         (dopey)                                                                                                                                                                                                                    
+1g 0:06:33:48 DONE (2024-07-25 12:19) 0.000042g/s 78.66p/s 78.66c/s 78.66C/s Zahne5ai..ioRai6li                                                                                                                                             
+Use the "--show" option to display all of the cracked passwords reliably                                                                                                                                                                    
+Session completed.  
