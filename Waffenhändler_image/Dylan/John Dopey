@@ -79,3 +79,10 @@ ioRai6li         (dopey)
 1g 0:06:33:48 DONE (2024-07-25 12:19) 0.000042g/s 78.66p/s 78.66c/s 78.66C/s Zahne5ai..ioRai6li                                                                                                                                             
 Use the "--show" option to display all of the cracked passwords reliably                                                                                                                                                                    
 Session completed.  
+
+┌──(kali㉿kali)-[~/Documents]
+└─$ sudo john --show Hash1.txt  
+dopey:ioRai6li:19177:0:99999:7:::
+
+1 password hash cracked, 0 left
+
