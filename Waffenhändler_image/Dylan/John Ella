@@ -1,0 +1,38 @@
+──(kali㉿kali)-[~/Documents]
+└─$ sudo john --wordlist=wordlist.txt hash.txt --format=crypt    
+[sudo] password for kali: 
+Using default input encoding: UTF-8
+Loaded 1 password hash (crypt, generic crypt(3) [?/64])
+Cost 1 (algorithm [1:descrypt 2:md5crypt 3:sunmd5 4:bcrypt 5:sha256crypt 6:sha512crypt]) is 0 for all loaded hashes
+Cost 2 (algorithm specific iterations) is 1 for all loaded hashes
+Will run 8 OpenMP threads
+Press 'q' or Ctrl-C to abort, almost any other key for status
+0g 0:00:00:03 0.02% (ETA: 23:12:57) 0g/s 283.2p/s 283.2c/s 283.2C/s pa4Phong..phae6Wee
+0g 0:00:00:07 0.03% (ETA: 23:32:41) 0g/s 284.7p/s 284.7c/s 284.7C/s aeR8hohJ..Bie5aehe
+0g 0:00:03:44 0.99% (ETA: 00:05:27) 0g/s 274.7p/s 274.7c/s 274.7C/s loneeRu9..eiz9teiD
+0g 0:00:04:46 1.27% (ETA: 00:02:40) 0g/s 277.0p/s 277.0c/s 277.0C/s ok7Xaif0..Xee4thog
+0g 0:00:14:25 3.73% (ETA: 00:13:50) 0g/s 269.4p/s 269.4c/s 269.4C/s aeBoo2ej..aFai9Ama
+0g 0:00:27:16 6.86% (ETA: 00:24:49) 0g/s 262.0p/s 262.0c/s 262.0C/s ohth7eiG..Ohtee9oh
+0g 0:00:28:59 7.14% (ETA: 00:33:09) 0g/s 256.6p/s 256.6c/s 256.6C/s Eezeish9..Zai4Roh0
+0g 0:00:29:00 7.15% (ETA: 00:33:12) 0g/s 256.6p/s 256.6c/s 256.6C/s aiheir4A..peBe1Omo
+0g 0:00:31:20 7.48% (ETA: 00:46:35) 0g/s 248.4p/s 248.4c/s 248.4C/s meiTo6ah..zee4Aex7
+0g 0:00:31:52 7.56% (ETA: 00:49:01) 0g/s 247.0p/s 247.0c/s 247.0C/s beis6Aek..NeeMiej1
+0g 0:00:32:07 7.60% (ETA: 00:50:01) 0g/s 246.3p/s 246.3c/s 246.3C/s uM8eemie..Zoo0loh5
+0g 0:00:35:02 8.12% (ETA: 00:58:55) 0g/s 241.3p/s 241.3c/s 241.3C/s kohghiF9..iYoh4eic
+0g 0:00:36:36 8.40% (ETA: 01:02:58) 0g/s 239.1p/s 239.1c/s 239.1C/s Che3deid..mooX5cah
+0g 0:00:37:59 8.65% (ETA: 01:06:25) 0g/s 237.2p/s 237.2c/s 237.2C/s Oof1Oogh..oroh9Uf7
+0g 0:00:38:17 8.71% (ETA: 01:07:01) 0g/s 236.8p/s 236.8c/s 236.8C/s ro8eiVoo..Mai1heeL
+0g 0:00:39:03 8.86% (ETA: 01:08:17) 0g/s 236.2p/s 236.2c/s 236.2C/s Ze9ootho..kah7aeT7
+0g 0:00:41:57 9.42% (ETA: 01:12:45) 0g/s 233.8p/s 233.8c/s 233.8C/s Ji3oteid..theTh5aa                                                                                                                                                                                                                                      
+0g 0:00:42:22 9.50% (ETA: 01:13:19) 0g/s 233.5p/s 233.5c/s 233.5C/s Ukei2ou5..vah2sooS                                                                                                                                                                                                                                      
+0g 0:00:44:38 9.95% (ETA: 01:16:04) 0g/s 232.1p/s 232.1c/s 232.1C/s Uquei6Ah..Pi7Phiar                                                                                                                                                                                                                                      
+0g 0:00:45:17 10.07% (ETA: 01:16:59) 0g/s 231.6p/s 231.6c/s 231.6C/s zeiw8Oth..jupie9Qu                                                                                                                                                                                                                                     
+0g 0:00:46:36 10.31% (ETA: 01:19:15) 0g/s 230.4p/s 230.4c/s 230.4C/s cohL3fei..tohyahL9                                                                                                                                                                                                                                     
+0g 0:00:54:41 11.92% (ETA: 01:26:05) 0g/s 227.0p/s 227.0c/s 227.0C/s fup6tu7Y..Ea2NigoC                                                                                                                                                                                                                                     
+0g 0:00:56:52 12.34% (ETA: 01:28:26) 0g/s 225.9p/s 225.9c/s 225.9C/s Aegaek5F..Ahnoot3x                                                                                                                                                                                                                                     
+0g 0:00:57:05 12.38% (ETA: 01:28:41) 0g/s 225.7p/s 225.7c/s 225.7C/s raesei8J..inaiToh1                                                                                                                                                                                                                                     
+0g 0:01:09:17 14.84% (ETA: 01:34:11) 0g/s 223.1p/s 223.1c/s 223.1C/s gi1oX2Ie..Aix3wohw                                                                                                                                                                                                                                     
+AiNgo6ho         (ella)                                                                                                                                                                                                                                                                                                     
+1g 0:05:04:30 DONE (2024-07-25 22:51) 0.000054g/s 215.7p/s 215.7c/s 215.7C/s Oi7dein0..haiCoh5a                                                                                                                                                                                                                             
+Use the "--show" option to display all of the cracked passwords reliably                                                                                                                                                                                                                                                    
+Session completed.                                                          
