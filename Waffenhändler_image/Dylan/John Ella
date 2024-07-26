@@ -36,3 +36,12 @@ AiNgo6ho         (ella)
 1g 0:05:04:30 DONE (2024-07-25 22:51) 0.000054g/s 215.7p/s 215.7c/s 215.7C/s Oi7dein0..haiCoh5a                                                                                                                                                                                                                             
 Use the "--show" option to display all of the cracked passwords reliably                                                                                                                                                                                                                                                    
 Session completed.                                                          
+
+
+┌──(kali㉿kali)-[~/Documents]
+└─$ sudo john --show hash.txt
+
+[sudo] password for kali: 
+ella:AiNgo6ho:19177:0:99999:7:::
+
+1 password hash cracked, 0 left
