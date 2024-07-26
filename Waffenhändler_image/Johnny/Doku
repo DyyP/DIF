@@ -89,3 +89,17 @@ Time consumer scanners spent waiting for data from producer:      0:00:00 (0.89 
 Average time each consumer spent waiting for data from producer:  0:00:00 (0.00 seconds)
 *** More time spent waiting for workers. You need a faster CPU or more cores for improved performance.
 Total email features found: 336719
+
+Nachdem das Passwort von fred mit JTR geknackt wurde konnte die Passwörter.kdbx mit KeePassXC geöffnet werden.
+Zunächst musste die Passwörter.kdbx Datei aus dem Image kopiert und Zugriffsrechte erteilt werden:
+
+Root Terminal Emulator:
+cd /mnt/linux_partition/home/fred/Dokumente
+cp Passwörter.kdbx /home/kali/Desktop/DIF/Projekt_waffenhändler
+sudo chmod -R 777 Passwörter.kdbx
+
+Danach konnte mit dem gekrackten Passwort über KeePassXC auf die Datei zugegriffen werden
+
+(Terminal) keepassxc -> datei einhängen und Passwort eingeben
+
+Schließlich konnte das Passwort von VeraCrypt eingesehen werden: 11GGUUTTxXX //Screenshot: Passwörter.kdbx_Screenshot.png
